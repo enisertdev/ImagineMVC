@@ -1,7 +1,11 @@
+using Imagine.Database;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer("Server=10.147.17.3;Database=Imagine;User Id=enis.ertnrkl;Password=402624;TrustServerCertificate=True"));
 
 var app = builder.Build();
 
