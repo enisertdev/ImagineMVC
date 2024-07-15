@@ -1,0 +1,37 @@
+﻿@using Imagine.Views.ViewModel
+@model UserViewModel
+
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login & Registration Form</title>
+    <!---Custom CSS File--->
+    <link rel="stylesheet" href="~/login/style.css">
+</head>
+<body>
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="registration form">
+        <header>Signup</header>
+        <form method="post" asp-action="Register" asp-controller="User">
+            <span asp-validation-for="@Model.Email"></span>
+            <input asp-for="@Model.Email" type="text" placeholder="Enter your email">
+            <span asp-validation-for="@Model.Password"></span>
+            <input asp-for="@Model.Password" type="password" placeholder="Create a password">
+            <span asp-validation-for="@Model.ValidatePassword"></span>
+            <input asp-for="@Model.ValidatePassword" type="password" placeholder="Confirm your password">
+            <input type="submit" class="button" value="Signup">
+        </form>
+        <div class="signup">
+            <span class="signup">
+                Already have an account?
+                <a asp-action="Login"><label for="check">Login</label></a>
+            </span>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+﻿@using Imagine.DataAccess.Entities
+@model Product
+<form method="post">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Product Name</label>
+        <input  class="form-control" asp-for="@Model.Name">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Price</label>
+        <input  asp-for="@Model.Price" class="form-control">
+    </div>
+    <input type="hidden" asp-for="@Model.CategoryId" />
+
+    <div class="mb-3">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
