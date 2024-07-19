@@ -16,13 +16,19 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddTransient<IEmailService, EmailService>();
+
+
+
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+
     .AddCookie(opt =>
     {
         opt.ExpireTimeSpan = TimeSpan.FromMinutes(2);
         opt.SlidingExpiration = true;
         opt.AccessDeniedPath = null;
         });
+
 
 var app = builder.Build();
 

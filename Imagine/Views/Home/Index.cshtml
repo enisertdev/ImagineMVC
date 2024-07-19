@@ -18,9 +18,12 @@
             <td>@product.Name</td>
             <td>@product.Category.Name</td>
             <td>@product.Price TL</td>
+            @if (User.Identity.IsAuthenticated)
+            {
                 <td><a class="btn btn-primary" asp-action="Edit" asp-route-id="@product.Id" role="button">Edit</a></td>
                 <td><a class="btn btn-primary" asp-action="Delete" asp-route-id="@product.Id" role="button">Delete</a></td>
-        </tr>
+            }
+            </tr>
         }
     </tbody>
 </table>

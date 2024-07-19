@@ -1,0 +1,6 @@
+﻿@model IEnumerable<Imagine.DataAccess.Entities.Category>
+
+@foreach (var category in Model)
+{
+    <a class="dropdown-item" >@category.Name</a>
+}
