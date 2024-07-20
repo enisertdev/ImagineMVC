@@ -68,7 +68,7 @@ namespace Imagine.Database
                      Price = 1099.99m,
                      Stock = 10,
                      ImageUrl = "laptop.jpg",
-                     CategoryId = 1, // Assuming Category with Id 1 exists
+                     CategoryId = 1,
 
                  },
                 new Product
@@ -79,7 +79,7 @@ namespace Imagine.Database
                     Price = 899.99m,
                     Stock = 15,
                     ImageUrl = "phone.jpg",
-                    CategoryId = 1, // Assuming Category with Id 1 exists
+                    CategoryId = 1, 
   
                 },
                 new Product
@@ -90,7 +90,7 @@ namespace Imagine.Database
                     Price = 79.99m,
                     Stock = 20,
                     ImageUrl = "shoes.jpg",
-                    CategoryId = 2, // Assuming Category with Id 2 exists
+                    CategoryId = 2, 
  
                 },
                 new Product
@@ -101,7 +101,7 @@ namespace Imagine.Database
                     Price = 149.99m,
                     Stock = 5,
                     ImageUrl = "bookshelf.jpg",
-                    CategoryId = 3, // Assuming Category with Id 3 exists
+                    CategoryId = 3,
 
                 },
                 new Product
@@ -112,7 +112,7 @@ namespace Imagine.Database
                     Price = 699.99m,
                     Stock = 8,
                     ImageUrl = "camera.jpg",
-                    CategoryId = 1, // Assuming Category with Id 1 exists
+                    CategoryId = 1, 
                 }
                 );
         }

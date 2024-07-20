@@ -23,15 +23,10 @@ namespace Imagine.Business.Services
             _productrepository.Add(product);
         }
 
-        public IEnumerable<Product> GetAllProducts()
-        {
-            return _productrepository.GetAll();
-        }
-
-        public Product GetProduct(Expression<Func<Product,bool>> filter)
-        {
-            return _productrepository.Get(filter);
-        }
+        public IEnumerable<Product> GetProducts(Expression<Func<Product, bool>> filter) => _productrepository.GetMany(filter);
+        public IEnumerable<Product> GetAllProducts() => _productrepository.GetAll();
+        public IEnumerable<Product> GetAllProductsWithCategory() => _productrepository.GetAllProductsWithCategory();
+        public Product GetProduct(Expression<Func<Product, bool>> filter) => _productrepository.Get(filter);
 
         public void RemoveProduct(Product product)
         {
@@ -43,14 +38,10 @@ namespace Imagine.Business.Services
             _productrepository.Update(product);
         }
 
-        public IEnumerable<Product> GetAllProductsWithCategory()
-        {
-            return _productrepository.GetAllProductsWithCategory();
-        }
-
         public void RemoveProductById(int id)
         {
             _productrepository.RemoveById(id);
         }
+
     }
 }

@@ -12,11 +12,11 @@ namespace Imagine.Business.Services
     {
         IEnumerable<Product> GetAllProducts();
         Product GetProduct(Expression<Func<Product,bool>> expression);
-
         IEnumerable<Product> GetAllProductsWithCategory();
         void AddProduct(Product product);
         void UpdateProduct(Product product);
         void RemoveProduct(Product product);
         void RemoveProductById(int id);
+        IEnumerable<Product> GetProducts(Expression<Func<Product,bool>> filter);
     }
 }
