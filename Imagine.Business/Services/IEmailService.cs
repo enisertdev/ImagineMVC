@@ -9,6 +9,5 @@ namespace Imagine.Business.Services
     public interface IEmailService
     {
         Task SendEmailAsync(string email, string subject, string message);
-        string CreateHtmlMessage(string email, string message);
     }
 }

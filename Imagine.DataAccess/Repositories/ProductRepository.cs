@@ -26,7 +26,7 @@ namespace Imagine.DataAccess.Repositories
 
         public void RemoveById(int id)
         {
-         Product product = _context.Products.FirstOrDefault(p => p.Id == id);
+            Product product = _context.Products.FirstOrDefault(p => p.Id == id);
             _context.Products.Remove(product);
             _context.SaveChanges();
         }

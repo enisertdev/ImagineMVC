@@ -140,10 +140,6 @@ C:\Users\enise\Desktop\Imagine\Imagine\obj\Debug\net8.0\refint\Imagine.dll
 C:\Users\enise\Desktop\Imagine\Imagine\obj\Debug\net8.0\Imagine.pdb
 C:\Users\enise\Desktop\Imagine\Imagine\obj\Debug\net8.0\Imagine.genruntimeconfig.cache
 C:\Users\enise\Desktop\Imagine\Imagine\obj\Debug\net8.0\ref\Imagine.dll
-C:\Users\enise\Desktop\Imagine\Imagine\bin\Debug\net8.0\Imagine.staticwebassets.endpoints.json
-C:\Users\enise\Desktop\Imagine\Imagine\bin\Debug\net8.0\System.Text.Json.dll
-C:\Users\enise\Desktop\Imagine\Imagine\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\enise\Desktop\Imagine\Imagine\obj\Debug\net8.0\staticwebassets\msbuild.Imagine.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\Users\enise\Desktop\imaginebackup\Imagine\bin\Debug\net8.0\.filenesting.json
 C:\Users\enise\Desktop\imaginebackup\Imagine\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\enise\Desktop\imaginebackup\Imagine\bin\Debug\net8.0\appsettings.json

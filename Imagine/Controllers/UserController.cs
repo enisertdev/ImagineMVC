@@ -34,6 +34,7 @@ namespace Imagine.Controllers
         public async Task<IActionResult> Login(UserViewModel model)
         {
             ModelState.Remove("ValidatePassword");
+
             if (ModelState.IsValid)
             {
                 User userExists = _userService.GetUser(u => u.Email == model.Email && u.Password == model.Password);
@@ -45,8 +46,7 @@ namespace Imagine.Controllers
                     };
                     var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
-                    await _emailService.SendEmailAsync(model.Email, "Test", "DENEME");
-
+                    await _emailService.SendEmailAsync(model.Email, "Test", "http://localhost:5211/User/Profile");
                     return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError("", "Email or Password is wrong");

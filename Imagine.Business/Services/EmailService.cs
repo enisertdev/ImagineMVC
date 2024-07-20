@@ -21,7 +21,7 @@ namespace Imagine.Business.Services
         }
         
 
-        public async Task SendEmailAsync(string email, string subject, string message)
+        public async Task SendEmailAsync(string email, string subject, string confirmUrl)
         {
             using (var client = new SmtpClient("smtp.gmail.com", 587))
             {
@@ -32,7 +32,7 @@ namespace Imagine.Business.Services
                 {
                     mailMessage.From = new MailAddress(this.email);
                     mailMessage.Subject = subject;
-                    mailMessage.Body = CreateHtmlMessage(email, message);
+                    mailMessage.Body = CreateHtmlMessage(email, confirmUrl);
                     mailMessage.IsBodyHtml = true;
                     mailMessage.To.Add(email);
                     
@@ -50,7 +50,7 @@ namespace Imagine.Business.Services
             }
         }
 
-        public string CreateHtmlMessage(string email, string message)
+        public string CreateHtmlMessage(string email, string confirmUrl)
         {
             return $@"
                 <html>
@@ -58,7 +58,7 @@ namespace Imagine.Business.Services
                     <h2>Thank You for Registering!</h2>
                     <p>Dear {email},</p>
                     <p>Thank you for registering with us. Please confirm your email address by clicking the link below:</p>
-                    <p>{message}</p>
+                    <a href = ""{confirmUrl}"">Confirm your email</a>
                     <p>If you did not create an account, no further action is required.</p>
                     <p>Best regards,<br/>The Imagine Team</p>
                 </body>
