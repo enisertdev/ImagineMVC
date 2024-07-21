@@ -46,7 +46,7 @@ namespace Imagine.Controllers
                     };
                     var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
-                    await _emailService.SendEmailAsync(model.Email, "Test", "http://localhost:5211/User/Profile");
+                    await _emailService.SendEmailAsync(model.Email, "Test", "https://smart-tops-pelican.ngrok-free.app/User/Profile");
                     return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError("", "Email or Password is wrong");
