@@ -46,7 +46,11 @@ namespace Imagine.Controllers
                     };
                     var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
-                    await _emailService.SendEmailAsync(model.Email, "Test", "https://smart-tops-pelican.ngrok-free.app/User/Profile");
+                    if (userExists.IsConfirmed is false)
+                    {
+                        await _emailService.SendEmailAsync(model.Email, "Test", "https://smart-tops-pelican.ngrok-free.app/User/ConfirmEmail");
+                    }
+
                     return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError("", "Email or Password is wrong");
@@ -57,24 +61,47 @@ namespace Imagine.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Index","Home");
+
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]
         public IActionResult Register(UserViewModel user)
         {
-            if(user.ValidatePassword == null)
+            if (user.ValidatePassword == null)
             {
                 ModelState.AddModelError("", "You have to validate the password.");
             }
             if (ModelState.IsValid)
             {
-                User newUser = new User {  Email = user.Email, Password = user.Password };
+                User newUser = new User { Email = user.Email, Password = user.Password };
                 _userService.AddUser(newUser);
 
                 return RedirectToAction("Login");
             }
             return View(user);
+        }
+
+        public IActionResult Profile()
+        {
+            return View();
+        }
+        public IActionResult ConfirmEmail()
+        {
+            var email = User.FindFirstValue(ClaimTypes.Email);
+            User user = _userService.GetUser(u => u.Email == email);
+            if (user == null)
+            {
+                return NotFound("User not found");
+            }
+            if (user.IsConfirmed is true)
+            {
+                return NotFound("you already confirmed your email.");
+            }
+            user.IsConfirmed = true;
+            _userService.UpdateUser(user);
+
+            return View("ConfirmEmail");
         }
     }
 }

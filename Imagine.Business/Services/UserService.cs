@@ -27,5 +27,10 @@ namespace Imagine.Business.Services
         {
             return _userRepository.Get(filter);
         }
+
+        public void UpdateUser(User user)
+        {
+            _userRepository.Update(user);
+        }
     }
 }

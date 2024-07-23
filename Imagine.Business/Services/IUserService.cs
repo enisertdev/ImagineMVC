@@ -12,5 +12,6 @@ namespace Imagine.Business.Services
     {
         void AddUser(User user);
         User GetUser(Expression<Func<User,bool>> filter);
+        void UpdateUser(User user);
     }
 }

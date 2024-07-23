@@ -25,7 +25,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
     .AddCookie(opt =>
     {
-        opt.ExpireTimeSpan = TimeSpan.FromMinutes(2);
+        opt.ExpireTimeSpan = TimeSpan.FromMinutes(15);
         opt.SlidingExpiration = true;
         opt.AccessDeniedPath = null;
         });
