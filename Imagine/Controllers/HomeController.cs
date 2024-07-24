@@ -12,11 +12,13 @@ namespace Imagine.Controllers
     {
         private readonly IProductService _productService;
         private readonly IUserService _userService;
+        private readonly ICategoryService _categoryService;
 
-        public HomeController(IProductService productService, IUserService userService)
+        public HomeController(IProductService productService, IUserService userService, ICategoryService categoryService)
         {
             _productService = productService;
             _userService = userService;
+            _categoryService = categoryService;
         }
         public IActionResult Index()
         {
@@ -26,6 +28,7 @@ namespace Imagine.Controllers
 
         public IActionResult Create()
         {
+            ViewBag.Categories = _categoryService.getAllCategories();
             return View();
         }
 
@@ -37,8 +40,8 @@ namespace Imagine.Controllers
                 _productService.AddProduct(product);
                 return RedirectToAction("Index");
             }
-
-            return View(product);
+            ModelState.AddModelError("", "Fill all spaces");
+            return RedirectToAction("Create");
         }
 
         public IActionResult Edit(int id)
@@ -54,7 +57,7 @@ namespace Imagine.Controllers
         [HttpPost]
         public IActionResult Edit(Product product)
         {
-           
+
             Product updatedProduct = new Product
             {
                 Id = product.Id,
@@ -79,6 +82,12 @@ namespace Imagine.Controllers
             }
             _productService.RemoveProductById(id);
             return RedirectToAction("Index");
+        }
+
+        public IActionResult Details(int id)
+        {
+            Product product = _productService.GetProductWithCategory(id);
+            return View(product);
         }
 
         private bool UserIsAdmin()

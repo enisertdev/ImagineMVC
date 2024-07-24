@@ -424,3 +424,7 @@ C:\Users\enise\Desktop\ImagineMVC\Imagine\obj\Debug\net8.0\staticwebassets.pack.
 C:\Users\enise\Desktop\ImagineMVC\Imagine\obj\Debug\net8.0\Imagine.csproj.Up2Date
 C:\Users\enise\Desktop\ImagineMVC\Imagine\obj\Debug\net8.0\Imagine.genruntimeconfig.cache
 C:\Users\enise\Desktop\ImagineMVC\Imagine\obj\Debug\net8.0\ref\Imagine.dll
+C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Debug\net8.0\Imagine.staticwebassets.endpoints.json
+C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\enise\Desktop\ImagineMVC\Imagine\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\enise\Desktop\ImagineMVC\Imagine\obj\Debug\net8.0\staticwebassets\msbuild.Imagine.Microsoft.AspNetCore.StaticWebAssetEndpoints.props

@@ -1,18 +1,70 @@
 ﻿@using Imagine.DataAccess.Entities
 @model Product
-<form method="post">
+<form method="post" class="p-4 bg-white border rounded">
     <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Product Name</label>
-        <input  class="form-control" asp-for="@Model.Name">
-        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        <label for="productName" class="form-label">Product Name</label>
+        <input id="productName" class="form-control form-control-sm" asp-for="Name" placeholder="Enter product name">
+        <div id="nameHelp" class="form-text text-muted">We'll never share your product name with anyone else.</div>
     </div>
+    
     <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Price</label>
-        <input  asp-for="@Model.Price" class="form-control">
+        <label for="productPrice" class="form-label">Price</label>
+        <input id="productPrice" class="form-control form-control-sm" asp-for="Price" placeholder="Enter product price">
     </div>
-    <input type="hidden" asp-for="@Model.CategoryId" />
+    
+    <input type="hidden" asp-for="CategoryId" />
 
-    <div class="mb-3">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-success w-100">Submit</button>
 </form>
+
+<style>
+    .form-label {
+        font-weight: 600;
+        color: #343a40;
+    }
+
+    .form-control-sm {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+        border-radius: 0.2rem;
+        color: #495057;
+        border: 1px solid #ced4da;
+    }
+
+    .form-text {
+        font-size: 0.75rem;
+        color: #6c757d;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        border-color: #28a745;
+        font-size: 0.875rem;
+        padding: 0.5rem;
+    }
+
+    .btn-success:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+    }
+
+    .border {
+        border: 1px solid #dee2e6;
+    }
+
+    .rounded {
+        border-radius: 0.25rem;
+    }
+
+    .bg-white {
+        background-color: #ffffff !important;
+    }
+
+    .p-4 {
+        padding: 1.5rem !important;
+    }
+
+    .w-100 {
+        width: 100% !important;
+    }
+</style>

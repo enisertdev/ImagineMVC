@@ -1,0 +1,20 @@
+﻿@model Product
+
+<div class="mb-3">
+    <label for="productName" class="form-label">Product Name</label>
+    <input readonly id="productName" class="form-control form-control-sm" asp-for="Name">
+    <div id="nameHelp" class="form-text text-muted">We'll never share your product name with anyone else.</div>
+</div>
+    
+<div class="mb-3">
+    <label for="productPrice" class="form-label">Price</label>
+    <input  readonly class="form-control form-control-sm" asp-for="Price">
+</div>
+<div class="mb-3">
+    <label for="productPrice" class="form-label">Stock</label>
+    <input readonly  class="form-control form-control-sm" asp-for="Stock">
+</div>
+<div class="mb-3">
+    <label for="productPrice" class="form-label">Category</label>
+    <input readonly  class="form-control form-control-sm" asp-for="Category.Name">
+</div>
