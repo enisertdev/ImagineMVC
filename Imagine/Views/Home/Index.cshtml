@@ -1,6 +1,10 @@
 ﻿@using Imagine.DataAccess.Entities
 @model IEnumerable<Product>
 
+@if (User.Identity.IsAuthenticated)
+{
+    <a asp-action="Create"><button class="btn btn-primary">Create</button></a>
+}
 <table class="table">
     <thead>
         <tr>

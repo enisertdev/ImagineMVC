@@ -7,6 +7,8 @@ namespace Imagine.Views.ViewModel
     {
         [EmailAddress(ErrorMessage = "The email you entered is invalid.")]
         public string Email { get; set; }
+        [Required]
+        public string Name { get; set; }
         public string Password { get; set; }
         [Compare("Password",ErrorMessage = "Passwords do not match.")]
         [DisplayName("Confirm Password")]

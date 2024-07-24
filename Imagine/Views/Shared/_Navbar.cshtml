@@ -26,7 +26,7 @@
             <div class="d-flex">
                 @if (User.Identity.IsAuthenticated)
                 {
-                    <a class="btn btn-outline-primary me-2" asp-controller="User" asp-action="Profile">My Account</a>
+                    <a class="btn btn-outline-primary me-2" asp-controller="User" asp-action="Profile">@await Component.InvokeAsync("User")</a>
                     <a class="btn btn-outline-primary me-2" asp-controller="User" asp-action="Logout">Logout</a>
 
                 }
