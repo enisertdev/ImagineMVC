@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MqEvhX1SN+Wvnrv2F6qe0k12a6pX/nnLPgbIMAdb/RM=",
+  "Hash": "65eAd4D+v2WZ85IhCN/Cm5YASc4vTuxTRSlhldjm6jo=",
   "Source": "Imagine",
   "BasePath": "_content/Imagine",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\image\\product.jpeg",
+      "SourceId": "Imagine",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\",
+      "BasePath": "_content/Imagine",
+      "RelativePath": "image/product.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\product.jpeg"
     },
     {
       "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\js\\site.js",

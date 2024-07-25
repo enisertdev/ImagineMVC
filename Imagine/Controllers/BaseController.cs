@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
-namespace Imagine.Controllers
+namespace Imagine.Components.Controllers
 {
     public class BaseController : Controller
     {

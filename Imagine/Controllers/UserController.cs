@@ -9,7 +9,7 @@ using System.Security.Claims;
 using Imagine.DataAccess.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 
-namespace Imagine.Controllers
+namespace Imagine.Components.Controllers
 {
     public class UserController : BaseController
     {
@@ -76,7 +76,7 @@ namespace Imagine.Controllers
             }
             if (ModelState.IsValid)
             {
-                User newUser = new User {Name = user.Name, Email = user.Email, Password = user.Password };
+                User newUser = new User { Name = user.Name, Email = user.Email, Password = user.Password };
                 _userService.AddUser(newUser);
                 var confirmationLink = Url.Action("ConfirmEmail", "User", new { email = user.Email }, Request.Scheme);
                 await _emailService.SendEmailAsync(user.Email, "Welcome", confirmationLink);

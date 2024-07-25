@@ -2,5 +2,5 @@
 
 @foreach (var category in Model)
 {
-    <a class="dropdown-item" >@category.Name</a>
-}
+    <a class="dropdown-item" href="@Url.Action("ProductsByCategory","Product",new {categoryId = category.Id})">@category.Name</a>
+}   

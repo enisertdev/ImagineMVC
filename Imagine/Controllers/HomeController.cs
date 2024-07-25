@@ -6,7 +6,7 @@ using Imagine.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Imagine.Controllers
+namespace Imagine.Components.Controllers
 {
     public class HomeController : BaseController
     {

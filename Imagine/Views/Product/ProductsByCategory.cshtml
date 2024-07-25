@@ -1,10 +1,4 @@
-﻿@using Imagine.DataAccess.Entities
-@model IEnumerable<Product>
-
-@if (User.Identity.IsAuthenticated)
-{
-    <a asp-action="Create"><button class="btn btn-primary">Create</button></a>
-}
+﻿@model IEnumerable<Product>
 
 <div class="container">
     <div class="row">
@@ -15,7 +9,7 @@
                 <div class="card-body">
                     <h5 class="card-title">@product.Name</h5>
                     <p class="card-text">@product.Description</p>
-                    <a asp-action="Details" asp-route-id="@product.Id" class="btn btn-primary">Details</a>
+                    <a asp-action="Details" asp-controller="Home" asp-route-id="@product.Id" class="btn btn-primary">Details</a>
                 </div>
             </div>
         }
