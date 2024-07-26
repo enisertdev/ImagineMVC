@@ -24,6 +24,11 @@ namespace Imagine.Business.Services
         }
 
         public IEnumerable<Product> GetProducts(Expression<Func<Product, bool>> filter) => _productrepository.GetMany(filter);
+        public Product GetProductWithCategory(int id)
+        {
+           return _productrepository.GetProductWithCategory(p => p.Id == id);
+        }
+
         public IEnumerable<Product> GetAllProducts() => _productrepository.GetAll();
         public IEnumerable<Product> GetAllProductsWithCategory() => _productrepository.GetAllProductsWithCategory();
         public Product GetProduct(Expression<Func<Product, bool>> filter) => _productrepository.Get(filter);

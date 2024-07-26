@@ -45,12 +45,15 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+app.UseRouting();
+
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseRouting();
-
-app.UseAuthorization();
+app.MapAreaControllerRoute(
+    name: "Areas",
+    areaName: "Admin",
+    pattern: "Admin/{controller=Product}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "default",

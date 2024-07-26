@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Imagine.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Imagine.bundle.scp.css"
+      "PackagePath": "staticwebassets\\Imagine.q03go759dq.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\css\\site.css",
@@ -11,6 +11,14 @@
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\image\\1.jpg",
+      "PackagePath": "staticwebassets\\image\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\image\\2.jpg",
+      "PackagePath": "staticwebassets\\image\\2.jpg"
     },
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\image\\product.jpeg",
@@ -251,6 +259,10 @@
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\login\\style.css",
       "PackagePath": "staticwebassets\\login\\style.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Imagine.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Imagine.Microsoft.AspNetCore.StaticWebAssets.props",

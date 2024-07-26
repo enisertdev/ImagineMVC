@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,5 +12,6 @@ namespace Imagine.DataAccess.Interfaces
     {
         IEnumerable<Product> GetAllProductsWithCategory();
         void RemoveById(int id);
+        Product GetProductWithCategory(Expression<Func<Product, bool>> filter);
     }
 }

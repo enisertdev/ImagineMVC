@@ -3,6 +3,7 @@ using Imagine.DataAccess.Entities;
 using Imagine.DataAccess.Interfaces;
 using Imagine.DataAccess.Repositories;
 using Imagine.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -13,12 +14,15 @@ namespace Imagine.Components.Controllers
         private readonly IProductService _productService;
         private readonly IUserService _userService;
         private readonly ICategoryService _categoryService;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public HomeController(IProductService productService, IUserService userService, ICategoryService categoryService)
+
+        public HomeController(IProductService productService, IUserService userService, ICategoryService categoryService, IWebHostEnvironment webHostEnvironment)
         {
             _productService = productService;
             _userService = userService;
             _categoryService = categoryService;
+            _webHostEnvironment = webHostEnvironment;
         }
         public IActionResult Index()
         {
@@ -26,24 +30,7 @@ namespace Imagine.Components.Controllers
             return View(products);
         }
 
-        public IActionResult Create()
-        {
-            ViewBag.Categories = _categoryService.getAllCategories();
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult Create(Product product)
-        {
-            if (ModelState.IsValid)
-            {
-                _productService.AddProduct(product);
-                return RedirectToAction("Index");
-            }
-            ModelState.AddModelError("", "Fill all spaces");
-            return RedirectToAction("Create");
-        }
-
+      
         public IActionResult Edit(int id)
         {
             if (!UserIsAdmin())

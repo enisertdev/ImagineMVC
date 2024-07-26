@@ -282,3 +282,4 @@ C:\Users\enise\Desktop\ImagineMVC\Imagine\obj\Release\net8.0\refint\Imagine.dll
 C:\Users\enise\Desktop\ImagineMVC\Imagine\obj\Release\net8.0\Imagine.pdb
 C:\Users\enise\Desktop\ImagineMVC\Imagine\obj\Release\net8.0\Imagine.genruntimeconfig.cache
 C:\Users\enise\Desktop\ImagineMVC\Imagine\obj\Release\net8.0\ref\Imagine.dll
+C:\Users\enise\Desktop\ImagineMVC\Imagine\obj\Release\net8.0\scopedcss\Areas\Admin\Views\Shared\_Layout.cshtml.rz.scp.css

@@ -18,5 +18,6 @@ namespace Imagine.Business.Services
         void RemoveProduct(Product product);
         void RemoveProductById(int id);
         IEnumerable<Product> GetProducts(Expression<Func<Product,bool>> filter);
+        Product GetProductWithCategory(int id);
     }
 }

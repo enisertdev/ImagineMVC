@@ -39,17 +39,22 @@ namespace Imagine.Components.Controllers
 
             if (ModelState.IsValid)
             {
-                User userExists = _userService.GetUser(u => u.Email == model.Email && u.Password == model.Password);
-                if (userExists != null)
+                User userExists = _userService.GetUser(u=>u.Email == model.Email);
+                if (userExists is null)
+                    return NotFound("An account with this email has not found");
+                User checkCredentials = _userService.GetUser(u => u.Email == model.Email && u.Password == model.Password);
+                if (checkCredentials != null)
                 {
-                    if (userExists.IsConfirmed is false)
+                    if (checkCredentials.IsConfirmed is false)
                     {
-                        return NotFound("Your email has not confirmed, check your email.");
+                        TempData["Error"] = "You have not confirmed your email.Please check your email before logging in.";
+                        return View(model);
                     }
                     var claims = new List<Claim>
                     {
-                        new Claim(ClaimTypes.Email,userExists.Email),
-                        new Claim(ClaimTypes.Name, userExists.Name),
+                        new Claim(ClaimTypes.Email,checkCredentials.Email),
+                        new Claim(ClaimTypes.Name, checkCredentials.Name),
+                        new Claim(ClaimTypes.Role,checkCredentials.IsAdmin ? "Admin" : "User")
                     };
                     var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
@@ -76,10 +81,17 @@ namespace Imagine.Components.Controllers
             }
             if (ModelState.IsValid)
             {
+                User checkExistingUser = _userService.GetUser(u => u.Email == user.Email);
+                if(checkExistingUser is not null)
+                {
+                    return NotFound("An account with this email already exists.");
+                }
                 User newUser = new User { Name = user.Name, Email = user.Email, Password = user.Password };
                 _userService.AddUser(newUser);
                 var confirmationLink = Url.Action("ConfirmEmail", "User", new { email = user.Email }, Request.Scheme);
                 await _emailService.SendEmailAsync(user.Email, "Welcome", confirmationLink);
+                TempData["Message"] = "A confirmation email has been sent. Please confirm your email address before logging in.";
+
                 return RedirectToAction("Login");
             }
             return View(user);

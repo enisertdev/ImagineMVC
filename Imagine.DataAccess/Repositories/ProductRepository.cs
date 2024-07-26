@@ -30,5 +30,10 @@ namespace Imagine.DataAccess.Repositories
             _context.Products.Remove(product);
             _context.SaveChanges();
         }
+
+        public Product GetProductWithCategory(Expression<Func<Product, bool>> filter)
+        {
+           return _context.Products.Include(p => p.Category).FirstOrDefault(filter);
+        }
     }
 }

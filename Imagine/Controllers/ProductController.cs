@@ -20,9 +20,16 @@ namespace Imagine.Components.Controllers
             return View(products);
         }
 
-        public IActionResult Search(string search)
+        public IActionResult Search(string? search)
         {
-            return View(_productService.GetProducts(p => p.Name.Contains(search)));
+            var products = _productService.GetProducts(p => p.Name.Contains(search));
+                if (products.Count() == 0 && string.IsNullOrEmpty(search)) 
+                return View(_productService.GetAllProducts());
+                if(products.Count() == 0 && !string.IsNullOrEmpty(search))
+            {
+                TempData["NotFound"] = "No product found with this keyword.";
+            }
+            return View(products);
         }
     }
 }

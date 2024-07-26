@@ -6,12 +6,12 @@
         <input id="productName" class="form-control form-control-sm" asp-for="Name" placeholder="Enter product name">
         <div id="nameHelp" class="form-text text-muted">We'll never share your product name with anyone else.</div>
     </div>
-    
+
     <div class="mb-3">
         <label for="productPrice" class="form-label">Price</label>
         <input id="productPrice" class="form-control form-control-sm" asp-for="Price" placeholder="Enter product price">
     </div>
-    
+
     <input type="hidden" asp-for="CategoryId" />
 
     <button type="submit" class="btn btn-success w-100">Submit</button>
@@ -43,10 +43,10 @@
         padding: 0.5rem;
     }
 
-    .btn-success:hover {
-        background-color: #218838;
-        border-color: #1e7e34;
-    }
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
 
     .border {
         border: 1px solid #dee2e6;

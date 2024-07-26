@@ -1,17 +1,29 @@
 ﻿
 @model IEnumerable<Product>
-<div class="container">
-    <div class="row">
-        @foreach (Product product in Model)
+<div style="width: 100%; display: flex; justify-content: center; align-items: center; margin-top: 1.5rem; margin-bottom: 1.5rem;">
+    <h2 style="font-size: 2.5rem; font-weight: 300; line-height: 1.2;">@TempData["NotFound"]</h2>
+</div>
+<div class="container-fluid bg-transparent my-4 p-3" style="position: relative;">
+    <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+        @foreach (Product? product in Model)
         {
-                <div class="card" style="width: 18rem;">
-                    <img src="~/image/product.jpeg" class="card-img-top" alt="...">
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://www.freepnglogos.com/uploads/notebook-png/download-laptop-notebook-png-image-png-image-pngimg-2.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">@product.Name</h5>
-                        <p class="card-text">@product.Description</p>
-                        <a asp-action="Details" asp-controller="Home" asp-route-id="@product.Id" class="btn btn-primary">Details</a>
+                        <div class="clearfix mb-3">
+                            <span class="float-start badge rounded-pill bg-primary">@product.Name</span>
+                            <span class="float-end price-hp">@product.Price.ToString("c")</span>
+                        </div>
+                        <h5 class="card-title">
+                            @product.Description
+                        </h5>
+                        <div class="text-center my-4">
+                            <a asp-action="Details" asp-controller="Home" class="btn btn-warning" asp-route-id="@product.Id">Check Offer</a>
+                        </div>
                     </div>
                 </div>
+            </div>
         }
     </div>
 </div>

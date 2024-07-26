@@ -27,6 +27,7 @@
             <input asp-for="@Model.ValidatePassword" type="password" placeholder="Confirm your password">
             <input type="submit" class="button" value="Signup">
         </form>
+        @TempData["Message"]
         <div class="signup">
             <span class="signup">
                 Already have an account?

@@ -9,6 +9,7 @@ namespace Imagine.Views.ViewModel
         public string Email { get; set; }
         [Required]
         public string Name { get; set; }
+        [MinLength(8,ErrorMessage = "Password length must be minimum of 8 characters.")]
         public string Password { get; set; }
         [Compare("Password",ErrorMessage = "Passwords do not match.")]
         [DisplayName("Confirm Password")]

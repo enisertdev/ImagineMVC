@@ -23,6 +23,11 @@ namespace Imagine.Business.Services
             _userRepository.Add(user);
         }
 
+        public IEnumerable<User> GetAllUsers()
+        {
+            return _userRepository.GetAll();
+        }
+
         public User GetUser(Expression<Func<User, bool>> filter)
         {
             return _userRepository.Get(filter);
