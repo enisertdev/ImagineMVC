@@ -22,6 +22,7 @@ builder.Services.AddTransient<IEmailService, EmailService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 
+
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
 
     .AddCookie(opt =>
@@ -49,6 +50,8 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+
 
 app.MapAreaControllerRoute(
     name: "Areas",

@@ -7,7 +7,7 @@
                     <h6 class="m-b-20">Products</h6>
                     <h2 class="text-center"><i class="fa fa-cart-plus f-left"></i><span>@ViewBag.productCount</span></h2>
                     <a asp-action="Create" class="m-b-0 btn-close-white">Create</a>
-                    <a asp-action="List" asp-controller="Dashboard" class="m-b-0 btn-close-white f-right" >Show All</a>
+                    <a asp-action="ListProducts" asp-controller="Dashboard" class="m-b-0 btn-close-white f-right" >Show All</a>
 
                 </div>
             </div>
@@ -19,7 +19,7 @@
                     <h6 class="m-b-20">Users</h6>
                     <h2 class="text-center"><i class="fa fa-rocket f-left"></i><span>@ViewBag.userCount</span></h2>
                     <a asp-action="Create" class="m-b-0 btn-close-white">Create</a>
-                    <a asp-action="Create" asp-controller="Dashboard" class="m-b-0 btn-close-white f-right">Show All</a>
+                    <a asp-action="ListUsers" asp-controller="Dashboard" class="m-b-0 btn-close-white f-right">Show All</a>
                 </div>
             </div>
         </div>

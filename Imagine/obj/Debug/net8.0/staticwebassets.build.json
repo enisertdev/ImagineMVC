@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qw38a/JdmNRzgqevy57m82fOG/V8MScn6+SJvkcfPWo=",
+  "Hash": "SiavC0feFRsXC04sNxCX9p56OsVnyv67pIAEA6ebBOM=",
   "Source": "Imagine",
   "BasePath": "_content/Imagine",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "vyobyvqojc",
-      "Integrity": "JzGqYumtft1NdETA4bu6X2wIV+RFg5zmmhEXJusVeQQ=",
+      "Fingerprint": "5f69o1c87v",
+      "Integrity": "P/u9wCdnRxyMFTGoOxgZrzJVKoWquDC6mpa3IM4+1l4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1405,6 +1405,51 @@
   ],
   "Endpoints": [
     {
+      "Route": "css/site.5f69o1c87v.css",
+      "AssetFile": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "774"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"P/u9wCdnRxyMFTGoOxgZrzJVKoWquDC6mpa3IM4+1l4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 27 Jul 2024 16:35:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5f69o1c87v"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-P/u9wCdnRxyMFTGoOxgZrzJVKoWquDC6mpa3IM4+1l4="
+        }
+      ]
+    },
+    {
       "Route": "css/site.css",
       "AssetFile": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -1415,7 +1460,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "836"
+          "Value": "774"
         },
         {
           "Name": "Content-Type",
@@ -1423,11 +1468,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"JzGqYumtft1NdETA4bu6X2wIV+RFg5zmmhEXJusVeQQ=\""
+          "Value": "\"P/u9wCdnRxyMFTGoOxgZrzJVKoWquDC6mpa3IM4+1l4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 18 Jul 2024 15:27:17 GMT"
+          "Value": "Sat, 27 Jul 2024 16:35:58 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1437,52 +1482,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-JzGqYumtft1NdETA4bu6X2wIV+RFg5zmmhEXJusVeQQ="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.vyobyvqojc.css",
-      "AssetFile": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "836"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"JzGqYumtft1NdETA4bu6X2wIV+RFg5zmmhEXJusVeQQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 18 Jul 2024 15:27:17 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "vyobyvqojc"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-JzGqYumtft1NdETA4bu6X2wIV+RFg5zmmhEXJusVeQQ="
+          "Value": "sha256-P/u9wCdnRxyMFTGoOxgZrzJVKoWquDC6mpa3IM4+1l4="
         }
       ]
     },

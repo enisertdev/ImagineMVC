@@ -1,10 +1,12 @@
 ﻿using Imagine.Business.Services;
 using Imagine.DataAccess.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Imagine.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class ProductController : Controller
     {
         private readonly ICategoryService _categoryService;
