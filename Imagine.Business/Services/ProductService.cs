@@ -1,4 +1,6 @@
-﻿using Imagine.DataAccess.Entities;
+﻿using AutoMapper;
+using Imagine.DataAccess.Entities;
+using Imagine.DataAccess.Entities.Dtos;
 using Imagine.DataAccess.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -12,10 +14,12 @@ namespace Imagine.Business.Services
     public class ProductService : IProductService
     {
         private readonly IProductRepository _productrepository;
+        private readonly IMapper _mapper;
 
-        public ProductService(IProductRepository productrepository)
+        public ProductService(IProductRepository productrepository, IMapper mapper)
         {
             _productrepository = productrepository;
+            _mapper = mapper;
         }
 
         public void AddProduct(Product product)
@@ -48,5 +52,10 @@ namespace Imagine.Business.Services
             _productrepository.RemoveById(id);
         }
 
+        public ProductDtoForUpdate GetOneProductForUpdate(int id)
+        {
+           var product = _productrepository.Get(p=>p.Id == id);
+           return  _mapper.Map<ProductDtoForUpdate>(product);
+        }
     }
 }

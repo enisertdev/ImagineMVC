@@ -1,4 +1,5 @@
 ﻿using Imagine.DataAccess.Entities;
+using Imagine.DataAccess.Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,9 @@ namespace Imagine.Business.Services
         User GetUser(Expression<Func<User,bool>> filter);
         void UpdateUser(User user);
         IEnumerable<User> GetAllUsers();
+        User CheckCredentials(User user);
+        UserDtoForUpdate GetOneUserToUpdate(string email);
+        void RemoveUser(User user);
+
     }
 }

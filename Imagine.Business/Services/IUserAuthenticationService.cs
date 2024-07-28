@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Imagine.Business.Services
 {
-    public interface IEmailService
+    public interface IUserAuthenticationService
     {
-        Task SendEmailAsync(string email, string subject, string message);
+        Task SignInUserAsync(User user);
+        Task SignOutUserAsync();
     }
 }

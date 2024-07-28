@@ -1,26 +1,31 @@
-﻿using Imagine.DataAccess.Entities;
+﻿using AutoMapper;
+using Imagine.DataAccess.Entities;
+using Imagine.DataAccess.Entities.Dtos;
 using Imagine.DataAccess.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Imagine.Business.Services
 {
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
+        private readonly IMapper _mapper;
 
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository, IMapper mapper)
         {
             _userRepository = userRepository;
+            _mapper = mapper;
         }
 
         public void AddUser(User user)
         {
             _userRepository.Add(user);
+        }
+
+        public User CheckCredentials(User user)
+        {
+            User confirmCredentials = _userRepository.Get(u => u.Email == user.Email && u.Password == user.Password);
+            return confirmCredentials;
         }
 
         public IEnumerable<User> GetAllUsers()
@@ -36,6 +41,16 @@ namespace Imagine.Business.Services
         public void UpdateUser(User user)
         {
             _userRepository.Update(user);
+        }
+        public UserDtoForUpdate GetOneUserToUpdate(string email)
+        {
+            var user = _userRepository.Get(u => u.Email == email);
+            return _mapper.Map<UserDtoForUpdate>(user);
+        }
+
+        public void RemoveUser(User user)
+        {
+            _userRepository.Remove(user);
         }
     }
 }

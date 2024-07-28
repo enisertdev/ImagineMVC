@@ -1,4 +1,5 @@
 ﻿using Imagine.DataAccess.Entities;
+using Imagine.DataAccess.Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,5 +20,6 @@ namespace Imagine.Business.Services
         void RemoveProductById(int id);
         IEnumerable<Product> GetProducts(Expression<Func<Product,bool>> filter);
         Product GetProductWithCategory(int id);
+        ProductDtoForUpdate GetOneProductForUpdate(int id);
     }
 }
