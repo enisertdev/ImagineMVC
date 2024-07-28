@@ -28,6 +28,7 @@
                 <td>@user.IsConfirmed</td>
                 <td>@user.IsAdmin</td>
                 <td><a asp-action="EditUser" asp-route-id="@user.Id" class="btn btn-warning">Edit</a></td>
+                <td><a asp-action="DeleteUser" asp-controller="Dashboard" asp-route-id="@user.Id" class="btn btn-danger">Remove</a></td>
                 <td></td>
             </tr>        }
     </tbody>

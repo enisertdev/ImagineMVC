@@ -1,32 +1,36 @@
-﻿@model ProductDtoForInsertion
+﻿@model UserDtoForInsertion
 
 <form method="post" class="p-3 bg-white border rounded">
     <div asp-validation-summary="All"></div>
-    <div class="mb-3">
-        <label class="form-label" for="categorySelect">Category</label>
-        <select id="categorySelect" class="form-select" asp-for="CategoryId">
-            @foreach (Category category in ViewBag.Categories)
-            {
-                <option value="@category.Id">@category.Name</option>
-            }
-        </select>
-    </div>
+  
 
     <div class="mb-3">
-        <label class="form-label" for="productName">Product Name</label>
-        <input id="productName" class="form-control" asp-for="Name" placeholder="Enter product name">
+        <label class="form-label" for="productName">Name</label>
+        <input id="productName" class="form-control" asp-for="Name" placeholder="Enter name of the user">
         <span class="text-danger" asp-validation-for="Name"></span>
     </div>
 
     <div class="mb-3">
-        <label class="form-label" for="productPrice">Price</label>
-        <input id="productPrice" class="form-control" asp-for="Price" placeholder="Enter product price">
-        <span class="text-danger" asp-validation-for="Price"></span>
+        <label class="form-label" for="productPrice">Email</label>
+        <input id="productPrice" class="form-control" asp-for="Email" placeholder="Enter email of the user">
+        <span class="text-danger" asp-validation-for="Email"></span>
     </div>
     <div class="mb-3">
-        <label for="productPrice" class="form-label">Description</label>
-        <input id="productPrice" class="form-control form-control-sm" asp-for="Description" placeholder="Enter description">
-    </div>  
+        <label for="productPrice" class="form-label">Password</label>
+        <input id="productPrice" class="form-control form-control-sm" asp-for="Password" placeholder="enter password">
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="isCheckedAdmin" id="defaultCheck1"  asp-for="IsAdmin" >
+        <label class="form-check-label" for="defaultCheck1">
+            Admin Rights
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="isCheckedConfirmed" id="defaultCheck1"  asp-for="IsConfirmed" >
+        <label class="form-check-label" for="defaultCheck1">
+            Email Confirmed
+        </label>
+    </div>
 
     <button type="submit" class="btn btn-primary w-100">Submit</button>
 </form>

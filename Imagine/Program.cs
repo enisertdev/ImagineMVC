@@ -1,3 +1,4 @@
+using Imagine.Business.AutoMapper;
 using Imagine.Business.Services;
 using Imagine.DataAccess.Interfaces;
 using Imagine.DataAccess.Repositories;
@@ -5,12 +6,14 @@ using Imagine.Database;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using System.Reflection;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("databaseConnection"),b => b.MigrationsAssembly("Imagine")));
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
@@ -20,6 +23,8 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddTransient<IEmailService, EmailService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IUserAuthenticationService, UserAuthenticationService>();
+    builder.Services.AddAutoMapper(typeof(UserProfile), typeof(ProductProfile));
 
 
 

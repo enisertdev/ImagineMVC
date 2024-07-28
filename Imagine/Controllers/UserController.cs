@@ -1,101 +1,99 @@
 ﻿using Imagine.Business.Services;
 using Imagine.DataAccess.Entities;
-using Imagine.Views.ViewModel;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Security.Claims;
-using Imagine.DataAccess.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using Imagine.DataAccess.Entities.Dtos;
+using AutoMapper;
 
 namespace Imagine.Components.Controllers
 {
-    public class UserController : BaseController
+    public class UserController : Controller
     {
         private readonly IUserService _userService;
         private readonly IEmailService _emailService;
-        public UserController(IUserService userService, IEmailService emailService)
+        private readonly IUserAuthenticationService _userAuthenticationService;
+        private readonly IMapper _mapper;
+
+        public UserController(IUserService userService, IEmailService emailService, IUserAuthenticationService userAuthenticationService, IMapper mapper)
         {
             _userService = userService;
             _emailService = emailService;
+            _userAuthenticationService = userAuthenticationService;
+            _mapper = mapper;
         }
         public IActionResult Login()
         {
             return View();
         }
 
-        [HttpGet]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public async Task<IActionResult> Login(UserDtoForLogin model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            User user = _mapper.Map<User>(model);
+            user = _userService.CheckCredentials(user);
+
+            if (user == null)
+            {
+                ModelState.AddModelError("", "Email or Password is wrong");
+                return View(model);
+            }
+
+            if (!user.IsConfirmed)
+            {
+                TempData["Error"] = "You have not confirmed your email.Please check your email before logging in.";
+                return View(model);
+            }
+
+            await _userAuthenticationService.SignInUserAsync(user);
+            return RedirectToAction("Index", "Home");
+        }
+
         public IActionResult Register()
         {
             return View();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Login(UserViewModel model)
-        {
-            ModelState.Remove("ValidatePassword");
-            ModelState.Remove("Name");
-
-            if (ModelState.IsValid)
-            {
-                User userExists = _userService.GetUser(u=>u.Email == model.Email);
-                if (userExists is null)
-                    return NotFound("An account with this email has not found");
-                User checkCredentials = _userService.GetUser(u => u.Email == model.Email && u.Password == model.Password);
-                if (checkCredentials != null)
-                {
-                    if (checkCredentials.IsConfirmed is false)
-                    {
-                        TempData["Error"] = "You have not confirmed your email.Please check your email before logging in.";
-                        return View(model);
-                    }
-                    var claims = new List<Claim>
-                    {
-                        new Claim(ClaimTypes.Email,checkCredentials.Email),
-                        new Claim(ClaimTypes.Name, checkCredentials.Name),
-                        new Claim(ClaimTypes.Role,checkCredentials.IsAdmin ? "Admin" : "User")
-                    };
-                    var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
-                    return RedirectToAction("Index", "Home");
-                }
-                ModelState.AddModelError("", "Email or Password is wrong");
-            }
-            return View(model);
-        }
-
-        public async Task<IActionResult> Logout()
-        {
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-
-            return RedirectToAction("Index", "Home");
-        }
 
         [HttpPost]
-        public async Task<IActionResult> Register(UserViewModel user)
+        [ValidateAntiForgeryToken]
+
+        public async Task<IActionResult> Register(UserDtoForRegister user)
         {
-            if (user.ValidatePassword == null)
-            {
-                ModelState.AddModelError("", "You have to validate the password.");
-            }
             if (ModelState.IsValid)
             {
                 User checkExistingUser = _userService.GetUser(u => u.Email == user.Email);
-                if(checkExistingUser is not null)
+
+                if (checkExistingUser != null)
                 {
-                    return NotFound("An account with this email already exists.");
+                    ViewData["Exists"] = "An account with this email already exists.";
+                    return View(user);
                 }
-                User newUser = new User { Name = user.Name, Email = user.Email, Password = user.Password };
+
+                User newUser = _mapper.Map<User>(user);
                 _userService.AddUser(newUser);
-                var confirmationLink = Url.Action("ConfirmEmail", "User", new { email = user.Email }, Request.Scheme);
+
+                var confirmationLink = Url.Action("ConfirmEmail", "User", new { email = newUser.Email }, Request.Scheme);
                 await _emailService.SendEmailAsync(user.Email, "Welcome", confirmationLink);
+
                 TempData["Message"] = "A confirmation email has been sent. Please confirm your email address before logging in.";
 
                 return RedirectToAction("Login");
             }
             return View(user);
         }
+
+        public async Task<IActionResult> Logout()
+        {
+            await _userAuthenticationService.SignOutUserAsync();
+            return RedirectToAction("Index", "Home");
+        }
+
         public async Task<IActionResult> ConfirmEmail(string email)
         {
             User user = _userService.GetUser(u => u.Email == email);
@@ -109,21 +107,17 @@ namespace Imagine.Components.Controllers
             }
             user.IsConfirmed = true;
             _userService.UpdateUser(user);
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Email,user.Email),
-                new Claim(ClaimTypes.Name,user.Name)
-            };
-            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
+
+            await _userAuthenticationService.SignInUserAsync(user);
 
             return View("ConfirmEmail");
         }
+
         [Authorize]
         public IActionResult Profile()
         {
-            var email = GetUserEmail();
-            User user = _userService.GetUser(u => u.Email == email);
+            var email = User.FindFirstValue(ClaimTypes.Email);
+            var user = _userService.GetOneUserToUpdate(email);
             if (user is null)
                 return NotFound("user not found");
             return View(user);
@@ -131,18 +125,15 @@ namespace Imagine.Components.Controllers
 
         [Authorize]
         [HttpPost]
-        public IActionResult Profile(User user)
-        {
-            var email = GetUserEmail();
+        [ValidateAntiForgeryToken]
 
-            User updateUser = _userService.GetUser(u => u.Email == email);
-            updateUser.Name = user.Name;
-            updateUser.PhoneNumber = user.PhoneNumber;
-            updateUser.Address = user.Address;
-            updateUser.UserName = user.UserName;
-            _userService.UpdateUser(updateUser);
+        public IActionResult Profile(UserDtoForUpdate user)
+        {
+            var email = User.FindFirstValue(ClaimTypes.Email);
+            User existingUser = _userService.GetUser(u => u.Email == email);
+            existingUser = _mapper.Map(user, existingUser);
+            _userService.UpdateUser(existingUser);
             return RedirectToAction("Profile");
         }
-
     }
 }

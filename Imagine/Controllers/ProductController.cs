@@ -25,7 +25,7 @@ namespace Imagine.Components.Controllers
             var products = _productService.GetProducts(p => p.Name.Contains(search));
                 if (products.Count() == 0 && string.IsNullOrEmpty(search)) 
                 return View(_productService.GetAllProducts());
-                if(products.Count() == 0 && !string.IsNullOrEmpty(search))
+                if(products.Count() == 0)
             {
                 TempData["NotFound"] = "No product found with this keyword.";
             }

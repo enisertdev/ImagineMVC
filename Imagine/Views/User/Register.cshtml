@@ -1,5 +1,4 @@
-﻿@using Imagine.Views.ViewModel
-@model UserViewModel
+﻿@model UserDtoForRegister
 
 <!DOCTYPE html>
 <!-- Coding By CodingNepal - codingnepalweb.com -->
@@ -27,7 +26,9 @@
             <input asp-for="@Model.ValidatePassword" type="password" placeholder="Confirm your password">
             <input type="submit" class="button" value="Signup">
         </form>
-        @TempData["Message"]
+        <div class="text text-danger">
+            @ViewData["Exists"]
+        </div>
         <div class="signup">
             <span class="signup">
                 Already have an account?
