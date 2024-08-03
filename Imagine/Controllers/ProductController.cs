@@ -2,6 +2,8 @@
 using Imagine.Business.Services;
 using Imagine.DataAccess.Entities;
 using Microsoft.AspNetCore.Mvc;
+using X.PagedList.Extensions;
+using X.PagedList;
 
 namespace Imagine.Components.Controllers
 {
@@ -14,18 +16,30 @@ namespace Imagine.Components.Controllers
             _productService = productService;
         }
 
-        public IActionResult ProductsByCategory(int categoryId)
+        public IActionResult ProductsByCategory(int categoryId, int page = 1, int pageSize = 4)
         {
             IEnumerable<Product> products = _productService.GetProducts(p => p.CategoryId == categoryId);
-            return View(products);
+
+            IPagedList<Product> model = products.ToPagedList(page, pageSize);
+
+            ViewData["CategoryId"] = categoryId;
+
+            return View(model);
         }
 
-        public IActionResult Search(string? search)
+
+        public IActionResult Search(string search)
         {
-            var products = _productService.GetProducts(p => p.Name.Contains(search));
-                if (products.Count() == 0 && string.IsNullOrEmpty(search)) 
+           return RedirectToAction("SearchResults", new {query = search ?? string.Empty});
+        }
+        public IActionResult SearchResults(string query)
+        {
+            var products = _productService.GetProducts(p => p.Name.Contains(query));
+            if(string.IsNullOrEmpty(query))
+            {
                 return View(_productService.GetAllProducts());
-                if(products.Count() == 0)
+            }
+            if (products.Count() == 0)
             {
                 TempData["NotFound"] = "No product found with this keyword.";
             }

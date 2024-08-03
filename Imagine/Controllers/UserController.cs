@@ -133,6 +133,7 @@ namespace Imagine.Components.Controllers
             User existingUser = _userService.GetUser(u => u.Email == email);
             existingUser = _mapper.Map(user, existingUser);
             _userService.UpdateUser(existingUser);
+            TempData["Success"] = "Profile succesfully updated.";
             return RedirectToAction("Profile");
         }
     }

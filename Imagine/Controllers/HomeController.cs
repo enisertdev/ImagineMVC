@@ -1,11 +1,8 @@
 using Imagine.Business.Services;
 using Imagine.DataAccess.Entities;
-using Imagine.DataAccess.Interfaces;
-using Imagine.DataAccess.Repositories;
-using Imagine.Models;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+using X.PagedList;
+using X.PagedList.Extensions;
 
 namespace Imagine.Components.Controllers
 {
@@ -18,10 +15,11 @@ namespace Imagine.Components.Controllers
         {
             _productService = productService;
         }
-        public IActionResult Index()
+        public IActionResult Index(int page = 1, int pageSize = 4)
         {
             IEnumerable<Product> products = _productService.GetAllProductsWithCategory();
-            return View(products);
+            IPagedList<Product> model = products.ToPagedList(page, pageSize);
+            return View(model);
         }
 
         public IActionResult Details(int id)

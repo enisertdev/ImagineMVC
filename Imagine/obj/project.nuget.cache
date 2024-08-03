@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LLwfwTCqdWE=",
+  "dgSpecHash": "w974SvDGSmI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\Imagine.csproj",
+  "projectFilePath": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\Imagine.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\enise\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\enise\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
@@ -107,7 +107,9 @@
     "C:\\Users\\enise\\.nuget\\packages\\system.text.json\\8.0.4\\system.text.json.8.0.4.nupkg.sha512",
     "C:\\Users\\enise\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512",
     "C:\\Users\\enise\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\enise\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+    "C:\\Users\\enise\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\enise\\.nuget\\packages\\x.pagedlist\\10.0.3\\x.pagedlist.10.0.3.nupkg.sha512",
+    "C:\\Users\\enise\\.nuget\\packages\\x.web.pagedlist\\10.1.2\\x.web.pagedlist.10.1.2.nupkg.sha512"
   ],
   "logs": []
 }

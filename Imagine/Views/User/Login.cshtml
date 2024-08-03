@@ -1,40 +1,64 @@
 ﻿@model UserDtoForLogin
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login & Registration Form</title>
-    <link rel="stylesheet" href="~/login/style.css">
-</head>
-<body>
-    <div class="container">
-        <div class="login form">
-            <header>Login</header>
-            <form asp-action="Login" method="post">
-                <div asp-validation-summary="ModelOnly"></div>
-                <span asp-validation-for="@Model.Email"></span>
-                <input asp-for="@Model.Email" type="text" placeholder="Enter your email">
-                <span asp-validation-for="@Model.Password"></span>
-                <input asp-for="@Model.Password" type="password" placeholder="Enter your password">
-                <a href="#">Forgot password?</a>
-                <input type="submit" class="button" value="Login">
-            </form>
-            <div class="signup">
-                <span class="signup">
-                    Don't have an account?
-                    <a asp-action="Register"><label for="check">Signup</label></a>
-                </span>
+<link rel="stylesheet" href="~/login/style.css">
+
+<div class="container-fluid">
+    <div class="row no-gutter">
+        <!-- The image half -->
+        <div class="col-md-6 d-none d-md-flex bg-image"></div>
+        <div asp-validation-summary="ModelOnly"></div>
+
+        <!-- The content half -->
+        <div class="col-md-6 bg-light">
+            <div class="login d-flex align-items-center py-5">
+
+                <!-- Demo content-->
+                <div class="container">
+                    @if (TempData["Error"] != null)
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            <h4 class="alert-heading">Unable to login</h4>
+                            <p>@TempData["Error"]</p>
+                        </div>
+                    }
+                    @if (TempData["Message"] != null)
+                    {
+                        <div class="alert alert-info" role="alert">
+                            <h4 class="alert-heading">Thanks for registering!</h4>
+                            <p>@TempData["Message"]</p>
+                        </div>
+                    }
+                    <div class="row">
+                        <div class="col-lg-10 col-xl-7 mx-auto">
+                            <h3 class="display-4">Welcome Back!</h3>
+                            <p class="text-muted mb-4">Login to your account </p>
+                            <form asp-action="Login" method="post">
+                                <div class="form-group mb-3">
+                                    <span asp-validation-for="@Model.Email"></span>
+                                    <input asp-for="@Model.Email" id="inputEmail" type="email" placeholder="Email address" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <span asp-validation-for="@Model.Password"></span>
+                                    <input asp-for="@Model.Password" id="inputPassword" type="password" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
+                                </div>
+                                <div class="custom-control custom-checkbox mb-3">
+                                    <input id="customCheck1" type="checkbox" checked class="custom-control-input">
+                                    <label for="customCheck1" class="custom-control-label">Remember password</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Sign in</button>
+                            </form>
+                            <div class="text-center d-flex justify-content-between mt-4">
+                                <p>
+                                    Dont have an account? <a asp-action="Register" class="font-italic text-muted">
+                                        <u>Register</u>
+                                    </a>
+                                </p>
+                        </div>
+                    </div>
+                </div><!-- End -->
+
             </div>
-            <div class="text text-info">
-                @TempData["Message"]
-            </div>
-            <div class="text text-danger">
-                @TempData["Error"]
-            </div>
-        </div>
+        </div><!-- End -->
+
     </div>
-</body>
-</html>
+</div>
