@@ -78,7 +78,7 @@ namespace Imagine.Components.Controllers
                 User newUser = _mapper.Map<User>(user);
                 _userService.AddUser(newUser);
 
-                var confirmationLink = Url.Action("ConfirmEmail", "User", new { email = newUser.Email }, Request.Scheme);
+                var confirmationLink = Url.Action("ConfirmEmail", "User", new { email = newUser.Email }, "https", "cd89-88-230-131-200.ngrok-free.app");
                 await _emailService.SendEmailAsync(user.Email, "Welcome", confirmationLink);
 
                 TempData["Message"] = "A confirmation email has been sent. Please confirm your email address before logging in.";
