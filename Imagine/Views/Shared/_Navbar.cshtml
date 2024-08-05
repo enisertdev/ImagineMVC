@@ -22,9 +22,9 @@
 
                     </div>
                     <div class="col-md-5 my-auto">
-                        <form role="search">
+                        <form role="search" asp-controller="Product" asp-action="Search">
                             <div class="input-group">
-                                <input type="search" placeholder="Search your product" class="form-control" />
+                                <input type="search" placeholder="Search your product" class="form-control" name="search" />
                                 <button class="btn bg-white" type="submit">
                                     <i class="fa fa-search"></i>
                                 </button>
@@ -33,12 +33,13 @@
                     </div>
                     <div class="col-md-5 my-auto">
                         <ul class="nav justify-content-end">
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i class="fa fa-shopping-cart"></i> Cart (0)
-                                </a>
-                            </li>
+                           
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Cart" asp-action="Cart">
+                                        <i class="fa fa-shopping-cart"></i> Cart @await Component.InvokeAsync("Cart")
+                                    </a>
+                                </li>
+                            
                             <li class="nav-item">
                                 <a class="nav-link" href="#">
                                     <i class="fa fa-heart"></i> Wishlist (0)
@@ -53,10 +54,13 @@
 
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li><a class="dropdown-item" asp-area="" asp-controller="User" asp-action="Profile"><i class="fa fa-user"></i> Profile</a></li>
-                                        <li><a class="dropdown-item" asp-area="Admin" asp-controller="Product" asp-action="Index"><i class="fa-solid fa-lock"></i> Admin</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="fa fa-list"></i> My Orders</a></li>
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <li><a class="dropdown-item" asp-area="Admin" asp-controller="Product" asp-action="Index"><i class="fa-solid fa-lock"></i> Admin</a></li>
+                                        }
+                                        <li><a class="dropdown-item" asp-controller="Cart" asp-action="Cart"><i class="fa fa-list"></i> My Orders</a></li>
                                         <li><a class="dropdown-item" href="#"><i class="fa fa-heart"></i> My Wishlist</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
+                                        <li><a class="dropdown-item" asp-controller="Cart" asp-action="Cart"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
                                         <li><a class="dropdown-item" asp-area="" asp-controller="User" asp-action="Logout"><i class="fa fa-sign-out"></i> Logout</a></li>
                                     </ul>
 
@@ -84,8 +88,8 @@
         </div>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand d-block d-sm-block d-md-none d-lg-none" href="#">
-                    Funda Ecom
+                <a class="navbar-brand d-block d-sm-block d-md-none d-lg-none" asp-controller="Home" asp-action="Index">
+                    Imagine
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -93,7 +97,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" asp-area="" asp-action="Index" asp-controller="Home">Home</a>
                         </li>
                         @await Component.InvokeAsync("Category")
                     </ul>

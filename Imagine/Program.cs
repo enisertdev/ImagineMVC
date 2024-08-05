@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.Reflection;
+using Imagine.DataAccess.Entities;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddRazorPages();
+
 builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("databaseConnection"),b => b.MigrationsAssembly("Imagine")));
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
@@ -24,9 +27,9 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddTransient<IEmailService, EmailService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IUserAuthenticationService, UserAuthenticationService>();
-    builder.Services.AddAutoMapper(typeof(UserProfile), typeof(ProductProfile));
-
-
+builder.Services.AddAutoMapper(typeof(UserProfile), typeof(ProductProfile));
+builder.Services.AddScoped<ICartRepository, CartRepository>();
+builder.Services.AddScoped<ICartService, CartService>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
 
@@ -65,6 +68,8 @@ app.MapAreaControllerRoute(
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Land}/{action=Index}/{id?}");
+
+app.MapRazorPages();
 
 app.Run();

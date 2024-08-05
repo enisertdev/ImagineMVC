@@ -15,7 +15,7 @@ namespace Imagine.Components.Controllers
         {
             _productService = productService;
         }
-        public IActionResult Index(int page = 1, int pageSize = 4)
+        public IActionResult Index(int page = 1, int pageSize = 8)
         {
             IEnumerable<Product> products = _productService.GetAllProductsWithCategory();
             IPagedList<Product> model = products.ToPagedList(page, pageSize);
@@ -25,6 +25,11 @@ namespace Imagine.Components.Controllers
         public IActionResult Details(int id)
         {
             Product product = _productService.GetProductWithCategory(id);
+            if (product == null)
+            {
+                return NotFound("Null");
+            }
+
             return View(product);
         }
 

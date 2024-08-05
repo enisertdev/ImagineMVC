@@ -1,12 +1,62 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Security.Claims;
+using Imagine.Business.Services;
+using Imagine.DataAccess.Entities;
+using Imagine.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Imagine.Components.Controllers
 {
     public class CartController : Controller
     {
-        public IActionResult Index()
+        private readonly ICartService _cartService;
+        private readonly IProductService _productService;
+        private readonly IUserService _userService;
+
+        public CartController(IProductService productService, ICartService cartService, IUserService userService)
         {
-            return View();
+            _productService = productService;
+            _cartService = cartService;
+            _userService = userService;
+        }
+
+        public IActionResult Cart()
+        {
+            User user = _userService.GetUser(u => u.Email == User.FindFirstValue(ClaimTypes.Email));
+            if (user == null)
+            {
+                return RedirectToAction("Login", "User");
+            }
+            IEnumerable<Cart> items = _cartService.GetMany(u=>u.UserId == user.Id);
+            if (items== null)
+            {
+                ViewData["Empty"] = "Cart is empty";
+                return View();
+            }
+            else
+            { 
+                decimal total = 0;
+                foreach (var item in items )
+                {
+                    total += item.Quantity * item.Product.Price;
+                }
+                ViewData["total"] = total.ToString("c");
+                ViewData["items"] = items.Count();
+            }
+            return View(items);
+        }
+
+        [HttpPost]
+        public IActionResult AddToCart(Product product, int Quantity = 1)
+        {
+            Product getProduct = _productService.GetProduct(p => p.Id == product.Id);
+            if (getProduct== null)
+            {
+                return NotFound("invalid product");
+            }
+
+            User user = _userService.GetUser(u=> u.Email ==User.FindFirstValue(ClaimTypes.Email));
+            _cartService.AddItem(getProduct, user.Id, Quantity);
+            return RedirectToAction("Cart","Cart");
         }
     }
 }

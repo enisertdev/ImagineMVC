@@ -51,10 +51,13 @@
 						<p class="product-description">@Model.Description</p>
 						<h4 class="price">current price: <span>@Model.Price.ToString("c")</span></h4>
 						<p class="vote"><strong>%91</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
-						<div class="action">
-							<button class="add-to-cart btn btn-default" type="button">add to cart</button>
-							<button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
-						</div>
+                        <div class="action">
+                            <form  asp-controller="Cart" asp-action="AddToCart" method="post">
+								<input type="hidden" asp-for="Id"/>
+                                <button class="add-to-cart btn btn-default" type="submit">add to cart</button>
+                            </form>
+                            <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+                        </div>
 					</div>
 				</div>
 			</div>

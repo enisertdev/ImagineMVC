@@ -46,6 +46,11 @@ namespace Imagine.Areas.Admin.Controllers
             {
                 return NotFound("User not found");
             }
+
+            if (getUser.Email == "admin@admin.com")
+            {
+                return NotFound("you cannot revoke rights of this account.");
+            }
             getUser.IsAdmin = isChecked ? true : false;
             _userService.UpdateUser(getUser);
             return RedirectToAction("ListUsers");
@@ -75,6 +80,10 @@ namespace Imagine.Areas.Admin.Controllers
              User user =_userService.GetUser(u=> u.Id == id);
             if (user == null)
                 return NotFound("not found");
+            if (user.IsAdmin)
+            {
+                return NotFound("You cannot remove admin");
+            }
             _userService.RemoveUser(user);
             return RedirectToAction("ListUsers");
         }
