@@ -46,5 +46,15 @@ namespace Imagine.Business.Services
         {
             return _cartRepository.GetManyItems(filter);
         }
+
+        public void RemoveItem(Cart item)
+        {
+            _cartRepository.Remove(item);
+        }
+
+        public void UpdateItem(Cart item)
+        {
+            _cartRepository.Update(item);
+        }
     }
 }

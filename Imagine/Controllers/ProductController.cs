@@ -18,11 +18,12 @@ namespace Imagine.Components.Controllers
 
         public IActionResult ProductsByCategory(int categoryId, int page = 1, int pageSize = 4)
         {
-            IEnumerable<Product> products = _productService.GetProducts(p => p.CategoryId == categoryId);
+            IEnumerable<Product> products = _productService.GetProductsWithCategory(p => p.CategoryId == categoryId);
 
             IPagedList<Product> model = products.ToPagedList(page, pageSize);
 
             ViewData["CategoryId"] = categoryId;
+
 
             return View(model);
         }
@@ -32,9 +33,9 @@ namespace Imagine.Components.Controllers
         {
            return RedirectToAction("SearchResults", new {query = search ?? string.Empty});
         }
-        public IActionResult SearchResults(string query)
+        public IActionResult SearchResults(string query, int page = 1, int pageSize = 4)
         {
-            var products = _productService.GetProducts(p => p.Name.Contains(query));
+            var products = _productService.GetProductsWithCategory(p => p.Name.Contains(query));
             if(string.IsNullOrEmpty(query))
             {
                 return View(_productService.GetAllProducts());
@@ -43,7 +44,9 @@ namespace Imagine.Components.Controllers
             {
                 TempData["NotFound"] = "No product found with this keyword.";
             }
-            return View(products);
+            IPagedList<Product> model = products.ToPagedList(page, pageSize);
+
+            return View(model);
         }
     }
 }

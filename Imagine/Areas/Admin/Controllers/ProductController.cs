@@ -43,17 +43,35 @@ namespace Imagine.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public IActionResult Create(ProductDtoForInsertion product)
+        public async Task<IActionResult> Create(ProductDtoForInsertion product, IFormFile file)
         {
+            ViewBag.Categories = _categoryService.getAllCategories();
+
             if (ModelState.IsValid)
             {
-                var createdProduct = _mapper.Map<Product>(product);
-                _productService.AddProduct(createdProduct);
-                return RedirectToAction("Index");
+                string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", file.FileName);
+                ViewData["path"] = path;
+
+                try
+                {
+                    using (var stream = new FileStream(path, FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+                    product.ImageUrl = file.FileName;
+                    var createdProduct = _mapper.Map<Product>(product);
+                    _productService.AddProduct(createdProduct);
+                    return RedirectToAction("Index");
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("", "An error occurred: " + ex.Message);
+                }
             }
             ModelState.AddModelError("", "Fill all spaces");
-            return RedirectToAction("Create");
+            return View(product);
         }
+
 
         public IActionResult Edit(int id)
         {

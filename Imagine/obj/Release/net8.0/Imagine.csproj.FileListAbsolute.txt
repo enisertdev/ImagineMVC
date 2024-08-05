@@ -430,3 +430,7 @@ C:\Users\enise\Desktop\mvcproject\Imagine\obj\Release\net8.0\refint\Imagine.dll
 C:\Users\enise\Desktop\mvcproject\Imagine\obj\Release\net8.0\Imagine.pdb
 C:\Users\enise\Desktop\mvcproject\Imagine\obj\Release\net8.0\Imagine.genruntimeconfig.cache
 C:\Users\enise\Desktop\mvcproject\Imagine\obj\Release\net8.0\ref\Imagine.dll
+C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Release\net8.0\AutoMapper.dll
+C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Release\net8.0\X.PagedList.dll
+C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Release\net8.0\X.Web.PagedList.dll
+C:\Users\enise\Desktop\ImagineMVC\Imagine\obj\Release\net8.0\Imagine.MvcApplicationPartsAssemblyInfo.cs

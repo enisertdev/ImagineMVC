@@ -33,5 +33,10 @@ namespace Imagine.Components.Controllers
             return View(product);
         }
 
+        public IActionResult test()
+        {
+            return View();
+        }
+
     }
 }

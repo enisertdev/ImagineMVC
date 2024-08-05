@@ -33,6 +33,11 @@ namespace Imagine.Business.Services
            return _productrepository.GetProductWithCategory(p => p.Id == id);
         }
 
+        public IEnumerable<Product> GetProductsWithCategory(Expression<Func<Product, bool>> filter)
+        {
+           return _productrepository.GetProductsWithCategory(filter);
+        }
+
         public IEnumerable<Product> GetAllProducts() => _productrepository.GetAll();
         public IEnumerable<Product> GetAllProductsWithCategory() => _productrepository.GetAllProductsWithCategory();
         public Product GetProduct(Expression<Func<Product, bool>> filter) => _productrepository.Get(filter);

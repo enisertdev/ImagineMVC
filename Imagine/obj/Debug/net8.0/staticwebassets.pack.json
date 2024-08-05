@@ -1,272 +1,440 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Imagine.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Imagine.q03go759dq.bundle.scp.css"
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Imagine.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Imagine.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\footer\\css\\style.css",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\footer\\css\\style.css",
       "PackagePath": "staticwebassets\\footer\\css\\style.css"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\image\\1.jpg",
-      "PackagePath": "staticwebassets\\image\\1.jpg"
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\1.jpg",
+      "PackagePath": "staticwebassets\\images\\1.jpg"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\image\\2.jpg",
-      "PackagePath": "staticwebassets\\image\\2.jpg"
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\2.jpg",
+      "PackagePath": "staticwebassets\\images\\2.jpg"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\image\\product.jpeg",
-      "PackagePath": "staticwebassets\\image\\product.jpeg"
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\3d_printer.jpg",
+      "PackagePath": "staticwebassets\\images\\3d_printer.jpg"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\Screenshot 2024-03-01 010157.png",
+      "PackagePath": "staticwebassets\\images\\Screenshot 2024-03-01 010157.png"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\Screenshot 2024-03-23 225827.png",
+      "PackagePath": "staticwebassets\\images\\Screenshot 2024-03-23 225827.png"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\Screenshot 2024-04-17 175113.png",
+      "PackagePath": "staticwebassets\\images\\Screenshot 2024-04-17 175113.png"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\action_camera.jpg",
+      "PackagePath": "staticwebassets\\images\\action_camera.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\air_fryer.jpg",
+      "PackagePath": "staticwebassets\\images\\air_fryer.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\air_purifier.jpg",
+      "PackagePath": "staticwebassets\\images\\air_purifier.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\blender.jpg",
+      "PackagePath": "staticwebassets\\images\\blender.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\bluetooth_speaker.jpg",
+      "PackagePath": "staticwebassets\\images\\bluetooth_speaker.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\camera.jpg",
+      "PackagePath": "staticwebassets\\images\\camera.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\coffee_maker.jpg",
+      "PackagePath": "staticwebassets\\images\\coffee_maker.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\dishwasher.jpg",
+      "PackagePath": "staticwebassets\\images\\dishwasher.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\drone.jpg",
+      "PackagePath": "staticwebassets\\images\\drone.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\e_reader.jpg",
+      "PackagePath": "staticwebassets\\images\\e_reader.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\electric_kettle.jpg",
+      "PackagePath": "staticwebassets\\images\\electric_kettle.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\electric_scooter.jpg",
+      "PackagePath": "staticwebassets\\images\\electric_scooter.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\electric_toothbrush.jpg",
+      "PackagePath": "staticwebassets\\images\\electric_toothbrush.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\external_hard_drive.jpg",
+      "PackagePath": "staticwebassets\\images\\external_hard_drive.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\fitness_tracker.jpg",
+      "PackagePath": "staticwebassets\\images\\fitness_tracker.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\gaming_console.jpg",
+      "PackagePath": "staticwebassets\\images\\gaming_console.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\hair_dryer.jpg",
+      "PackagePath": "staticwebassets\\images\\hair_dryer.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\headphones.jpg",
+      "PackagePath": "staticwebassets\\images\\headphones.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\keyboard.jpg",
+      "PackagePath": "staticwebassets\\images\\keyboard.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\laptop.jpg",
+      "PackagePath": "staticwebassets\\images\\laptop.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\microphone.jpg",
+      "PackagePath": "staticwebassets\\images\\microphone.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\microwave.jpg",
+      "PackagePath": "staticwebassets\\images\\microwave.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\monitor.jpg",
+      "PackagePath": "staticwebassets\\images\\monitor.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\mouse.jpg",
+      "PackagePath": "staticwebassets\\images\\mouse.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\oven.jpg",
+      "PackagePath": "staticwebassets\\images\\oven.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\printer.jpg",
+      "PackagePath": "staticwebassets\\images\\printer.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\product.jpeg",
+      "PackagePath": "staticwebassets\\images\\product.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\refrigerator.jpg",
+      "PackagePath": "staticwebassets\\images\\refrigerator.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\router.jpg",
+      "PackagePath": "staticwebassets\\images\\router.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\shaver.jpg",
+      "PackagePath": "staticwebassets\\images\\shaver.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\smart_home_assistant.jpg",
+      "PackagePath": "staticwebassets\\images\\smart_home_assistant.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\smart_light_bulb.jpg",
+      "PackagePath": "staticwebassets\\images\\smart_light_bulb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\smartphone.jpg",
+      "PackagePath": "staticwebassets\\images\\smartphone.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\smartwatch.jpg",
+      "PackagePath": "staticwebassets\\images\\smartwatch.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\tablet.jpg",
+      "PackagePath": "staticwebassets\\images\\tablet.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\tv.jpg",
+      "PackagePath": "staticwebassets\\images\\tv.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\vacuum_cleaner.jpg",
+      "PackagePath": "staticwebassets\\images\\vacuum_cleaner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\vr_headset.jpg",
+      "PackagePath": "staticwebassets\\images\\vr_headset.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\washing_machine.jpg",
+      "PackagePath": "staticwebassets\\images\\washing_machine.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\webcam.jpg",
+      "PackagePath": "staticwebassets\\images\\webcam.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\wwwroot\\login\\style.css",
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\login\\style.css",
       "PackagePath": "staticwebassets\\login\\style.css"
-    },
-    {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Imagine.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
-      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Imagine.Microsoft.AspNetCore.StaticWebAssets.props",

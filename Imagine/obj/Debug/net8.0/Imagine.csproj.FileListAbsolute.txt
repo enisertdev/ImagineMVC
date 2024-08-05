@@ -287,7 +287,6 @@ C:\Users\enise\Desktop\ImagineMVC\Imagine\obj\Debug\net8.0\refint\Imagine.dll
 C:\Users\enise\Desktop\ImagineMVC\Imagine\obj\Debug\net8.0\Imagine.pdb
 C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Debug\net8.0\.filenesting.json
 C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Debug\net8.0\appsettings.Development.json
-C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Debug\net8.0\appsettings.json
 C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Debug\net8.0\Imagine.staticwebassets.runtime.json
 C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Debug\net8.0\Imagine.exe
 C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Debug\net8.0\Imagine.deps.json
@@ -577,3 +576,7 @@ C:\Users\enise\Desktop\mvcproject\Imagine\bin\Debug\net8.0\Imagine.staticwebasse
 C:\Users\enise\Desktop\mvcproject\Imagine\bin\Debug\net8.0\System.Text.Json.dll
 C:\Users\enise\Desktop\mvcproject\Imagine\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\enise\Desktop\mvcproject\Imagine\obj\Debug\net8.0\staticwebassets\msbuild.Imagine.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Debug\net8.0\X.PagedList.dll
+C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Debug\net8.0\X.Web.PagedList.dll
+C:\Users\enise\Desktop\ImagineMVC\Imagine\obj\Debug\net8.0\Imagine.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Debug\net8.0\appsettings.json

@@ -35,5 +35,9 @@ namespace Imagine.DataAccess.Repositories
         {
            return _context.Products.Include(p => p.Category).FirstOrDefault(filter);
         }
+        public IEnumerable<Product> GetProductsWithCategory(Expression<Func<Product, bool>> filter)
+        {
+            return _context.Products.Include(p => p.Category).Where(filter).ToList();
+        }
     }
 }

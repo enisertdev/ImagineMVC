@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "w974SvDGSmI=",
+  "dgSpecHash": "yMYIF2dWOlg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\Imagine.csproj",
+  "projectFilePath": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\Imagine.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\enise\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\enise\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",

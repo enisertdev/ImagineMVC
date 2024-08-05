@@ -13,5 +13,7 @@ namespace Imagine.DataAccess.Interfaces
         IEnumerable<Product> GetAllProductsWithCategory();
         void RemoveById(int id);
         Product GetProductWithCategory(Expression<Func<Product, bool>> filter);
+        IEnumerable<Product> GetProductsWithCategory(Expression<Func<Product, bool>> filter);
+
     }
 }

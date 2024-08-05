@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\Imagine.csproj": {}
+    "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\Imagine.csproj": {}
   },
   "projects": {
-    "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine.Business\\Imagine.Business.csproj": {
+    "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine.Business\\Imagine.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine.Business\\Imagine.Business.csproj",
+        "projectUniqueName": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine.Business\\Imagine.Business.csproj",
         "projectName": "Imagine.Business",
-        "projectPath": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine.Business\\Imagine.Business.csproj",
+        "projectPath": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine.Business\\Imagine.Business.csproj",
         "packagesPath": "C:\\Users\\enise\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine.Business\\obj\\",
+        "outputPath": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine.Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine.DataAccess\\Imagine.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine.DataAccess\\Imagine.DataAccess.csproj"
+              "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine.DataAccess\\Imagine.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine.DataAccess\\Imagine.DataAccess.csproj"
               }
             }
           }
@@ -93,14 +93,14 @@
         }
       }
     },
-    "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine.DataAccess\\Imagine.DataAccess.csproj": {
+    "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine.DataAccess\\Imagine.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine.DataAccess\\Imagine.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine.DataAccess\\Imagine.DataAccess.csproj",
         "projectName": "Imagine.DataAccess",
-        "projectPath": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine.DataAccess\\Imagine.DataAccess.csproj",
+        "projectPath": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine.DataAccess\\Imagine.DataAccess.csproj",
         "packagesPath": "C:\\Users\\enise\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine.DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -182,14 +182,14 @@
         }
       }
     },
-    "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\Imagine.csproj": {
+    "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\Imagine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\Imagine.csproj",
+        "projectUniqueName": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\Imagine.csproj",
         "projectName": "Imagine",
-        "projectPath": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\Imagine.csproj",
+        "projectPath": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\Imagine.csproj",
         "packagesPath": "C:\\Users\\enise\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine\\obj\\",
+        "outputPath": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -211,11 +211,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine.Business\\Imagine.Business.csproj": {
-                "projectPath": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine.Business\\Imagine.Business.csproj"
+              "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine.Business\\Imagine.Business.csproj": {
+                "projectPath": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine.Business\\Imagine.Business.csproj"
               },
-              "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine.DataAccess\\Imagine.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\enise\\Desktop\\mvcproject\\Imagine.DataAccess\\Imagine.DataAccess.csproj"
+              "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine.DataAccess\\Imagine.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine.DataAccess\\Imagine.DataAccess.csproj"
               }
             }
           }
