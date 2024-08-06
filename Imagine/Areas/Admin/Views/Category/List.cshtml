@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Category>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Parent Category Id</th>
+        <th scope="col">Parent Category Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (Category category in Model)
+    {
+        <tr>
+            <th scope="row">@category.Id</th>
+            <td>@category.Name</td>
+            @if (@category.Parent != null)
+            {
+                <td>@category.ParentId</td>
+                <td>@category.Parent.Name</td>
+            }
+            <td><a asp-action="RemoveCategory" asp-controller="Category" asp-route-id="@category.Id">Delete</a></td>
+
+        </tr>
+    }
+    </tbody>
+</table>

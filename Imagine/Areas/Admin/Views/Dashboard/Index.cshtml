@@ -19,9 +19,9 @@
                         <h5 class="card-title">
                         </h5>
                         <div class="btn-group">
-                            <a asp-action="Details" asp-route-id="@product.Id" class="btn btn-primary me-2 rounded">Details</a>
-                            <a asp-action="Edit" asp-route-id="@product.Id" class="btn btn-warning me-2 rounded">Edit</a>
-                            <a asp-action="Delete" asp-route-id="@product.Id" class="btn btn-danger rounded">Delete</a>
+                            <a asp-action="Details"  asp-controller="Product" asp-route-id="@product.Id" class="btn btn-primary me-2 rounded">Details</a>
+                            <a asp-action="Edit" asp-controller="Product" asp-route-id="@product.Id" class="btn btn-warning me-2 rounded">Edit</a>
+                            <a asp-action="Delete" asp-controller="Product" asp-route-id="@product.Id" class="btn btn-danger rounded">Delete</a>
                         </div>
                     </div>
                 </div>

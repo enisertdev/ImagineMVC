@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
+using Imagine.Business.Services.CategoryService;
 using Imagine.Business.Services.ProductService;
 using Imagine.Business.Services.UserService.UserService;
 using Imagine.DataAccess.Entities;
 using Imagine.DataAccess.Entities.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Imagine.Areas.Admin.Controllers
 {
@@ -15,12 +17,25 @@ namespace Imagine.Areas.Admin.Controllers
         private readonly IProductService _productService;
         private readonly IUserService _userService;
         private readonly IMapper _mapper;
+        private readonly ICategoryService _categoryService;
 
-        public DashboardController(IProductService productService, IUserService userService, IMapper mapper)
+        public DashboardController(IProductService productService, IUserService userService, IMapper mapper, ICategoryService categoryService)
         {
             _productService = productService;
             _userService = userService;
             _mapper = mapper;
+            _categoryService = categoryService;
+        }
+
+        public IActionResult Index()
+        {
+            IEnumerable<Product> products = _productService.GetAllProductsWithCategory();
+
+            ViewBag.productCount = _productService.GetAllProducts().Count();
+            ViewBag.userCount = _userService.GetAllUsers().Count();
+            ViewBag.categoryCount = _categoryService.getAllCategories().Count();
+
+            return View(products);
         }
 
         public IActionResult ListProducts()
@@ -28,6 +43,7 @@ namespace Imagine.Areas.Admin.Controllers
             return View(_productService.GetAllProductsWithCategory());
         }
 
+      
         public IActionResult ListUsers()
         {
             return View(_userService.GetAllUsers());
@@ -42,6 +58,10 @@ namespace Imagine.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult EditUser(User user, bool isChecked)
         {
+            if (User.FindFirstValue(ClaimTypes.Email) == "admin@admin.com")
+            {
+                return NotFound("You cannot edit users");
+            }
             User getUser = _userService.GetUser(u => u.Id == user.Id);
             if (getUser == null)
             {
@@ -78,7 +98,11 @@ namespace Imagine.Areas.Admin.Controllers
 
         public IActionResult DeleteUser(int id)
         {
-             User user =_userService.GetUser(u=> u.Id == id);
+            if(User.FindFirstValue(ClaimTypes.Email) == "admin@admin.com")
+            {
+                return NotFound("You cannot remove users");
+            }
+            User user =_userService.GetUser(u=> u.Id == id);
             if (user == null)
                 return NotFound("not found");
             if (user.IsAdmin)

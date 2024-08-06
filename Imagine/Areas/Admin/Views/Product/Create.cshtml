@@ -3,22 +3,37 @@
 @ViewData["path"]
 <form method="post" class="p-3 bg-white border rounded" enctype="multipart/form-data">
     <div asp-validation-summary="All"></div>
+
+    <!-- Category Dropdown -->
     <div class="mb-3">
         <label class="form-label" for="categorySelect">Category</label>
-        <select id="categorySelect" class="form-select" asp-for="CategoryId">
+        <select id="categorySelect" class="form-select">
             @foreach (Category category in ViewBag.Categories)
             {
                 <option value="@category.Id">@category.Name</option>
             }
         </select>
-    </div> 
-   
+    </div>
 
+    <!-- Sub Category Dropdown -->
+    <div class="mb-3">
+        <label class="form-label" for="subCategorySelect">Sub Category</label>
+        <select id="subCategorySelect" class="form-select" asp-for="CategoryId">
+            <option value="">Select a subcategory</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="productName">Brand</label>
+        <input id="productName" class="form-control" asp-for="Brand" placeholder="Enter brand name">
+        <span class="text-danger" asp-validation-for="Brand"></span>
+    </div>
     <div class="mb-3">
         <label class="form-label" for="productName">Product Name</label>
         <input id="productName" class="form-control" asp-for="Name" placeholder="Enter product name">
         <span class="text-danger" asp-validation-for="Name"></span>
     </div>
+
     <div class="mb-3">
         <label class="form-label" for="productPrice">Price</label>
         <input id="productPrice" class="form-control" asp-for="Price" placeholder="Enter product price">
@@ -32,6 +47,34 @@
     <button type="submit" class="btn btn-primary w-100">Submit</button>
 </form>
 
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#categorySelect').change(function () {
+                var categoryId = $(this).val();
+                $('#subCategorySelect').empty();
+                $('#subCategorySelect').append('<option value="">Select a subcategory</option>');
+
+                if (categoryId) {
+                    $.ajax({
+                        url: '@Url.Action("GetSubCategories", "Product")', // Ensure this matches your controller name
+                        type: 'GET',
+                        data: { categoryId: categoryId },
+                        success: function (data) {
+                            $.each(data, function (i, subCategory) {
+                                $('#subCategorySelect').append('<option value="' + subCategory.id + '">' + subCategory.name + '</option>');
+                            });
+                        },
+                        error: function () {
+                            alert('Error loading subcategories');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}
 <style>
     .form-label {
         font-weight: 600;

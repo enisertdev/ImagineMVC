@@ -16,9 +16,10 @@ namespace Imagine.Components.Controllers
             _productService = productService;
         }
 
-        public IActionResult ProductsByCategory(int categoryId, int page = 1, int pageSize = 4)
+        public IActionResult ProductsByCategory(int categoryId, int parentId, int page = 1, int pageSize = 4)
         {
-            IEnumerable<Product> products = _productService.GetProductsWithCategory(p => p.CategoryId == categoryId);
+
+            IEnumerable<Product> products = _productService.GetProductsWithCategory(p => p.Category.ParentId == categoryId);
 
             IPagedList<Product> model = products.ToPagedList(page, pageSize);
 
@@ -35,7 +36,7 @@ namespace Imagine.Components.Controllers
         }
         public IActionResult SearchResults(string query, int page = 1, int pageSize = 4)
         {
-            var products = _productService.GetProductsWithCategory(p => p.Name.Contains(query));
+            var products = _productService.GetProductsWithCategory(p => p.Name.Contains(query) || p.Brand.Contains(query) || p.Category.Name.Contains(query));
             if(string.IsNullOrEmpty(query))
             {
                 return View(_productService.GetAllProducts());

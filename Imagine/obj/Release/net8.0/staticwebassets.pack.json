@@ -113,6 +113,10 @@
       "PackagePath": "staticwebassets\\images\\electric_toothbrush.jpg"
     },
     {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\excalibur.jpg",
+      "PackagePath": "staticwebassets\\images\\excalibur.jpg"
+    },
+    {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\external_hard_drive.jpg",
       "PackagePath": "staticwebassets\\images\\external_hard_drive.jpg"
     },
@@ -133,6 +137,10 @@
       "PackagePath": "staticwebassets\\images\\headphones.jpg"
     },
     {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\iphone13.webp",
+      "PackagePath": "staticwebassets\\images\\iphone13.webp"
+    },
+    {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\keyboard.jpg",
       "PackagePath": "staticwebassets\\images\\keyboard.jpg"
     },
@@ -143,6 +151,14 @@
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\logo.jpg",
       "PackagePath": "staticwebassets\\images\\logo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\m1.jpeg",
+      "PackagePath": "staticwebassets\\images\\m1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\m34.jpeg",
+      "PackagePath": "staticwebassets\\images\\m34.jpeg"
     },
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\microphone.jpg",
@@ -211,6 +227,10 @@
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\vacuum_cleaner.jpg",
       "PackagePath": "staticwebassets\\images\\vacuum_cleaner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\vr300.jpeg",
+      "PackagePath": "staticwebassets\\images\\vr300.jpeg"
     },
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\vr_headset.jpg",

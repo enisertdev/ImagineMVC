@@ -1,4 +1,5 @@
-﻿using Imagine.DataAccess.Interfaces;
+﻿using Imagine.DataAccess.Entities;
+using Imagine.DataAccess.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Imagine.Components
@@ -14,7 +15,8 @@ namespace Imagine.Components
 
         public IViewComponentResult Invoke()
         {
-            return View(_categoryRepository.GetAll());
+            IEnumerable<Category> categories = _categoryRepository.GetCategoriesWithParent().Where(c=>c.ParentId == null);
+            return View(categories);
         }
     }
 }

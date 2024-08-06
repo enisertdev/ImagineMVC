@@ -15,18 +15,21 @@ namespace Imagine.Components
         public IViewComponentResult Invoke()
         {
             var products = new List<Product>();
+            var allproducts = _productService.GetAllProducts();
            Random rnd = new Random();
-           while (products.Count < 4)
+           if (allproducts.Count() < 5)
            {
-                int number = rnd.Next(1,40);
+               return View(allproducts);
+           }
+           while(products.Count < 4)
+           {
+                int number = rnd.Next(1,allproducts.Count()+1);
                 var product = _productService.GetProduct(p => p.Id == number);
                 if (product != null && !products.Contains(product))
                 {
                     products.Add(product);
                 }
            }
-
-
            return View(products);
         }
     }

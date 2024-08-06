@@ -57,7 +57,7 @@
                                     <li><a class="dropdown-item" asp-area="" asp-controller="User" asp-action="Profile"><i class="fa fa-user"></i> Profile</a></li>
                                     @if (User.IsInRole("Admin"))
                                     {
-                                        <li><a class="dropdown-item" asp-area="Admin" asp-controller="Product" asp-action="Index"><i class="fa-solid fa-lock"></i> Admin</a></li>
+                                        <li><a class="dropdown-item" asp-area="Admin" asp-controller="Dashboard" asp-action="Index"><i class="fa-solid fa-lock"></i> Admin</a></li>
                                     }
                                     <li><a class="dropdown-item" asp-controller="Cart" asp-action="Cart"><i class="fa fa-list"></i> My Orders</a></li>
                                     <li><a class="dropdown-item" href="#"><i class="fa fa-heart"></i> My Wishlist</a></li>

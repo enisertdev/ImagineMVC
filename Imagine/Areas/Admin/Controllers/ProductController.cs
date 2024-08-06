@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Security.Claims;
+using AutoMapper;
 using Imagine.Business.Services.CategoryService;
 using Imagine.Business.Services.ProductService;
 using Imagine.Business.Services.UserService.UserService;
@@ -6,6 +7,7 @@ using Imagine.DataAccess.Entities;
 using Imagine.DataAccess.Entities.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Imagine.Areas.Admin.Controllers
 {
@@ -26,25 +28,23 @@ namespace Imagine.Areas.Admin.Controllers
             _mapper = mapper;
         }
 
-        public IActionResult Index()
-        {
-            IEnumerable<Product> products = _productService.GetAllProductsWithCategory();
-
-            ViewBag.productCount = _productService.GetAllProducts().Count();
-            ViewBag.userCount = _userService.GetAllUsers().Count();
-
-            return View(products);
-        }
-
         public IActionResult Create()
         {
             ViewBag.Categories = _categoryService.getAllCategories();
             return View();
         }
+        public async Task<JsonResult> GetSubCategories(int categoryId)
+        {
+            var subCategories = _categoryService.getAllCategories()
+                .Where(c => c.ParentId == categoryId)
+                .Select(c => new { c.Id, c.Name });
+
+            return Json(subCategories);
+        }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-
         public async Task<IActionResult> Create(ProductDtoForInsertion product, IFormFile file)
         {
             ViewBag.Categories = _categoryService.getAllCategories();
@@ -53,7 +53,6 @@ namespace Imagine.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", file.FileName);
-                ViewData["path"] = path;
 
                 try
                 {
@@ -64,7 +63,7 @@ namespace Imagine.Areas.Admin.Controllers
                     product.ImageUrl = file.FileName;
                     var createdProduct = _mapper.Map<Product>(product);
                     _productService.AddProduct(createdProduct);
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index","Dashboard");
                 }
                 catch (Exception ex)
                 {
@@ -87,21 +86,30 @@ namespace Imagine.Areas.Admin.Controllers
 
         public IActionResult Edit(ProductDtoForUpdate product)
         {
+            if (User.FindFirstValue(ClaimTypes.Email) == "admin@admin.com")
+            {
+                return NotFound("You cannot edit items");
+            }
             if (ModelState.IsValid)
             {
                 var updatedProduct = _mapper.Map<Product>(product);
                 _productService.UpdateProduct(updatedProduct);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Dashboard");
             }
             return View(product);
         }
         public IActionResult Delete(int id)
         {
+            if (User.FindFirstValue(ClaimTypes.Email) == "admin@admin.com")
+            {
+                return NotFound("You cannot remove items");
+            }
             _productService.RemoveProductById(id);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Dashboard");
         }
         public IActionResult Details(int id)
         {
+           
             var product = _productService.GetProductWithCategory(id);
             if (product == null)
                 return NotFound("Product does not exist.");

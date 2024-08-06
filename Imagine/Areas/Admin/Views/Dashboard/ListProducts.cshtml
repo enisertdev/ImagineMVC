@@ -7,6 +7,7 @@
             <th scope="col">Product Name</th>
             <th scope="col">Price</th>
             <th scope="col">Category</th>
+            <th scope="col">Sub Category</th>
         </tr>
     </thead>
     <tbody>
@@ -16,7 +17,11 @@
                 <th scope="row">@products.Id</th>
                 <td>@products.Name</td>
                 <td>@products.Price</td>
-                <td>@products.Category.Name</td>
+                <td>@(products.Category.Parent?.Name ?? products.Category.Name)</td>
+                @if (products.Category.Parent != null)
+                {
+                    <td>@products.Category.Name</td>
+                }
             </tr>
         }
     </tbody>
