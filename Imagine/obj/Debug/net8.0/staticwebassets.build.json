@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+Owb6IW5a6f+k6kk5FPW3WLxoA/QTvz3br4ANGN302k=",
+  "Hash": "xIzvO+FhyjxCPpxlgF2n4WMHNd27QS5Oqpb2psMq4YQ=",
   "Source": "Imagine",
   "BasePath": "_content/Imagine",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "mgxtdnbctj",
-      "Integrity": "WhjPdSC1WLHsWTJHTWhOoQEijGcR/MyXGFGdSogEhhw=",
+      "Fingerprint": "ed42cj885h",
+      "Integrity": "orqiM/nHhoxXi2u0OcVQeD7NUI+PYnEzw0CVZLm81HU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -605,6 +605,27 @@
       "OriginalItemSpec": "wwwroot\\images\\laptop.jpg"
     },
     {
+      "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\logo.jpg",
+      "SourceId": "Imagine",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\",
+      "BasePath": "_content/Imagine",
+      "RelativePath": "images/logo#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3deetcy6ki",
+      "Integrity": "N80iEoGKopZCnS7B9v5cPUX4ZDlJDcoexFbvTKUxSaA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logo.jpg"
+    },
+    {
       "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\microphone.jpg",
       "SourceId": "Imagine",
       "SourceType": "Discovered",
@@ -815,6 +836,27 @@
       "OriginalItemSpec": "wwwroot\\images\\Screenshot 2024-03-01 010157.png"
     },
     {
+      "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\Screenshot 2024-03-23 175305.png",
+      "SourceId": "Imagine",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\",
+      "BasePath": "_content/Imagine",
+      "RelativePath": "images/Screenshot 2024-03-23 175305#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2m49i8alsu",
+      "Integrity": "mtG++8ghkDgfYmc0apJEcz8DI2iusuHF3E6ie56CQ5I=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Screenshot 2024-03-23 175305.png"
+    },
+    {
       "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\Screenshot 2024-03-23 225827.png",
       "SourceId": "Imagine",
       "SourceType": "Discovered",
@@ -836,6 +878,27 @@
       "OriginalItemSpec": "wwwroot\\images\\Screenshot 2024-03-23 225827.png"
     },
     {
+      "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\Screenshot 2024-04-12 004348.png",
+      "SourceId": "Imagine",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\",
+      "BasePath": "_content/Imagine",
+      "RelativePath": "images/Screenshot 2024-04-12 004348#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xc043ihmqc",
+      "Integrity": "LyotXzA3mGiIp6auDgjeOKLp2rwxpPHUNmFeJ9D/G8U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Screenshot 2024-04-12 004348.png"
+    },
+    {
       "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\Screenshot 2024-04-17 175113.png",
       "SourceId": "Imagine",
       "SourceType": "Discovered",
@@ -855,6 +918,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Screenshot 2024-04-17 175113.png"
+    },
+    {
+      "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\Screenshot 2024-04-19 174110.png",
+      "SourceId": "Imagine",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\",
+      "BasePath": "_content/Imagine",
+      "RelativePath": "images/Screenshot 2024-04-19 174110#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "u4r8usa6vi",
+      "Integrity": "XikUvs75vLg6rmDSLTgXxdE5im4eidTO681JGqIUj3A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Screenshot 2024-04-19 174110.png"
+    },
+    {
+      "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\Screenshot 2024-04-30 010706.png",
+      "SourceId": "Imagine",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\",
+      "BasePath": "_content/Imagine",
+      "RelativePath": "images/Screenshot 2024-04-30 010706#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "hxgiehkj02",
+      "Integrity": "Ndh8DuUrMEAAA1jMkr748HmpArEP/NMLHD+BbpLQ65I=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Screenshot 2024-04-30 010706.png"
     },
     {
       "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\Screenshot 2024-07-13 134326.png",
@@ -955,8 +1060,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "uk193gwkka",
-      "Integrity": "wmxXRGVCZBTrqHDmAHOTIP+bEjMHKMLoFTgvWGJJFm4=",
+      "Fingerprint": "ctw84cy9hc",
+      "Integrity": "4BPSG2VCu8OF4R/0UvrMruhnGcAoFM2QA25GKnQMQkg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\smartphone.jpg"
@@ -2360,7 +2465,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "781"
+          "Value": "826"
         },
         {
           "Name": "Content-Type",
@@ -2368,11 +2473,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WhjPdSC1WLHsWTJHTWhOoQEijGcR/MyXGFGdSogEhhw=\""
+          "Value": "\"orqiM/nHhoxXi2u0OcVQeD7NUI+PYnEzw0CVZLm81HU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 05 Aug 2024 02:20:03 GMT"
+          "Value": "Tue, 06 Aug 2024 12:47:53 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2382,12 +2487,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-WhjPdSC1WLHsWTJHTWhOoQEijGcR/MyXGFGdSogEhhw="
+          "Value": "sha256-orqiM/nHhoxXi2u0OcVQeD7NUI+PYnEzw0CVZLm81HU="
         }
       ]
     },
     {
-      "Route": "css/site.mgxtdnbctj.css",
+      "Route": "css/site.ed42cj885h.css",
       "AssetFile": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2397,7 +2502,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "781"
+          "Value": "826"
         },
         {
           "Name": "Content-Type",
@@ -2405,11 +2510,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WhjPdSC1WLHsWTJHTWhOoQEijGcR/MyXGFGdSogEhhw=\""
+          "Value": "\"orqiM/nHhoxXi2u0OcVQeD7NUI+PYnEzw0CVZLm81HU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 05 Aug 2024 02:20:03 GMT"
+          "Value": "Tue, 06 Aug 2024 12:47:53 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2419,7 +2524,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "mgxtdnbctj"
+          "Value": "ed42cj885h"
         },
         {
           "Name": "label",
@@ -2427,7 +2532,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-WhjPdSC1WLHsWTJHTWhOoQEijGcR/MyXGFGdSogEhhw="
+          "Value": "sha256-orqiM/nHhoxXi2u0OcVQeD7NUI+PYnEzw0CVZLm81HU="
         }
       ]
     },
@@ -4646,6 +4751,88 @@
       ]
     },
     {
+      "Route": "images/logo.3deetcy6ki.jpg",
+      "AssetFile": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\logo.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17659"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"N80iEoGKopZCnS7B9v5cPUX4ZDlJDcoexFbvTKUxSaA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 Aug 2024 00:23:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3deetcy6ki"
+        },
+        {
+          "Name": "label",
+          "Value": "images/logo.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-N80iEoGKopZCnS7B9v5cPUX4ZDlJDcoexFbvTKUxSaA="
+        }
+      ]
+    },
+    {
+      "Route": "images/logo.jpg",
+      "AssetFile": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\logo.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17659"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"N80iEoGKopZCnS7B9v5cPUX4ZDlJDcoexFbvTKUxSaA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 Aug 2024 00:23:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-N80iEoGKopZCnS7B9v5cPUX4ZDlJDcoexFbvTKUxSaA="
+        }
+      ]
+    },
+    {
       "Route": "images/microphone.jpg",
       "AssetFile": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\microphone.jpg",
       "Selectors": [],
@@ -5466,6 +5653,88 @@
       ]
     },
     {
+      "Route": "images/Screenshot 2024-03-23 175305.2m49i8alsu.png",
+      "AssetFile": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\Screenshot 2024-03-23 175305.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3519"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mtG++8ghkDgfYmc0apJEcz8DI2iusuHF3E6ie56CQ5I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 Aug 2024 15:36:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2m49i8alsu"
+        },
+        {
+          "Name": "label",
+          "Value": "images/Screenshot 2024-03-23 175305.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mtG++8ghkDgfYmc0apJEcz8DI2iusuHF3E6ie56CQ5I="
+        }
+      ]
+    },
+    {
+      "Route": "images/Screenshot 2024-03-23 175305.png",
+      "AssetFile": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\Screenshot 2024-03-23 175305.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3519"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mtG++8ghkDgfYmc0apJEcz8DI2iusuHF3E6ie56CQ5I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 Aug 2024 15:36:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mtG++8ghkDgfYmc0apJEcz8DI2iusuHF3E6ie56CQ5I="
+        }
+      ]
+    },
+    {
       "Route": "images/Screenshot 2024-03-23 225827.68mi15n9na.png",
       "AssetFile": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\Screenshot 2024-03-23 225827.png",
       "Selectors": [],
@@ -5488,7 +5757,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 05 Aug 2024 16:59:11 GMT"
+          "Value": "Tue, 06 Aug 2024 15:12:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5533,7 +5802,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 05 Aug 2024 16:59:11 GMT"
+          "Value": "Tue, 06 Aug 2024 15:12:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5544,6 +5813,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-+jmqEOt7SYqsi0NjDAKpLhKoz1jw68mHRV+haYcg9Uo="
+        }
+      ]
+    },
+    {
+      "Route": "images/Screenshot 2024-04-12 004348.png",
+      "AssetFile": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\Screenshot 2024-04-12 004348.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "132"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LyotXzA3mGiIp6auDgjeOKLp2rwxpPHUNmFeJ9D/G8U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 Aug 2024 15:19:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LyotXzA3mGiIp6auDgjeOKLp2rwxpPHUNmFeJ9D/G8U="
+        }
+      ]
+    },
+    {
+      "Route": "images/Screenshot 2024-04-12 004348.xc043ihmqc.png",
+      "AssetFile": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\Screenshot 2024-04-12 004348.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "132"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LyotXzA3mGiIp6auDgjeOKLp2rwxpPHUNmFeJ9D/G8U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 Aug 2024 15:19:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xc043ihmqc"
+        },
+        {
+          "Name": "label",
+          "Value": "images/Screenshot 2024-04-12 004348.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LyotXzA3mGiIp6auDgjeOKLp2rwxpPHUNmFeJ9D/G8U="
         }
       ]
     },
@@ -5626,6 +5977,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-pRT8mNUEsTm2wnkiXMUk+21EvKqf0TX6hkvlG0CVbMI="
+        }
+      ]
+    },
+    {
+      "Route": "images/Screenshot 2024-04-19 174110.png",
+      "AssetFile": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\Screenshot 2024-04-19 174110.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "131072"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XikUvs75vLg6rmDSLTgXxdE5im4eidTO681JGqIUj3A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 Aug 2024 15:18:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XikUvs75vLg6rmDSLTgXxdE5im4eidTO681JGqIUj3A="
+        }
+      ]
+    },
+    {
+      "Route": "images/Screenshot 2024-04-19 174110.u4r8usa6vi.png",
+      "AssetFile": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\Screenshot 2024-04-19 174110.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "131072"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XikUvs75vLg6rmDSLTgXxdE5im4eidTO681JGqIUj3A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 Aug 2024 15:18:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "u4r8usa6vi"
+        },
+        {
+          "Name": "label",
+          "Value": "images/Screenshot 2024-04-19 174110.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XikUvs75vLg6rmDSLTgXxdE5im4eidTO681JGqIUj3A="
+        }
+      ]
+    },
+    {
+      "Route": "images/Screenshot 2024-04-30 010706.hxgiehkj02.png",
+      "AssetFile": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\Screenshot 2024-04-30 010706.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "275"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Ndh8DuUrMEAAA1jMkr748HmpArEP/NMLHD+BbpLQ65I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 Aug 2024 15:19:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hxgiehkj02"
+        },
+        {
+          "Name": "label",
+          "Value": "images/Screenshot 2024-04-30 010706.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Ndh8DuUrMEAAA1jMkr748HmpArEP/NMLHD+BbpLQ65I="
+        }
+      ]
+    },
+    {
+      "Route": "images/Screenshot 2024-04-30 010706.png",
+      "AssetFile": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\Screenshot 2024-04-30 010706.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "275"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Ndh8DuUrMEAAA1jMkr748HmpArEP/NMLHD+BbpLQ65I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 Aug 2024 15:19:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Ndh8DuUrMEAAA1jMkr748HmpArEP/NMLHD+BbpLQ65I="
         }
       ]
     },
@@ -5958,6 +6473,51 @@
       ]
     },
     {
+      "Route": "images/smartphone.ctw84cy9hc.jpg",
+      "AssetFile": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\smartphone.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11016"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4BPSG2VCu8OF4R/0UvrMruhnGcAoFM2QA25GKnQMQkg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 Aug 2024 01:28:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ctw84cy9hc"
+        },
+        {
+          "Name": "label",
+          "Value": "images/smartphone.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4BPSG2VCu8OF4R/0UvrMruhnGcAoFM2QA25GKnQMQkg="
+        }
+      ]
+    },
+    {
       "Route": "images/smartphone.jpg",
       "AssetFile": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\smartphone.jpg",
       "Selectors": [],
@@ -5968,7 +6528,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "13082"
+          "Value": "11016"
         },
         {
           "Name": "Content-Type",
@@ -5976,11 +6536,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"wmxXRGVCZBTrqHDmAHOTIP+bEjMHKMLoFTgvWGJJFm4=\""
+          "Value": "\"4BPSG2VCu8OF4R/0UvrMruhnGcAoFM2QA25GKnQMQkg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 05 Aug 2024 15:08:50 GMT"
+          "Value": "Tue, 06 Aug 2024 01:28:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5990,52 +6550,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-wmxXRGVCZBTrqHDmAHOTIP+bEjMHKMLoFTgvWGJJFm4="
-        }
-      ]
-    },
-    {
-      "Route": "images/smartphone.uk193gwkka.jpg",
-      "AssetFile": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\smartphone.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "13082"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"wmxXRGVCZBTrqHDmAHOTIP+bEjMHKMLoFTgvWGJJFm4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 05 Aug 2024 15:08:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "uk193gwkka"
-        },
-        {
-          "Name": "label",
-          "Value": "images/smartphone.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-wmxXRGVCZBTrqHDmAHOTIP+bEjMHKMLoFTgvWGJJFm4="
+          "Value": "sha256-4BPSG2VCu8OF4R/0UvrMruhnGcAoFM2QA25GKnQMQkg="
         }
       ]
     },

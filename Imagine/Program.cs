@@ -1,13 +1,15 @@
 using Imagine.Business.AutoMapper;
-using Imagine.Business.Services;
 using Imagine.DataAccess.Interfaces;
 using Imagine.DataAccess.Repositories;
 using Imagine.Database;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using System.Reflection;
-using Imagine.DataAccess.Entities;
+using Imagine.Business.Services.CartService;
+using Imagine.Business.Services.CategoryService;
+using Imagine.Business.Services.EmailService;
+using Imagine.Business.Services.ProductService;
+using Imagine.Business.Services.UserAuthenticationService;
+using Imagine.Business.Services.UserService.UserService;
 
 
 var builder = WebApplication.CreateBuilder(args);

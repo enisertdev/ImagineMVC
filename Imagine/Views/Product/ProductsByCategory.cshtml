@@ -5,36 +5,35 @@
         @foreach (Product product in Model)
         {
             <div class="col-md-3 mt-2">
-                <div class="card">
-                    <div class="card-img-actions">
-                        <img src="~/images/@product.ImageUrl" class="card-img img-fluid" alt="">
-                    </div>
-                    <div class="card-body bg-light text-center">
-                        <div class="mb-2">
-                            <h6 class="font-weight-semibold mb-2">
-                                <a asp-controller="Home" asp-action="Details" asp-route-id="@product.Id" class="text-default mb-2" data-abc="true">@product.Name</a>
-                            </h6>
-                            <a href="#" class="text-muted" data-abc="true">@product.Category.Name</a>
+                <a asp-controller="Home" asp-action="Details" asp-route-id="@product.Id">
+                    <div class="card">
+                        <div class="card-img-actions">
+                            <img src="~/images/@product.ImageUrl" class="card-img img-fluid" alt="">
                         </div>
+                        <div class="card-body text-left">
+                            <div class="mb-2">
+                                <h6 class="font-weight-semibold mb-2 card-title">
+                                    <a asp-controller="Home" asp-action="Details" asp-route-id="@product.Id">
+                                        <!---->   <b style="font-size: 13px; ">@product.Brand &nbsp;</b>
+                                        <p style="font-size: 13px;"> @product.Name</p>
+                                    </a>
+                                </h6>
+                                <a href="#" class="text-muted" data-abc="true">@product.Category.Name</a>
+                            </div>
 
-                        <h3 class="mb-0 font-weight-semibold">@product.Price.ToString("c")</h3>
+                            <h3 class="mb-0 font-weight-semibold" style="font-size: 18px; color:#f27a1a">@product.Price.ToString() TL</h3>
 
-                        <div>
-                            <i class="fa fa-star star"></i>
-                            <i class="fa fa-star star"></i>
-                            <i class="fa fa-star star"></i>
-                            <i class="fa fa-star star"></i>
-                            <i class="fa fa-star star"></i>
+                            <div>
+                                <i class="fa fa-star emptystar"></i>
+                                <i class="fa fa-star emptystar"></i>
+                                <i class="fa fa-star emptystar"></i>
+                                <i class="fa fa-star rmptystar"></i>
+                                <i class="fa fa-star emptystar"></i> (0)
+                            </div>
+
                         </div>
-
-                        <div class="text-muted mb-3">34 reviews</div>
-
-                        <form asp-controller="Cart" asp-action="AddToCart" method="post">
-                            <input asp-for="@product.Id" type="hidden" />
-                            <button type="submit" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
-                        </form>
                     </div>
-                </div>
+                </a>
             </div>
         }
     </div>
@@ -57,13 +56,15 @@
 </div>
 
 <style>
+    <style >
+
     body {
         margin: 0;
         font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         font-size: .8125rem;
         font-weight: 400;
         line-height: 1.5385;
-        color: #333;
+        color: #ffffff;
         text-align: left;
     }
 
@@ -76,37 +77,35 @@
     }
 
     .card {
-        width: 18rem; /* Set a fixed width for the card */
-        height: 450px; /* Set a fixed height for the card */
-        position: relative;
+        width: 18rem;
+        height: 550px;
         display: flex;
         flex-direction: column;
-        min-width: 0;
-        word-wrap: break-word;
         background-color: #fff;
-        background-clip: border-box;
         border: 1px solid rgba(0,0,0,.125);
         border-radius: .1875rem;
+        overflow: hidden;
     }
 
     .card-img-actions {
-        height: 60%; /* Set the image container height */
+        width: 100%;
+        height: 300px;
         display: flex;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
     }
 
     .card-img {
-        max-width: 100%; /* Ensure the image does not exceed the container's width */
-        max-height: 100%; /* Ensure the image does not exceed the container's height */
-        object-fit: contain; /* Maintain aspect ratio and fit the image within the container */
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
     }
 
     .card-body {
         flex: 1 1 auto;
-        padding: 0.75rem; /* Reduced padding to give more space to the image */
-        text-align: center;
-        margin-top: auto; /* Ensure content is pushed to the bottom of the card */
+        padding: 0.75rem;
+        text-align: left;
     }
 
     .star {
@@ -116,6 +115,7 @@
     .bg-cart {
         background-color: orange;
         color: #fff;
+        y
     }
 
         .bg-cart:hover {
@@ -135,4 +135,41 @@
     a {
         text-decoration: none !important;
     }
+
+    .card-title {
+        display: flex;
+        flex-direction: column;
+    }
+
+        .card-title a {
+            height: 3.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #7b7b7b; /* Product name color */
+            text-decoration: none; /* Remove underline */
+            margin: 0;
+        }
+
+            .card-title a:hover {
+                color: #7b7b7b; /* Maintain color on hover */
+                text-decoration: none; /* Ensure no underline on hover */
+            }
+
+        .card-title b {
+            color: #484848; /* Product brand color */
+            display: block;
+            font-size: 13px; /* Adjust as needed */
+            text-align: left;
+        }
+
+        .card-title p {
+            color: #7b7b7b; /* Product name color */
+            font-size: 13px; /* Adjust as needed */
+            margin: 0; /* Remove default margin */
+            text-align: left;
+        }
+
 </style>

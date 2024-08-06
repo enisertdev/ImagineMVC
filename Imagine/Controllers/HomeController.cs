@@ -1,4 +1,5 @@
 using Imagine.Business.Services;
+using Imagine.Business.Services.ProductService;
 using Imagine.DataAccess.Entities;
 using Microsoft.AspNetCore.Mvc;
 using X.PagedList;
@@ -19,6 +20,7 @@ namespace Imagine.Components.Controllers
         {
             IEnumerable<Product> products = _productService.GetAllProductsWithCategory();
             IPagedList<Product> model = products.ToPagedList(page, pageSize);
+            ViewBag.Products = products;
             return View(model);
         }
 
@@ -31,11 +33,6 @@ namespace Imagine.Components.Controllers
             }
 
             return View(product);
-        }
-
-        public IActionResult test()
-        {
-            return View();
         }
 
     }

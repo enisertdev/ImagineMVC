@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
-using Imagine.Business.Services;
+using Imagine.Business.Services.ProductService;
+using Imagine.Business.Services.UserService.UserService;
 using Imagine.DataAccess.Entities;
 using Imagine.DataAccess.Entities.Dtos;
 using Microsoft.AspNetCore.Authorization;

@@ -1,18 +1,22 @@
 ﻿@model Product
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<header>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div style="background-color: #ebebeb;">
+        <div class="container py-4">
+            <nav class="d-flex">
+                <h6 class="mb-0">
+                    <a asp-action="Index" asp-controller="Home" style="color: black; text-decoration: none;">Home</a>
+                    <span class=" mx-2" style="color: black; text-decoration: none;"> > </span>
+                    <a href="@Url.Action("ProductsByCategory","Product", new{categoryId = @Model.CategoryId} )" class="" style="color: black; text-decoration: none;">@Model.Category.Name</a>
+                </h6>
+            </nav>
+        </div>
+    </div>
+</header>
 
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-
-</head>
-
-<body>
-
+<!-- content -->
+<section class="py-5">
     <div class="container">
         @if (TempData["Error"] != null)
         {
@@ -21,233 +25,174 @@
                 <p>@TempData["Error"]</p>
             </div>
         }
-        <div class="card">
-            <div class="container-fliud">
-                <div class="wrapper row">
-                    <div class="preview col-md-6">
+        <div class="row gx-5">
+            <aside class="col-lg-6">
+                <div class="border rounded-4 mb-3 d-flex justify-content-center">
+                    <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image" href="~/images/@Model.ImageUrl">
+                        <img style="max-width: 100%; max-height: 100vh; margin: 100px;" class="rounded-4 fit" src="~/images/@Model.ImageUrl" />
+                    </a>
+                </div>
 
-                        <div class="preview-pic tab-content">
-                            <div class="tab-pane active" id="pic-1"><img src="~/images/@Model.ImageUrl" /></div>
+                <!-- thumbs-wrap.// -->
+                <!-- gallery-wrap .end// -->
+            </aside>
+            <main class="col-lg-6">
+                <div class="ps-lg-3">
+                    <h4 class="title text-dark">
+                        <b>@Model.Brand</b> <br />
+                        @Model.Name
+                    </h4>
+                    <div class="d-flex flex-row my-3">
+                        <div class="text-warning mb-1 me-2">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="ms-1">
+                                4.5
+                            </span>
                         </div>
-                        <ul class="preview-thumbnail nav nav-tabs">
-                        </ul>
+                        <span class="text-muted"><i class="fas fa-shopping-basket fa-sm mx-1"></i>154 orders</span>
+                        <span class="text-success ms-2">In stock</span>
                     </div>
-                    <div class="details col-md-6">
-                        <h3 class="product-title">@Model.Name</h3>
-                        <div class="rating">
-                            <div class="stars">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
+
+                    <div class="mb-3">
+                        <span class="h5">@Model.Price.ToString() TL</span>
+                    </div>
+
+
+                    <div class="row">
+
+                        <dt class="col-3">Category</dt>
+                        <dd class="col-9">@Model.Category.Name</dd>
+                    </div>
+
+                    <hr />
+                    <form asp-controller="Cart" asp-action="AddToCart" method="post">
+                        <input type="hidden" asp-for="Id" />
+                        <button type="submit" class="btn btn-primary shadow-0"> <i class="me-1 fa fa-shopping-basket"></i> Add to cart </button>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+</section>
+<!-- content -->
+
+<section class="bg-light border-top py-4">
+    <div class="container">
+        <div class="row gx-4">
+            <div class="col-lg-8 mb-4">
+                <div class="border rounded-2 px-3 py-2 bg-white">
+                    <!-- Pills navs -->
+                    <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+                        <li class="nav-item d-flex" role="presentation">
+                            <a class="nav-link d-flex align-items-center justify-content-center w-100 active" id="ex1-tab-1" data-mdb-toggle="pill" href="#ex1-pills-1" role="tab" aria-controls="ex1-pills-1" aria-selected="true">Specification</a>
+                        </li>
+                        <li class="nav-item d-flex" role="presentation">
+                            <a class="nav-link d-flex align-items-center justify-content-center w-100" id="ex1-tab-2" data-mdb-toggle="pill" href="#ex1-pills-2" role="tab" aria-controls="ex1-pills-2" aria-selected="false">Warranty info</a>
+                        </li>
+                        <li class="nav-item d-flex" role="presentation">
+                            <a class="nav-link d-flex align-items-center justify-content-center w-100" id="ex1-tab-3" data-mdb-toggle="pill" href="#ex1-pills-3" role="tab" aria-controls="ex1-pills-3" aria-selected="false">Shipping info</a>
+                        </li>
+                        <li class="nav-item d-flex" role="presentation">
+                            <a class="nav-link d-flex align-items-center justify-content-center w-100" id="ex1-tab-4" data-mdb-toggle="pill" href="#ex1-pills-4" role="tab" aria-controls="ex1-pills-4" aria-selected="false">Seller profile</a>
+                        </li>
+                    </ul>
+                    <!-- Pills navs -->
+                    <!-- Pills content -->
+                    <div class="tab-content" id="ex1-content">
+                        <div class="tab-pane fade show active" id="ex1-pills-1" role="tabpanel" aria-labelledby="ex1-tab-1">
+                            <p>
+                                With supporting text below as a natural lead-in to additional content. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                pariatur.
+                            </p>
+                            <div class="row mb-2">
+                                <div class="col-12 col-md-6">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><i class="fas fa-check text-success me-2"></i>Some great feature name here</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Lorem ipsum dolor sit amet, consectetur</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Duis aute irure dolor in reprehenderit</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Optical heart sensor</li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-md-6 mb-0">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i>Easy fast and ver good</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Some great feature name here</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Modern style and design</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <span class="review-no">41 reviews</span>
+                            <table class="table border mt-3 mb-2">
+                                <tr>
+                                    <th class="py-2">Display:</th>
+                                    <td class="py-2">13.3-inch LED-backlit display with IPS</td>
+                                </tr>
+                                <tr>
+                                    <th class="py-2">Processor capacity:</th>
+                                    <td class="py-2">2.3GHz dual-core Intel Core i5</td>
+                                </tr>
+                                <tr>
+                                    <th class="py-2">Camera quality:</th>
+                                    <td class="py-2">720p FaceTime HD camera</td>
+                                </tr>
+                                <tr>
+                                    <th class="py-2">Memory</th>
+                                    <td class="py-2">8 GB RAM or 16 GB RAM</td>
+                                </tr>
+                                <tr>
+                                    <th class="py-2">Graphics</th>
+                                    <td class="py-2">Intel Iris Plus Graphics 640</td>
+                                </tr>
+                            </table>
                         </div>
-                        <p class="product-description">@Model.Description</p>
-                        <h4 class="price">current price: <span>@Model.Price.ToString("c")</span></h4>
-                        <p class="vote"><strong>%91</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
-                        <div class="action">
-                            <form asp-controller="Cart" asp-action="AddToCart" method="post">
-                                <input type="hidden" asp-for="Id" />
-                                <button class="add-to-cart btn btn-default" type="submit">add to cart</button>
-                            </form>
-                            <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+                        <div class="tab-pane fade mb-2" id="ex1-pills-2" role="tabpanel" aria-labelledby="ex1-tab-2">
+                            Tab content or sample information now <br />
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                            officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        </div>
+                        <div class="tab-pane fade mb-2" id="ex1-pills-3" role="tabpanel" aria-labelledby="ex1-tab-3">
+                            Another tab content or sample information now <br />
+                            Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                            mollit anim id est laborum.
+                        </div>
+                        <div class="tab-pane fade mb-2" id="ex1-pills-4" role="tabpanel" aria-labelledby="ex1-tab-4">
+                            Some other tab content or sample information now <br />
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                            officia deserunt mollit anim id est laborum.
+                        </div>
+                    </div>
+                    <!-- Pills content -->
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="px-0 border rounded-2 shadow-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">More Items</h5>
+                            @await Component.InvokeAsync("Carosel");
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</body>
-</html>
+</section>
 <style>
-
-    /*****************globals*************/
-    body {
-        font-family: 'open sans';
-        overflow-x: hidden;
+    .icon-hover:hover {
+        border-color: #3b71ca !important;
+        background-color: white !important;
+        color: #3b71ca !important;
     }
 
-    img {
-        max-width: 100%;
-    }
-
-    .preview {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column;
-    }
-
-    .preview {
-        margin-bottom: 20px;
-    }
-
-    }
-
-    .preview-pic {
-        -webkit-box-flex: 1;
-        -webkit-flex-grow: 1;
-        -ms-flex-positive: 1;
-        flex-grow: 1;
-    }
-
-    .preview-thumbnail.nav-tabs {
-        border: none;
-        margin-top: 15px;
-    }
-
-        .preview-thumbnail.nav-tabs li {
-            width: 18%;
-            margin-right: 2.5%;
+        .icon-hover:hover i {
+            color: #3b71ca !important;
         }
-
-            .preview-thumbnail.nav-tabs li img {
-                max-width: 100%;
-                display: block;
-            }
-
-            .preview-thumbnail.nav-tabs li a {
-                padding: 0;
-                margin: 0;
-            }
-
-            .preview-thumbnail.nav-tabs li:last-of-type {
-                margin-right: 0;
-            }
-
-    .tab-content {
-        overflow: hidden;
-    }
-
-        .tab-content img {
-            width: 100%;
-            -webkit-animation-name: opacity;
-            animation-name: opacity;
-            -webkit-animation-duration: .3s;
-            animation-duration: .3s;
-        }
-
-    .card {
-        margin-top: 50px;
-        background: #eee;
-        padding: 3em;
-        line-height: 1.5em;
-    }
-
-    .wrapper {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-    }
-
-    }
-
-    .details {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column;
-    }
-
-    .colors {
-        -webkit-box-flex: 1;
-        -webkit-flex-grow: 1;
-        -ms-flex-positive: 1;
-        flex-grow: 1;
-    }
-
-    .product-title, .price, .sizes, .colors {
-        text-transform: UPPERCASE;
-        font-weight: bold;
-    }
-
-        .checked, .price span {
-            color: #ff9f1a;
-        }
-
-    .product-title, .rating, .product-description, .price, .vote, .sizes {
-        margin-bottom: 15px;
-    }
-
-    .product-title {
-        margin-top: 0;
-    }
-
-    .size {
-        margin-right: 10px;
-    }
-
-        .size:first-of-type {
-            margin-left: 40px;
-        }
-
-    .color {
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 10px;
-        height: 2em;
-        width: 2em;
-        border-radius: 2px;
-    }
-
-        .color:first-of-type {
-            margin-left: 20px;
-        }
-
-    .add-to-cart, .like {
-        background: #ff9f1a;
-        padding: 1.2em 1.5em;
-        border: none;
-        text-transform: UPPERCASE;
-        font-weight: bold;
-        color: #fff;
-        -webkit-transition: background .3s ease;
-        transition: background .3s ease;
-    }
-
-        .add-to-cart:hover, .like:hover {
-            background: #b36800;
-            color: #fff;
-        }
-
-    .not-available {
-        text-align: center;
-        line-height: 2em;
-    }
-
-        .not-available:before {
-            font-family: fontawesome;
-            content: "\f00d";
-            color: #fff;
-        }
-
-    .orange {
-        background: #ff9f1a;
-    }
-
-    .green {
-        background: #85ad00;
-    }
-
-    .blue {
-        background: #0076ad;
-    }
-
-    .tooltip-inner {
-        padding: 1.3em;
-    }
-    /*# sourceMappingURL=style.css.map */
 </style>

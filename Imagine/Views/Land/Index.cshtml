@@ -1,32 +1,69 @@
-﻿
+﻿@{
+    Layout = null;
+}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
         }
-      }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="~/landing/css/style.css" rel="stylesheet">
-  <body class="text-center">
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
-  <main role="main" class="inner cover">
-    <h1 class="cover-heading">Imagine Website</h1>
-    <p class="lead">Imagine</p>
-    <p class="lead">
-      <a asp-controller="User" asp-action="Register" class="btn btn-lg btn-secondary">You can register here.</a>
-    </p>
-  </main>
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-image: url('/images/logo.jpg');
+            background-size: 600px;
+            background-position: top center; /* Resmi üstte konumlandırma */
+            background-repeat: no-repeat; /* Resmi tekrar etme */
+            color: white;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-top: 20px;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+        }
+
+        .cta-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.25rem;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero-section">
+    <div>
+        <h1>Welcome to Our Website</h1>
+        <p>Your journey to excellence starts here.</p>
+        <a asp-controller="Home" asp-action="Index" class="cta-button">Find Out</a>
+    </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,10 +1,12 @@
-﻿using Imagine.Business.Services;
-using Imagine.DataAccess.Entities;
+﻿using Imagine.DataAccess.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Imagine.DataAccess.Entities.Dtos;
 using AutoMapper;
+using Imagine.Business.Services.EmailService;
+using Imagine.Business.Services.UserAuthenticationService;
+using Imagine.Business.Services.UserService.UserService;
 
 namespace Imagine.Components.Controllers
 {

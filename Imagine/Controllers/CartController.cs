@@ -1,5 +1,7 @@
 ﻿using System.Security.Claims;
-using Imagine.Business.Services;
+using Imagine.Business.Services.CartService;
+using Imagine.Business.Services.ProductService;
+using Imagine.Business.Services.UserService.UserService;
 using Imagine.DataAccess.Entities;
 using Imagine.Models;
 using Microsoft.AspNetCore.Authorization;

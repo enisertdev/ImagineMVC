@@ -1,9 +1,9 @@
 ﻿using System.Collections;
-using Imagine.Business.Services;
 using Imagine.DataAccess.Entities;
 using Microsoft.AspNetCore.Mvc;
 using X.PagedList.Extensions;
 using X.PagedList;
+using Imagine.Business.Services.ProductService;
 
 namespace Imagine.Components.Controllers
 {

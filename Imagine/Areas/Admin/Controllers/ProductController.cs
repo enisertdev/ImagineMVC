@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
-using Imagine.Business.Services;
+using Imagine.Business.Services.CategoryService;
+using Imagine.Business.Services.ProductService;
+using Imagine.Business.Services.UserService.UserService;
 using Imagine.DataAccess.Entities;
 using Imagine.DataAccess.Entities.Dtos;
 using Microsoft.AspNetCore.Authorization;
@@ -46,6 +48,7 @@ namespace Imagine.Areas.Admin.Controllers
         public async Task<IActionResult> Create(ProductDtoForInsertion product, IFormFile file)
         {
             ViewBag.Categories = _categoryService.getAllCategories();
+
 
             if (ModelState.IsValid)
             {

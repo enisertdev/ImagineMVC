@@ -1,4 +1,4 @@
-﻿using Imagine.Business.Services;
+﻿using Imagine.Business.Services.ProductService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Imagine.Components

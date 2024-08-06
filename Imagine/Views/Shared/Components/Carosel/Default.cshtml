@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Product>
+
+@foreach (var product in Model)
+{
+    <div class="d-flex mb-3">
+        <a href="@Url.Action("Details", "Home", new { Id = product.Id })" class="me-3">
+            <img src="~/images/@product.ImageUrl" style="min-width: 96px; height: 96px;" class="img-md img-thumbnail" />
+        </a>
+        <div class="info">
+            <a href="@Url.Action("Details", "Home", new { Id = @product.Id })" class="nav-link mb-1">
+                @product.Name <br />
+                @product.Brand
+            </a>
+            <strong class="text-dark"> @product.Price.ToString() TL</strong>
+        </div>
+    </div>
+
+}
