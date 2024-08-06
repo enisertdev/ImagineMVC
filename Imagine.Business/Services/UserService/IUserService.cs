@@ -7,12 +7,12 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imagine.Business.Services
+namespace Imagine.Business.Services.UserService.UserService
 {
     public interface IUserService
     {
         void AddUser(User user);
-        User GetUser(Expression<Func<User,bool>> filter);
+        User GetUser(Expression<Func<User, bool>> filter);
         void UpdateUser(User user);
         IEnumerable<User> GetAllUsers();
         User CheckCredentials(User user);

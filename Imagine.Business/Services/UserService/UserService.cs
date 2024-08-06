@@ -4,7 +4,7 @@ using Imagine.DataAccess.Entities.Dtos;
 using Imagine.DataAccess.Interfaces;
 using System.Linq.Expressions;
 
-namespace Imagine.Business.Services
+namespace Imagine.Business.Services.UserService.UserService
 {
     public class UserService : IUserService
     {

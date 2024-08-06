@@ -21,7 +21,7 @@ namespace Imagine.DataAccess.Repositories
 
         public IEnumerable<Product> GetAllProductsWithCategory()
         {
-            return _context.Products.Include(p => p.Category).ToList();
+            return _context.Products.Include(p => p.Category).ThenInclude(p=>p.Parent).ToList();
         }
 
         public void RemoveById(int id)
@@ -33,11 +33,14 @@ namespace Imagine.DataAccess.Repositories
 
         public Product GetProductWithCategory(Expression<Func<Product, bool>> filter)
         {
-           return _context.Products.Include(p => p.Category).FirstOrDefault(filter);
+           return _context.Products.Include(p => p.Category).ThenInclude(p => p.Parent).FirstOrDefault(filter);
         }
         public IEnumerable<Product> GetProductsWithCategory(Expression<Func<Product, bool>> filter)
         {
-            return _context.Products.Include(p => p.Category).Where(filter).ToList();
+            return _context.Products.Include(p => p.Category)
+                .ThenInclude(p => p.Parent)
+                .Where(filter)
+                .ToList();
         }
     }
 }

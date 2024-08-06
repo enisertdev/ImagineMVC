@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 
-namespace Imagine.Business.Services
+namespace Imagine.Business.Services.EmailService
 {
     public class EmailService : IEmailService
     {
@@ -19,7 +19,7 @@ namespace Imagine.Business.Services
             email = configuration["EmailSettings:Email"];
             password = configuration["EmailSettings:Password"];
         }
-        
+
 
         public async Task SendEmailAsync(string email, string subject, string confirmUrl)
         {
@@ -35,7 +35,7 @@ namespace Imagine.Business.Services
                     mailMessage.Body = CreateHtmlMessage(email, confirmUrl);
                     mailMessage.IsBodyHtml = true;
                     mailMessage.To.Add(email);
-                    
+
 
                     try
                     {

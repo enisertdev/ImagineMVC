@@ -15,6 +15,7 @@ namespace Imagine.DataAccess.Entities.Dtos
         public string? Description { get; set; }
         [Required]
         public decimal Price { get; set; }
+        public string Brand { get; set; }
         public int? Stock { get; set; }
         public string? ImageUrl { get; set; }
         public int? CategoryId { get; set; }

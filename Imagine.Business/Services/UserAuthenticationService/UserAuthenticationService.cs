@@ -10,7 +10,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imagine.Business.Services
+namespace Imagine.Business.Services.UserAuthenticationService
 {
     public class UserAuthenticationService : IUserAuthenticationService
     {

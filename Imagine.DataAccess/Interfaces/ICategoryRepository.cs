@@ -10,6 +10,8 @@ namespace Imagine.DataAccess.Interfaces
 {
     public interface ICategoryRepository : IGenericRepository<Category>
     {
+        void RemoveById(int id);
+        public IEnumerable<Category> GetCategoriesWithParent();
 
     }
 }

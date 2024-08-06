@@ -9,7 +9,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imagine.Business.Services
+namespace Imagine.Business.Services.ProductService
 {
     public class ProductService : IProductService
     {
@@ -30,12 +30,12 @@ namespace Imagine.Business.Services
         public IEnumerable<Product> GetProducts(Expression<Func<Product, bool>> filter) => _productrepository.GetMany(filter);
         public Product GetProductWithCategory(int id)
         {
-           return _productrepository.GetProductWithCategory(p => p.Id == id);
+            return _productrepository.GetProductWithCategory(p => p.Id == id);
         }
 
         public IEnumerable<Product> GetProductsWithCategory(Expression<Func<Product, bool>> filter)
         {
-           return _productrepository.GetProductsWithCategory(filter);
+            return _productrepository.GetProductsWithCategory(filter);
         }
 
         public IEnumerable<Product> GetAllProducts() => _productrepository.GetAll();
@@ -59,8 +59,8 @@ namespace Imagine.Business.Services
 
         public ProductDtoForUpdate GetOneProductForUpdate(int id)
         {
-           var product = _productrepository.Get(p=>p.Id == id);
-           return  _mapper.Map<ProductDtoForUpdate>(product);
+            var product = _productrepository.Get(p => p.Id == id);
+            return _mapper.Map<ProductDtoForUpdate>(product);
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Imagine.DataAccess.Entities;
 using Imagine.DataAccess.Interfaces;
 
-namespace Imagine.Business.Services
+namespace Imagine.Business.Services.CartService
 {
     public class CartService : ICartService
     {
@@ -39,7 +39,7 @@ namespace Imagine.Business.Services
 
         public Cart GetItem(Expression<Func<Cart, bool>> filter)
         {
-           return _cartRepository.Get(filter);
+            return _cartRepository.Get(filter);
         }
 
         public IEnumerable<Cart> GetMany(Expression<Func<Cart, bool>> filter)

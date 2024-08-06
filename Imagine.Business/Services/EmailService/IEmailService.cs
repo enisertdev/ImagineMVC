@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imagine.Business.Services
+namespace Imagine.Business.Services.EmailService
 {
-    public interface IUserAuthenticationService
+    public interface IEmailService
     {
-        Task SignInUserAsync(User user);
-        Task SignOutUserAsync();
+        Task SendEmailAsync(string email, string subject, string message);
     }
 }
