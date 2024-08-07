@@ -56,5 +56,10 @@ namespace Imagine.Business.Services.CartService
         {
             _cartRepository.Update(item);
         }
+
+        public void RemoveItems(IEnumerable<Cart> items)
+        {
+            _cartRepository.RemoveItems(items);
+        }
     }
 }

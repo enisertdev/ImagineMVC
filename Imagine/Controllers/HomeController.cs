@@ -11,12 +11,11 @@ namespace Imagine.Components.Controllers
     {
         private readonly IProductService _productService;
 
-
         public HomeController(IProductService productService)
         {
             _productService = productService;
         }
-        public IActionResult Index(int page = 1, int pageSize = 8)
+        public IActionResult Index(int page = 1, int pageSize = 4)
         {
             IEnumerable<Product> products = _productService.GetAllProductsWithCategory();
             IPagedList<Product> model = products.ToPagedList(page, pageSize);

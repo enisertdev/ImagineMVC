@@ -23,5 +23,11 @@ namespace Imagine.DataAccess.Repositories
         {
             return _context.Carts.Include(c => c.Product).Where(filter).ToList();
         }
+
+        public void RemoveItems(IEnumerable<Cart> items)
+        {
+            _context.Carts.RemoveRange(items);
+            _context.SaveChanges();
+        }
     }
 }

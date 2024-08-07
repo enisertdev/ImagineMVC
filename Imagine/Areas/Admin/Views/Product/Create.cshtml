@@ -8,6 +8,8 @@
     <div class="mb-3">
         <label class="form-label" for="categorySelect">Category</label>
         <select id="categorySelect" class="form-select">
+            <option>Select a category</option>
+
             @foreach (Category category in ViewBag.Categories)
             {
                 <option value="@category.Id">@category.Name</option>
@@ -42,7 +44,7 @@
 
     <div class="mb-3">
         <label class="form-label">ImageUrl</label>
-        <input name="file" type="file" class="form-control">
+        <input required name="file" type="file" class="form-control">
     </div>
     <button type="submit" class="btn btn-primary w-100">Submit</button>
 </form>

@@ -16,5 +16,6 @@ namespace Imagine.Business.Services.CartService
         IEnumerable<Cart> GetMany(Expression<Func<Cart, bool>> filter);
         void RemoveItem(Cart item);
         void UpdateItem(Cart item);
+        void RemoveItems(IEnumerable<Cart> items);
     }
 }

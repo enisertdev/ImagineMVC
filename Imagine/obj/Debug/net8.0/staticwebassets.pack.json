@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Imagine.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Imagine.bundle.scp.css"
+      "PackagePath": "staticwebassets\\Imagine.q03go759dq.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\css\\site.css",
@@ -141,6 +141,10 @@
       "PackagePath": "staticwebassets\\images\\iphone13.webp"
     },
     {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\iphone15.jpeg",
+      "PackagePath": "staticwebassets\\images\\iphone15.jpeg"
+    },
+    {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\keyboard.jpg",
       "PackagePath": "staticwebassets\\images\\keyboard.jpg"
     },
@@ -187,6 +191,10 @@
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\product.jpeg",
       "PackagePath": "staticwebassets\\images\\product.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\redmi.webp",
+      "PackagePath": "staticwebassets\\images\\redmi.webp"
     },
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\refrigerator.jpg",
@@ -479,6 +487,14 @@
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\login\\style.css",
       "PackagePath": "staticwebassets\\login\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\payment\\style.css",
+      "PackagePath": "staticwebassets\\payment\\style.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Imagine.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Imagine.Microsoft.AspNetCore.StaticWebAssets.props",

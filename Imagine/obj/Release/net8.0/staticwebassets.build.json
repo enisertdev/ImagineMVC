@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Abz4Y6PwmbJBHCsT2xG49FnBRgZBvZ2uOwC2eoAu+yM=",
+  "Hash": "iEgNbXH3BNcwfj+ZnlUE10OTcCVWubjVJVfXzp/1jMQ=",
   "Source": "Imagine",
   "BasePath": "_content/Imagine",
   "Mode": "Default",
@@ -549,6 +549,25 @@
       "OriginalItemSpec": "wwwroot\\images\\iphone13.webp"
     },
     {
+      "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\iphone15.jpeg",
+      "SourceId": "Imagine",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\",
+      "BasePath": "_content/Imagine",
+      "RelativePath": "images/iphone15.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\iphone15.jpeg"
+    },
+    {
       "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\keyboard.jpg",
       "SourceId": "Imagine",
       "SourceType": "Discovered",
@@ -775,6 +794,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\product.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\redmi.webp",
+      "SourceId": "Imagine",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\",
+      "BasePath": "_content/Imagine",
+      "RelativePath": "images/redmi.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\redmi.webp"
     },
     {
       "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\refrigerator.jpg",
@@ -2314,6 +2352,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\login\\style.css"
+    },
+    {
+      "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\payment\\style.css",
+      "SourceId": "Imagine",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\",
+      "BasePath": "_content/Imagine",
+      "RelativePath": "payment/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\payment\\style.css"
     }
   ]
 }

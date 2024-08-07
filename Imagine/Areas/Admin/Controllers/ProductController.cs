@@ -42,6 +42,12 @@ namespace Imagine.Areas.Admin.Controllers
             return Json(subCategories);
         }
 
+        [HttpPost]
+        public IActionResult GetSelectedCategory(int categoryId)
+        {
+            return NotFound("test");
+        }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]

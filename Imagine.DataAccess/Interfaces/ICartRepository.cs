@@ -11,5 +11,6 @@ namespace Imagine.DataAccess.Interfaces
     public interface ICartRepository : IGenericRepository<Cart>
     {
         IEnumerable<Cart> GetManyItems(Expression<Func<Cart, bool>> filter);
+        void RemoveItems(IEnumerable<Cart> items);
     }
 }
