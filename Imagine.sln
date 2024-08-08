@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imagine.DataAccess", "Imagi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imagine.Business", "Imagine.Business\Imagine.Business.csproj", "{7E586311-1E21-4956-8933-A9A7BE18E48E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imagine.Api", "test\Imagine.Api.csproj", "{126579FF-A5A3-4367-AFD9-350CCA60E39A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imagine.Api", "Imagine.Api\Imagine.Api.csproj", "{126579FF-A5A3-4367-AFD9-350CCA60E39A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
