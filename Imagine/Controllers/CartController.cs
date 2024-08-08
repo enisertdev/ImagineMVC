@@ -60,7 +60,7 @@ namespace Imagine.Components.Controllers
             if (!User.Identity.IsAuthenticated)
             {
                 TempData["error"] = "You must login to purchase items.";
-                return Redirect($"/Home/Details/{product.Id}");
+                return Redirect($"/Product/Details/{product.Id}");
 
             }
 

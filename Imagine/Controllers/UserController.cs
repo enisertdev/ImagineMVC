@@ -84,7 +84,7 @@ namespace Imagine.Components.Controllers
                 _userService.AddUser(newUser);
 
                 var confirmationLink = Url.Action("ConfirmEmail", "User", 
-                    new { email = newUser.Email }, "https", "cd89-88-230-131-200.ngrok-free.app");
+                    new { email = newUser.Email }, "https", "https://smart-tops-pelican.ngrok-free.app/");
 
                 await _emailService.SendEmailAsync(user.Email, "Welcome", confirmationLink);
 

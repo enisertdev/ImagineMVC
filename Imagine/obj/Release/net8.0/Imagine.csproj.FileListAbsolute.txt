@@ -434,3 +434,9 @@ C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Release\net8.0\AutoMapper.dll
 C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Release\net8.0\X.PagedList.dll
 C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Release\net8.0\X.Web.PagedList.dll
 C:\Users\enise\Desktop\ImagineMVC\Imagine\obj\Release\net8.0\Imagine.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Release\net8.0\System.Net.Http.Formatting.dll
+C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Release\net8.0\Newtonsoft.Json.dll
+C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Release\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Release\net8.0\System.Net.Http.WebRequest.dll
+C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Release\net8.0\System.Net.Http.Extensions.dll
+C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Release\net8.0\System.Net.Http.Primitives.dll
