@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,6 +19,8 @@ namespace Imagine.Business.Services.UserService.UserService
         User CheckCredentials(User user);
         UserDtoForUpdate GetOneUserToUpdate(string email);
         void RemoveUser(User user);
+        User GetUserByEmail(string email);
+
 
     }
 }

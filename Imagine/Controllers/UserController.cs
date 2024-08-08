@@ -40,12 +40,14 @@ namespace Imagine.Components.Controllers
             User user = _mapper.Map<User>(model);
             user = _userService.CheckCredentials(user);
 
+            //if inputs are not match any user
             if (user == null)
             {
                 ModelState.AddModelError("", "Email or Password is wrong");
                 return View(model);
             }
 
+            //if user hasn't confirmed email
             if (!user.IsConfirmed)
             {
                 TempData["Error"] = "You have not confirmed your email.Please check your email before logging in.";
@@ -53,6 +55,7 @@ namespace Imagine.Components.Controllers
             }
 
             await _userAuthenticationService.SignInUserAsync(user);
+
             return RedirectToAction("Index", "Home");
         }
 
@@ -80,7 +83,9 @@ namespace Imagine.Components.Controllers
                 User newUser = _mapper.Map<User>(user);
                 _userService.AddUser(newUser);
 
-                var confirmationLink = Url.Action("ConfirmEmail", "User", new { email = newUser.Email }, "https", "cd89-88-230-131-200.ngrok-free.app");
+                var confirmationLink = Url.Action("ConfirmEmail", "User", 
+                    new { email = newUser.Email }, "https", "cd89-88-230-131-200.ngrok-free.app");
+
                 await _emailService.SendEmailAsync(user.Email, "Welcome", confirmationLink);
 
                 TempData["Message"] = "A confirmation email has been sent. Please confirm your email address before logging in.";
@@ -131,11 +136,13 @@ namespace Imagine.Components.Controllers
 
         public IActionResult Profile(UserDtoForUpdate user)
         {
-            var email = User.FindFirstValue(ClaimTypes.Email);
-            User existingUser = _userService.GetUser(u => u.Email == email);
+            User existingUser = _userService.GetUserByEmail(User.FindFirstValue(ClaimTypes.Email));
             existingUser = _mapper.Map(user, existingUser);
+
             _userService.UpdateUser(existingUser);
+
             TempData["Success"] = "Profile succesfully updated.";
+
             return RedirectToAction("Profile");
         }
     }

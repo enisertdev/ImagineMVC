@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imagine.DataAccess", "Imagi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imagine.Business", "Imagine.Business\Imagine.Business.csproj", "{7E586311-1E21-4956-8933-A9A7BE18E48E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{126579FF-A5A3-4367-AFD9-350CCA60E39A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7E586311-1E21-4956-8933-A9A7BE18E48E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E586311-1E21-4956-8933-A9A7BE18E48E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E586311-1E21-4956-8933-A9A7BE18E48E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{126579FF-A5A3-4367-AFD9-350CCA60E39A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{126579FF-A5A3-4367-AFD9-350CCA60E39A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{126579FF-A5A3-4367-AFD9-350CCA60E39A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{126579FF-A5A3-4367-AFD9-350CCA60E39A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

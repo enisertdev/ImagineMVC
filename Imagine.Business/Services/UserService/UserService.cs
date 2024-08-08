@@ -52,5 +52,10 @@ namespace Imagine.Business.Services.UserService.UserService
         {
             _userRepository.Remove(user);
         }
+
+        public User GetUserByEmail(string email)
+        {
+           return _userRepository.Get(u => u.Email == email);
+        }
     }
 }

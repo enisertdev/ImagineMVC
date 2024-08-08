@@ -22,7 +22,7 @@ namespace Imagine.Controllers
 
         public IActionResult Index()
         {
-            User user = _userService.GetUser(i => i.Email == User.FindFirstValue(ClaimTypes.Email));
+            User user = _userService.GetUserByEmail(User.FindFirstValue(ClaimTypes.Email));
             IEnumerable<Cart> items = _cartService.GetMany(i => i.UserId == user.Id);
             if (!items.Any())
             {
@@ -43,7 +43,7 @@ namespace Imagine.Controllers
         [HttpPost]
         public IActionResult ConfirmPayment()
         {
-            User user = _userService.GetUser(i => i.Email == User.FindFirstValue(ClaimTypes.Email));
+            User user = _userService.GetUserByEmail(User.FindFirstValue(ClaimTypes.Email));
             IEnumerable<Cart> items = _cartService.GetMany(i => i.UserId == user.Id);
             if (!items.Any())
             {
@@ -60,7 +60,7 @@ namespace Imagine.Controllers
 
         public IActionResult Success()
         {
-            User user = _userService.GetUser(i => i.Email == User.FindFirstValue(ClaimTypes.Email));
+            User user = _userService.GetUserByEmail(User.FindFirstValue(ClaimTypes.Email));
             IEnumerable<Cart> items = _cartService.GetMany(i => i.UserId == user.Id);
             if (!items.Any())
             {

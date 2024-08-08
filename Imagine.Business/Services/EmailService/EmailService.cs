@@ -50,6 +50,8 @@ namespace Imagine.Business.Services.EmailService
             }
         }
 
+        
+
         public string CreateHtmlMessage(string email, string confirmUrl)
         {
             return $@"

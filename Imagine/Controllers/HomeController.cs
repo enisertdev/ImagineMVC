@@ -22,17 +22,5 @@ namespace Imagine.Components.Controllers
             ViewBag.Products = products;
             return View(model);
         }
-
-        public IActionResult Details(int id)
-        {
-            Product product = _productService.GetProductWithCategory(id);
-            if (product == null)
-            {
-                return NotFound("Null");
-            }
-
-            return View(product);
-        }
-
     }
 }

@@ -16,6 +16,17 @@ namespace Imagine.Components.Controllers
             _productService = productService;
         }
 
+        public IActionResult Details(int id)
+        {
+            Product product = _productService.GetProductWithCategory(id);
+            if (product == null)
+            {
+                return NotFound("Null");
+            }
+
+            return View(product);
+        }
+
         public IActionResult ProductsByCategory(int categoryId,int page = 1, int pageSize = 4)
         {
 

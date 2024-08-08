@@ -24,7 +24,7 @@ namespace Imagine.Components.Controllers
 
         public IActionResult Cart()
         {
-            User user = _userService.GetUser(u => u.Email == User.FindFirstValue(ClaimTypes.Email));
+            User user = _userService.GetUserByEmail(User.FindFirstValue(ClaimTypes.Email));
             if (user == null)
             {
                 return RedirectToAction("Login", "User");
@@ -64,7 +64,7 @@ namespace Imagine.Components.Controllers
 
             }
 
-            User user = _userService.GetUser(u => u.Email == User.FindFirstValue(ClaimTypes.Email));
+            User user = _userService.GetUserByEmail(User.FindFirstValue(ClaimTypes.Email));
             _cartService.AddItem(getProduct, user.Id, Quantity);
             TempData["success"] = "Item has been added to your cart.";
             return RedirectToAction("Cart", "Cart");
