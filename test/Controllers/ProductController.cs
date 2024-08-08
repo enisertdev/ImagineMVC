@@ -1,9 +1,7 @@
 ﻿using Imagine.Business.Services.ProductService;
-using Imagine.DataAccess.Entities;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace test.Controllers
+namespace Imagine.Api.Controllers
 {
     [Route("api/products")]
     [ApiController]
@@ -16,7 +14,8 @@ namespace test.Controllers
             _productService = productService;
         }
 
-        [HttpGet]
+
+        [HttpGet("all")]
         public IActionResult GetAllProducts()
         { 
             var products = _productService.GetAllProductsWithCategory(); 

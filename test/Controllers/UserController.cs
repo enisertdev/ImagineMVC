@@ -1,10 +1,8 @@
 ﻿using Imagine.Business.Services.UserService.UserService;
 using Imagine.DataAccess.Entities;
-using Imagine.Database;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace test.Controllers
+namespace Imagine.Api.Controllers
 {
     [Route("api/users")]
     [ApiController]
