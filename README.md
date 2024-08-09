@@ -11,3 +11,7 @@ To try <a href ="https://smart-tops-pelican.ngrok-free.app/">here</a>
 email : admin@admin.com  
 
 password : admin
+
+<h2 >Database Diagram</h2>
+
+![image](https://github.com/user-attachments/assets/bfe0b6c5-c57c-45ce-96e0-2e6e3048c2cf)
