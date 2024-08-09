@@ -15,12 +15,18 @@ namespace Imagine.Api.Controllers
         }
 
 
-        [HttpGet("all")]
+        [HttpGet]
         public IActionResult GetAllProducts()
         { 
             var products = _productService.GetAllProductsWithCategory(); 
 
             return Ok(products);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetProduct(int id)
+        {
+            return Ok(_productService.GetProductWithCategory(id));
         }
     }
 }

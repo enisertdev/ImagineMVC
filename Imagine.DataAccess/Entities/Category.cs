@@ -14,8 +14,7 @@ namespace Imagine.DataAccess.Entities
         public string Name { get; set; }
         public int? ParentId { get; set; }
         public virtual Category? Parent { get; set; }
-        public virtual ICollection<Category>? Children { get; set; }
-
+    
 
     }
 }

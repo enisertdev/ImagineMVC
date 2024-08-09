@@ -1,4 +1,5 @@
 
+using Imagine.Business.Services.CategoryService;
 using Imagine.Business.Services.ProductService;
 using Imagine.Business.Services.UserService.UserService;
 using Imagine.DataAccess.Interfaces;
@@ -24,6 +25,8 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddAutoMapper(typeof(Program));
 
 

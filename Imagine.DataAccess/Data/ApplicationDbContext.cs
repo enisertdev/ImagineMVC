@@ -10,6 +10,8 @@ namespace Imagine.Database
         public Microsoft.EntityFrameworkCore.DbSet<Category> Categories { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Product> Products { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Cart> Carts { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
@@ -44,10 +46,7 @@ namespace Imagine.Database
             {
                 entity.HasKey(c => c.Id);
 
-                entity.HasOne(c => c.Parent)
-                    .WithMany(c => c.Children)
-                    .HasForeignKey(c => c.ParentId)
-                    .OnDelete(DeleteBehavior.Restrict);
+                entity.HasOne(c => c.Parent);
 
             });
 

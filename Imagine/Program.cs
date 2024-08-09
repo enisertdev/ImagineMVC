@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 using Imagine.Business.Services.CartService;
 using Imagine.Business.Services.CategoryService;
 using Imagine.Business.Services.EmailService;
+using Imagine.Business.Services.OrderItemService;
+using Imagine.Business.Services.OrderService;
 using Imagine.Business.Services.ProductService;
 using Imagine.Business.Services.UserAuthenticationService;
 using Imagine.Business.Services.UserService.UserService;
@@ -32,6 +34,10 @@ builder.Services.AddScoped<IUserAuthenticationService, UserAuthenticationService
 builder.Services.AddAutoMapper(typeof(UserProfile), typeof(ProductProfile));
 builder.Services.AddScoped<ICartRepository, CartRepository>();
 builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IOrderItemRepository, OrderItemRepository>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IOrderItemService, OrderItemService>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
 
