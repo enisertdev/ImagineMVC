@@ -12,8 +12,9 @@ namespace Imagine.Business.Services.CategoryService
     {
         IEnumerable<Category> getAllCategories();
         void CreateCategory(Category category);
-        void RemoveCategory(int id);
-        public IEnumerable<Category> GetCategoriesWithParent();
+        void RemoveCategory(int id); 
+        IEnumerable<Category> GetCategoriesWithParent();
+        IEnumerable<Category> GetCategories();
 
     }
 }

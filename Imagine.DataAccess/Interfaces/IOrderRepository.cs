@@ -6,5 +6,7 @@ namespace Imagine.DataAccess.Interfaces
     public interface IOrderRepository : IGenericRepository<Order>
     {
         IEnumerable<Order> GetOrders(Expression<Func<Order,bool>> filter);
+        IEnumerable<Order> GetAllOrders();
+        void RemoveOrder(Order order);
     }
 }

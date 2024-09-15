@@ -12,5 +12,7 @@ namespace Imagine.Business.Services.OrderItemService
     {
         void Create(OrderItem  item);
         IEnumerable<OrderItem> GetOrders(Expression<Func<OrderItem, bool>> filter);
+        OrderItem GetOneOrderItem(int id);
+       void RemoveOrderItem(int id);
     }
 }

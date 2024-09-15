@@ -23,5 +23,16 @@ namespace Imagine.DataAccess.Repositories
         {
             return _context.Orders.Include(o => o.User).Where(filter).ToList();
         }
+
+        public IEnumerable<Order> GetAllOrders()
+        {
+            return _context.Orders.Include(o => o.User).ToList();
+        }
+
+        public void RemoveOrder(Order order)
+        {
+            _context.Orders.Remove(order);
+            _context.SaveChanges();
+        }
     }
 }

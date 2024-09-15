@@ -30,7 +30,7 @@ namespace Imagine.Areas.Admin.Controllers
 
         public IActionResult Create()
         {
-            ViewBag.Categories = _categoryService.getAllCategories();
+            ViewBag.Categories = _categoryService.GetCategories();
             return View();
         }
         public async Task<JsonResult> GetSubCategories(int categoryId)
@@ -47,7 +47,6 @@ namespace Imagine.Areas.Admin.Controllers
         {
             return NotFound("test");
         }
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]

@@ -20,6 +20,7 @@ namespace Imagine.Business.Services.UserService.UserService
         UserDtoForUpdate GetOneUserToUpdate(string email);
         void RemoveUser(User user);
         User GetUserByEmail(string email);
+        Task<(bool success, string errorMessage, string confirmUrl)> RegisterUserAsync(UserDtoForRegister user);
 
 
     }

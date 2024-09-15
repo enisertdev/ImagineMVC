@@ -36,5 +36,10 @@ namespace Imagine.Business.Services.CategoryService
         {
            return _categoryRepository.GetCategoriesWithParent();
         }
+
+        public IEnumerable<Category> GetCategories()
+        {
+            return _categoryRepository.GetMany(c => c.ParentId == null);
+        }
     }
 }

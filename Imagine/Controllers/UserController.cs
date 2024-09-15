@@ -72,21 +72,17 @@ namespace Imagine.Components.Controllers
         {
             if (ModelState.IsValid)
             {
-                User checkExistingUser = _userService.GetUser(u => u.Email == user.Email);
-
-                if (checkExistingUser != null)
+                var result =await _userService.RegisterUserAsync(user);
+                if (!result.success)
                 {
-                    ViewData["Exists"] = "An account with this email already exists.";
+                    TempData["Error"] = result.errorMessage;
                     return View(user);
                 }
 
-                User newUser = _mapper.Map<User>(user);
-                _userService.AddUser(newUser);
-
-                var confirmationLink = Url.Action("ConfirmEmail", "User", 
-                    new { email = newUser.Email }, "https", "smart-tops-pelican.ngrok-free.app");
-
-                await _emailService.SendEmailAsync(user.Email, "Welcome", confirmationLink);
+                await _emailService.SendEmailAsync(
+                    email: user.Email,
+                    subject: "Welcome",
+                    confirmUrl: Url.Action("ConfirmEmail", "User", new { email = user.Email }, "https", "smart-tops-pelican.ngrok-free.app"));
 
                 TempData["Message"] = "A confirmation email has been sent. Please confirm your email address before logging in.";
 
@@ -98,6 +94,7 @@ namespace Imagine.Components.Controllers
         public async Task<IActionResult> Logout()
         {
             await _userAuthenticationService.SignOutUserAsync();
+
             return RedirectToAction("Index", "Home");
         }
 

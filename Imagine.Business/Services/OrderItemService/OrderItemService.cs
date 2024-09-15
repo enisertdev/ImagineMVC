@@ -23,9 +23,23 @@ namespace Imagine.Business.Services.OrderItemService
             _orderItemRepository.Add(item);
         }
 
+        public OrderItem GetOneOrderItem(int id)
+        {
+            return _orderItemRepository.GetOneOrderItem(id);
+        }
+
         public IEnumerable<OrderItem> GetOrders(Expression<Func<OrderItem, bool>> filter)
         {
            return _orderItemRepository.GetOrders(filter);
+        }
+
+        public void RemoveOrderItem(int id)
+        {
+            OrderItem getOrderItem = _orderItemRepository.GetOneOrderItem(id);
+            if (getOrderItem != null)
+            {
+                _orderItemRepository.Remove(getOrderItem);
+            }
         }
     }
 }

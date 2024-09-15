@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Imagine.Business.Services.CategoryService;
+using Imagine.Business.Services.OrderService;
 using Imagine.Business.Services.ProductService;
 using Imagine.Business.Services.UserService.UserService;
 using Imagine.DataAccess.Entities;
@@ -18,13 +19,15 @@ namespace Imagine.Areas.Admin.Controllers
         private readonly IUserService _userService;
         private readonly IMapper _mapper;
         private readonly ICategoryService _categoryService;
+        private readonly IOrderService _orderService;
 
-        public DashboardController(IProductService productService, IUserService userService, IMapper mapper, ICategoryService categoryService)
+        public DashboardController(IProductService productService, IUserService userService, IMapper mapper, ICategoryService categoryService, IOrderService orderService)
         {
             _productService = productService;
             _userService = userService;
             _mapper = mapper;
             _categoryService = categoryService;
+            _orderService = orderService;
         }
 
         public IActionResult Index()
@@ -34,6 +37,7 @@ namespace Imagine.Areas.Admin.Controllers
             ViewBag.productCount = _productService.GetAllProducts().Count();
             ViewBag.userCount = _userService.GetAllUsers().Count();
             ViewBag.categoryCount = _categoryService.getAllCategories().Count();
+            ViewBag.orderCount = _orderService.GetAllOrders().Count();
 
             return View(products);
         }
@@ -46,6 +50,8 @@ namespace Imagine.Areas.Admin.Controllers
       
         public IActionResult ListUsers()
         {
+            if(User.FindFirstValue(ClaimTypes.Email) == "admin@admin.com")
+            return NotFound("you cannot view users.");
             return View(_userService.GetAllUsers());
         }
         public IActionResult EditUser(int id)

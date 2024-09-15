@@ -32,5 +32,19 @@ namespace Imagine.Business.Services.OrderService
         {
            return _orderRepository.Get(filter);
         }
+
+        public IEnumerable<Order> GetAllOrders()
+        {
+            return _orderRepository.GetAllOrders();
+        }
+
+        public void UpdateOrder(Order order)
+        {
+            _orderRepository.Update(order);
+        }
+        public void RemoveOrder(Order order)
+        {
+            _orderRepository.RemoveOrder(order);
+        }
     }
 }

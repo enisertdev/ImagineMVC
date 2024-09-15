@@ -18,7 +18,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block text-start">
-                    <a asp-area="" asp-action="Index" asp-controller="Home" class="navbar-brand">
+                        <a class="navbar-brand"  asp-area="" asp-action="Index" asp-controller="Home">
                         <img src="~/images/logo.jpg" width="130" height="85"/>
                     </a>
                 </div>
@@ -60,9 +60,9 @@
                                     {
                                         <li><a class="dropdown-item" asp-area="Admin" asp-controller="Dashboard" asp-action="Index"><i class="fa-solid fa-lock"></i> Admin</a></li>
                                     }
-                                    <li><a class="dropdown-item" asp-controller="Order" asp-action="Index"><i class="fa fa-list"></i> My Orders</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="fa fa-heart"></i> My Wishlist</a></li>
-                                    <li><a class="dropdown-item" asp-controller="Cart" asp-action="Cart"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Order" asp-action="Index"><i class="fa fa-list"></i> My Orders</a></li>
+                                        <li><a class="dropdown-item"  href="#"><i class="fa fa-heart"></i> My Wishlist</a></li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Cart" asp-action="Cart"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
                                     <li><a class="dropdown-item" asp-area="" asp-controller="User" asp-action="Logout"><i class="fa fa-sign-out"></i> Logout</a></li>
                                 </ul>
 

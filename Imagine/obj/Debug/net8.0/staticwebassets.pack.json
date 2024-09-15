@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Imagine.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Imagine.bundle.scp.css"
+      "PackagePath": "staticwebassets\\Imagine.q03go759dq.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\css\\site.css",
@@ -21,12 +21,24 @@
       "PackagePath": "staticwebassets\\images\\1.jpg"
     },
     {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\17250595374468569902353242345086.jpg",
+      "PackagePath": "staticwebassets\\images\\17250595374468569902353242345086.jpg"
+    },
+    {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\2.jpg",
       "PackagePath": "staticwebassets\\images\\2.jpg"
     },
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\3d_printer.jpg",
       "PackagePath": "staticwebassets\\images\\3d_printer.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\Donald_Trump_official_portrait.jpg.webp",
+      "PackagePath": "staticwebassets\\images\\Donald_Trump_official_portrait.jpg.webp"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\IMG_20240815_223336.jpg",
+      "PackagePath": "staticwebassets\\images\\IMG_20240815_223336.jpg"
     },
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\Screenshot 2024-03-01 010157.png",
@@ -61,6 +73,10 @@
       "PackagePath": "staticwebassets\\images\\Screenshot 2024-07-13 134326.png"
     },
     {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\Screenshot_2024-09-07-09-48-39-95.jpg",
+      "PackagePath": "staticwebassets\\images\\Screenshot_2024-09-07-09-48-39-95.jpg"
+    },
+    {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\action_camera.jpg",
       "PackagePath": "staticwebassets\\images\\action_camera.jpg"
     },
@@ -71,6 +87,10 @@
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\air_purifier.jpg",
       "PackagePath": "staticwebassets\\images\\air_purifier.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\aircon.webp",
+      "PackagePath": "staticwebassets\\images\\aircon.webp"
     },
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\blender.jpg",
@@ -147,6 +167,10 @@
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\keyboard.jpg",
       "PackagePath": "staticwebassets\\images\\keyboard.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\klima.webp",
+      "PackagePath": "staticwebassets\\images\\klima.webp"
     },
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\laptop.jpg",
@@ -227,6 +251,10 @@
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\tablet.jpg",
       "PackagePath": "staticwebassets\\images\\tablet.jpg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\tuf.webp",
+      "PackagePath": "staticwebassets\\images\\tuf.webp"
     },
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\tv.jpg",
@@ -485,12 +513,20 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\loaderio-c723a7b9712514660bb878226001c52b.txt",
+      "PackagePath": "staticwebassets\\loaderio-c723a7b9712514660bb878226001c52b.txt"
+    },
+    {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\login\\style.css",
       "PackagePath": "staticwebassets\\login\\style.css"
     },
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\payment\\style.css",
       "PackagePath": "staticwebassets\\payment\\style.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Imagine.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Imagine.Microsoft.AspNetCore.StaticWebAssets.props",

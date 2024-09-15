@@ -26,5 +26,10 @@ namespace Imagine.DataAccess.Repositories
                 .Where(filter)
                 .ToList();
         }
+
+        public OrderItem GetOneOrderItem(int id)
+        {
+            return _context.OrderItems.FirstOrDefault(o=>o.Id == id);
+        }
     }
 }

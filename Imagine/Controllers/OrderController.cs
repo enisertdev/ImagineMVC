@@ -28,18 +28,36 @@ namespace Imagine.Controllers
             {
                 return Unauthorized();
             }
-            IEnumerable<Order> getActiveOrders = _orderService.GetOrders(u => u.UserId == user.Id && u.OrderStatus == "Pending");
+            IEnumerable<OrderItem> getActiveOrders = _orderItemService.GetOrders(o=> o.Order.UserId == user.Id);
             if (getActiveOrders.Count() == 0)
             {
                 ViewData["noActiveOrders"] = "You dont have any active orders";
                 return View();
             }
             IEnumerable<OrderItem> orderItems = new List<OrderItem>();
-            foreach (var order in getActiveOrders)
+          /*  foreach (var order in getActiveOrders)
             {
-                orderItems = _orderItemService.GetOrders(u => u.Order.UserId == order.UserId);
+                orderItems = _orderItemService.GetOrders(u => u.Order.UserId == order);
             }
-            return View(orderItems);
+          */
+            return View(getActiveOrders);
         }
+
+        public IActionResult CancelOrder(int id)
+        {
+            OrderItem orderItem = _orderItemService.GetOneOrderItem(id);
+            Order getOrder = _orderService.GetOneOrder(o => o.Id == orderItem.OrderId);
+
+            if (orderItem == null)
+            {
+                return NotFound();
+            }
+            _orderItemService.RemoveOrderItem(id);
+            getOrder.OrderStatus = "Cancelled";
+            _orderService.UpdateOrder(getOrder);
+            return RedirectToAction("Index");
+            
+        }
+
     }
 }

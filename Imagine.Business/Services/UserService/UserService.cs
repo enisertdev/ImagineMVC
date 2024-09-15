@@ -3,6 +3,8 @@ using Imagine.DataAccess.Entities;
 using Imagine.DataAccess.Entities.Dtos;
 using Imagine.DataAccess.Interfaces;
 using System.Linq.Expressions;
+using Imagine.Business.Services.EmailService;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 
 namespace Imagine.Business.Services.UserService.UserService
 {
@@ -10,11 +12,13 @@ namespace Imagine.Business.Services.UserService.UserService
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
+        private readonly IEmailService _emailService;
 
-        public UserService(IUserRepository userRepository, IMapper mapper)
+        public UserService(IUserRepository userRepository, IMapper mapper, IEmailService emailService)
         {
             _userRepository = userRepository;
             _mapper = mapper;
+            _emailService = emailService;
         }
 
         public void AddUser(User user)
@@ -55,7 +59,26 @@ namespace Imagine.Business.Services.UserService.UserService
 
         public User GetUserByEmail(string email)
         {
-           return _userRepository.Get(u => u.Email == email);
+            return _userRepository.Get(u => u.Email == email);
+        }
+
+        public async Task<(bool success, string errorMessage, string confirmUrl)> RegisterUserAsync(UserDtoForRegister user)
+        {
+            User checkExistingUser = GetUser(u => u.Email == user.Email);
+            if (checkExistingUser != null)
+            {
+                return (false, "An account with this email alread   y exists.", null);
+            }
+            User newUser = _mapper.Map<User>(user);
+            AddUser(newUser);
+            var confirmUrl = GetConfirmEmail(newUser.Email);
+            return (true, "A confirmation email has been sent. Please confirm your email address before logging in.",confirmUrl);
+
+        }
+
+        public string GetConfirmEmail(string email)
+        {
+            return $"https://smart-tops-pelican.ngrok-free.app/User/ConfirmEmail?email={email}";
         }
     }
 }

@@ -1,0 +1,15 @@
+﻿@model Order
+
+<form method="post" class="p-4 bg-white border rounded">
+    <select name="orderStatus" id="orderStatus">
+        @foreach (var status in ViewBag.orderstatus)
+        {
+            <option value="@status.Name">@status.Name</option>
+        }
+    </select>
+
+
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit" class="btn btn-success w-100">Submit</button>
+</form>

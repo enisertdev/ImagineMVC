@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Order>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Order Status</th>
+            <th scope="col">Total Amount</th>
+            <th scope="col">Tracking Number</th>
+            <th scope="col">User's Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Order orders in Model)
+        {
+            <tr>
+                <th scope="row">@orders.Id</th>
+                <td>@orders.OrderStatus</td>
+                <td>@orders.TotalAmount</td>
+                <td>@orders.TrackingNumber</td>
+                <td>@orders.User.Email</td>
+                <td><a asp-action ="EditOrderStatus" asp-route-id ="@orders.Id">Edit OrderStatus</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
