@@ -1,0 +1,59 @@
+﻿@model OrderItem
+
+@{
+    ViewData["Title"] = "Order Item Details";
+}
+
+<div class="container mt-4">
+
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h3 class="card-title">Order Item Information</h3>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-4">Order ID:</dt>
+                <dd class="col-sm-8">@Model.OrderId</dd>
+
+                <dt class="col-sm-4">Product ID:</dt>
+                <dd class="col-sm-8">@Model.ProductId</dd>
+                
+                <dt class="col-sm-4">Tracking Number:</dt>
+                <dd class="col-sm-8">@Model.Order.TrackingNumber</dd>
+
+                <dt class="col-sm-4">Quantity:</dt>
+                <dd class="col-sm-8">@Model.Quantity</dd>
+
+                <dt class="col-sm-4">Unit Price:</dt>
+                <dd class="col-sm-8">@Model.UnitPrice.ToString("C")</dd>
+
+                <dt class="col-sm-4">Total Price:</dt>
+                <dd class="col-sm-8">@Model.TotalPrice.ToString("C")</dd>
+
+                <dt class="col-sm-4">Order Status:</dt>
+                <dd class="col-sm-8">
+                    @if (Model.Order.OrderStatus == "Pending")
+                    {
+                        <span class="badge bg-warning text-dark">Pending</span>
+                    }
+                    else if (Model.Order.OrderStatus == "Processing")
+                    {
+                        <span class="badge bg-primary text-light">Processing</span>
+                    }
+                    else if (Model.Order.OrderStatus == "Shipped")
+                    {
+                        <span class="badge bg-info text-dark">Shipped</span>
+                    }
+                    else if (Model.Order.OrderStatus == "Delivered")
+                    {
+                        <span class="badge bg-success text-light">Delivered</span>
+                    }
+                    else if (Model.Order.OrderStatus == "Cancelled")
+                    {
+                        <span class="badge bg-danger text-light">Cancelled</span>
+                    }
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>

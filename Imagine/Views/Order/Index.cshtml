@@ -20,8 +20,8 @@ else
                     <th style="width:10%">Quantity</th>
                     <th style="width:10%">Tracking Number</th>
                     <th style="width:16%">Order Status</th>
-                    <th style="width:16%">Order Status</th>
-                    <th style="width:16%">Order Status</th>
+                    <th style="width:16%">Order Details</th>
+                    <th style="width:16%">Cancel Order</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -50,6 +50,7 @@ else
                         <td>
                             <input class = "form-control form-control-sm text-center" value="@item.Order.OrderStatus" disabled>
                         </td>
+                        <td><a asp-action="OrderDetails" asp-controller="Order" asp-route-id="@item.Id">Order Details</a></td>
                         <td><a asp-action="CancelOrder" asp-controller="Order" asp-route-id="@item.Id">Cancel Order</a></td>
                     </tr>
                 }

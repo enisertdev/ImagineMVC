@@ -29,7 +29,7 @@ namespace Imagine.DataAccess.Repositories
 
         public OrderItem GetOneOrderItem(int id)
         {
-            return _context.OrderItems.FirstOrDefault(o=>o.Id == id);
+            return _context.OrderItems.Include(o=>o.Order).FirstOrDefault(o=>o.Id == id);
         }
     }
 }

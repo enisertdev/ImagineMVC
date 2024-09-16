@@ -10,5 +10,7 @@ namespace Imagine.Business.Services.EmailService
     public interface IEmailService
     {
         Task SendEmailAsync(string email, string subject, string confirmUrl);
+        Task SendOrderEmailAsync(string email, string subject, Order order, int id);
+        Task SendOrderCancelledEmailAsync(string email, string subject, Order order, int id);
     }
 }
