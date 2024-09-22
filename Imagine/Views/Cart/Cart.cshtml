@@ -2,95 +2,95 @@
 
 <section class="pt-5 pb-5">
     <div class="container">
-    @if (Model == null || !Model.Any())
-    {
-        <h3 class="display-5 mb-2 text-center">Your cart is currently empty</h3>
-        <p class="mb-5 text-center">
-                You can press <a asp-controller="Home" asp-action="Index">this</a> button to start filling your cart.
-        </p>
-    }
-    else
-    {
-        @if (TempData["success"] != null)
+        @if (Model == null || !Model.Any())
         {
-            <div class="alert alert-success" role="alert">
-                <h4 class="alert-heading">Success</h4>
-                <p>@TempData["success"]</p>
-            </div>
+            <h3 class="display-5 mb-2 text-center">Your cart is currently empty</h3>
+            <p class="mb-5 text-center">
+                You can press <a asp-controller="Home" asp-action="Index">this</a> button to start filling your cart.
+            </p>
         }
-        <div class="row w-100">
-            <div class="col-lg-12 col-md-12 col-12">
-                <h3 class="display-5 mb-2 text-center">Shopping Cart</h3>
-                <p class="mb-5 text-center">
-                    <i class="text-info font-weight-bold">@ViewData["items"]</i> items in your cart
-                </p>
-                <table id="shoppingCart" class="table table-condensed table-responsive">
-                    <thead>
-                    <tr>
-                        <th style="width:60%">Product</th>
-                        <th style="width:12%">Price</th>
-                        <th style="width:10%">Quantity</th>
-                        <th style="width:16%"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach (var item in Model)
-                    {
+        else
+        {
+            @if (TempData["success"] != null)
+            {
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading">Success</h4>
+                    <p>@TempData["success"]</p>
+                </div>
+            }
+            <div class="row w-100">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <h3 class="display-5 mb-2 text-center">Shopping Cart</h3>
+                    <p class="mb-5 text-center">
+                        <i class="text-info font-weight-bold">@ViewData["items"]</i> items in your cart
+                    </p>
+                    <table id="shoppingCart" class="table table-condensed table-responsive">
+                        <thead>
                         <tr>
-
-                            <td>
-                                <div class="row">
-                                    <div class="col-md-3 text-left">
-                                        <img src="~/images/@item.Product.ImageUrl" alt="" class="img-fluid d-none d-md-block rounded mb-2 shadow ">
-                                    </div>
-                                    <div class="col-md-9 text-left mt-sm-2">
-                                                <h6>@item.Product.Name</h6>
-                                                <p class="font-weight-light"></p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>@item.Product.Price.ToString("c")</td>
-                            <td>
-                                        <input type="number" class="form-control form-control-sm text-center" value="@item.Quantity" disabled>
-                            </td>
-                            <td>
-                                <div class="text-right">
-                                    <form method="post" asp-controller="Cart" asp-action="IncreaseItemQuantity">
-                                        <input type="hidden" name="productId" value="@item.ProductId" />
-                                        <button type="submit" class="btn btn-white border-secondary bg-white btn-md mb-2">
-                                            <i class="fas fa-sync"></i>
-                                        </button>
-                                    </form>
-                                   
-                                    <form method="post" asp-controller="Cart" asp-action="RemoveFromCart">
-                                        <input type="hidden" name="productId" value="@item.ProductId"/>
-                                        <button type="submit" class="btn btn-white border-secondary bg-white btn-md mb-2">
-                                            <a><i class="fas fa-trash"></i></a>
-                                        </button>
-                                    </form>
-                                </div>
-                            </td>
+                            <th style="width:60%">Product</th>
+                            <th style="width:12%">Price</th>
+                            <th style="width:10%">Quantity</th>
+                            <th style="width:16%"></th>
                         </tr>
-                    }
+                        </thead>
+                        <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
 
-                    </tbody>
-                </table>
-                <div class="float-right text-right">
-                    <h4>Subtotal:</h4>
-                    <h1>@ViewData["total"]</h1>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-md-3 text-left">
+                                            <img src="~/images/@item.Product.ImageUrl" alt="" class="img-fluid d-none d-md-block rounded mb-2 shadow ">
+                                        </div>
+                                        <div class="col-md-9 text-left mt-sm-2">
+                                            <h6>@item.Product.Name</h6>
+                                            <p class="font-weight-light"></p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>@item.Product.Price.ToString("c")</td>
+                                <td>
+                                    <input type="number" class="form-control form-control-sm text-center" value="@item.Quantity" disabled>
+                                </td>
+                                <td>
+                                    <div class="text-right">
+                                        <form method="post" asp-controller="Cart" asp-action="IncreaseItemQuantity">
+                                            <input type="hidden" name="productId" value="@item.ProductId" />
+                                            <button type="submit" class="btn btn-white border-secondary bg-white btn-md mb-2">
+                                                <i class="fas fa-sync"></i>
+                                            </button>
+                                        </form>
+                                   
+                                        <form method="post" asp-controller="Cart" asp-action="RemoveFromCart">
+                                            <input type="hidden" name="productId" value="@item.ProductId"/>
+                                            <button type="submit" class="btn btn-white border-secondary bg-white btn-md mb-2">
+                                                <a><i class="fas fa-trash"></i></a>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+
+                        </tbody>
+                    </table>
+                    <div class="float-right text-right">
+                        <h4>Subtotal:</h4>
+                        <h1>@ViewData["total"]</h1>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row mt-4 d-flex align-items-center">
-            <div class="col-sm-6 order-md-2 text-right">
-                <a asp-controller="Payment" asp-action="Index" class="btn btn-primary mb-4 btn-lg pl-5 pr-5">Checkout</a>
+            <div class="row mt-4 d-flex align-items-center">
+                <div class="col-sm-6 order-md-2 text-right">
+                    <a asp-controller="Payment" asp-action="Index" class="btn btn-primary mb-4 btn-lg pl-5 pr-5">Checkout</a>
+                </div>
+                <div class="col-sm-6 mb-3 mb-m-1 order-md-1 text-md-left">
+                    <a asp-controller="Home" asp-action="Index">
+                        <i class="fas fa-arrow-left mr-2"></i> Continue Shopping
+                    </a>
+                </div>
             </div>
-            <div class="col-sm-6 mb-3 mb-m-1 order-md-1 text-md-left">
-                <a asp-controller="Home" asp-action="Index">
-                    <i class="fas fa-arrow-left mr-2"></i> Continue Shopping
-                </a>
-            </div>
-        </div>
-    }
+        }
     </div>
 </section>

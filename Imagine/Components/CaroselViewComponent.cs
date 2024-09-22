@@ -15,7 +15,8 @@ namespace Imagine.Components
         public IViewComponentResult Invoke()
         {
             var products = new List<Product>();
-            var allproducts = _productService.GetAllProducts();
+            var allproducts = _productService.GetAllProducts().ToList();
+            Product getHighestIdProduct = _productService.GetAllProducts().OrderBy(p => p.Id).LastOrDefault();
            Random rnd = new Random();
            if (allproducts.Count() < 5)
            {
@@ -23,7 +24,7 @@ namespace Imagine.Components
            }
            while(products.Count < 4)
            {
-                int number = rnd.Next(1,allproducts.Count()+1);
+                int number = rnd.Next(1,getHighestIdProduct.Id + 1);
                 var product = _productService.GetProduct(p => p.Id == number);
                 if (product != null && !products.Contains(product))
                 {

@@ -1,27 +1,31 @@
 ﻿@using Imagine.DataAccess.Entities
 @model IEnumerable<Product>
 
-<partial name="_Dashboard"/>
-    
-<div class="container-fluid bg-transparent my-4 p-3" style="position: relative;">
-    <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+<partial name="_Dashboard" />
+
+<div class="container-fluid bg-light my-4 p-3" style="border-radius: 15px;">
+    <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-4">
 
         @foreach (Product product in Model)
         {
             <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="~/images/@product.ImageUrl" class="card-img-top" alt="...">
-                    <div class="card-body">
+                <div class="card h-100 shadow-sm border-0" style="border-radius: 10px;">
+                    <img src="~/images/@product.ImageUrl" class="card-img-top" alt="Product Image" style="border-radius: 10px 10px 0 0; height: 200px; object-fit: cover;">
+                    <div class="card-body p-4" style="max-height: 250px; overflow: hidden;">
                         <div class="clearfix mb-3">
-                            <span class="float-start badge rounded-pill bg-primary">@product.Name</span>
-                            <span class="float-end price-hp">@product.Price.ToString("c")</span>
+                            <span class="float-end price-hp text-success" style="font-weight: bold; font-size: 1.1rem;">@product.Price.ToString("c")</span>
                         </div>
-                        <h5 class="card-title">
+
+                        <!-- Truncate long text -->
+                        <h5 class="card-title text-center text-truncate" style="font-weight: bold; color: #333; max-width: 100%;">
+                            @product.Name
                         </h5>
-                        <div class="btn-group">
-                            <a asp-action="Details"  asp-controller="Product" asp-route-id="@product.Id" class="btn btn-primary me-2 rounded">Details</a>
-                            <a asp-action="Edit" asp-controller="Product" asp-route-id="@product.Id" class="btn btn-warning me-2 rounded">Edit</a>
-                            <a asp-action="Delete" asp-controller="Product" asp-route-id="@product.Id" class="btn btn-danger rounded">Delete</a>
+
+                        <!-- Adjusted button layout for better fit -->
+                        <div class="d-flex justify-content-between mt-4">
+                            <a asp-action="Details" asp-controller="Product" asp-route-id="@product.Id" class="btn btn-outline-primary rounded-pill px-2">Details</a>
+                            <a asp-action="Edit" asp-controller="Product" asp-route-id="@product.Id" class="btn btn-outline-warning rounded-pill px-2">Edit</a>
+                            <a asp-action="Delete" asp-controller="Product" asp-route-id="@product.Id" class="btn btn-outline-danger rounded-pill px-2">Delete</a>
                         </div>
                     </div>
                 </div>
@@ -30,3 +34,62 @@
     </div>
 </div>
 
+<style>
+    .card {
+        transition: transform 0.3s ease-in-out;
+    }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+    .price-hp {
+        font-weight: bold;
+        color: #28a745;
+    }
+
+    .btn-outline-primary {
+        border-color: #007bff;
+        color: #007bff;
+    }
+
+        .btn-outline-primary:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+    .btn-outline-warning {
+        border-color: #ffc107;
+        color: #ffc107;
+    }
+
+        .btn-outline-warning:hover {
+            background-color: #ffc107;
+            color: white;
+        }
+
+    .btn-outline-danger {
+        border-color: #dc3545;
+        color: #dc3545;
+    }
+
+        .btn-outline-danger:hover {
+            background-color: #dc3545;
+            color: white;
+        }
+
+    .btn {
+        font-size: 0.85rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .text-truncate {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .card-body {
+        max-height: 250px;
+    }
+</style>

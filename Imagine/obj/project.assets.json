@@ -1405,6 +1405,15 @@
           }
         }
       },
+      "QRCoder/1.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/QRCoder.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/QRCoder.dll": {}
+        }
+      },
       "System.Buffers/4.5.0": {
         "type": "package",
         "compile": {
@@ -4093,6 +4102,27 @@
         "newtonsoft.json.bson.nuspec"
       ]
     },
+    "QRCoder/1.6.0": {
+      "sha512": "XmPA81eo+oRxBuyVdswsSkTGTE1d3thfF11Z1PdD7oB56A6HU4G4AAOdySmGRMb/cljwlFTMWUtosGEnwpS6GA==",
+      "type": "package",
+      "path": "qrcoder/1.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/QRCoder.dll",
+        "lib/net40/QRCoder.dll",
+        "lib/net5.0-windows7.0/QRCoder.dll",
+        "lib/net5.0/QRCoder.dll",
+        "lib/net6.0-windows7.0/QRCoder.dll",
+        "lib/net6.0/QRCoder.dll",
+        "lib/netstandard1.3/QRCoder.dll",
+        "lib/netstandard2.0/QRCoder.dll",
+        "nuget-icon.png",
+        "nuget-readme.md",
+        "qrcoder.1.6.0.nupkg.sha512",
+        "qrcoder.nuspec"
+      ]
+    },
     "System.Buffers/4.5.0": {
       "sha512": "pL2ChpaRRWI/p4LXyy4RgeWlYF2sgfj/pnVMvBqwNFr5cXg7CXNnWZWxrOONLg8VGdFB8oB+EG2Qw4MLgTOe+A==",
       "type": "package",
@@ -5433,6 +5463,7 @@
       "Microsoft.Extensions.Configuration >= 8.0.0",
       "Microsoft.Extensions.Configuration.Json >= 8.0.0",
       "Newtonsoft.Json >= 13.0.3",
+      "QRCoder >= 1.6.0",
       "System.Net.Http.Formatting.Extension >= 5.2.3",
       "X.PagedList >= 10.0.3",
       "X.Web.PagedList >= 10.1.2"
@@ -5445,11 +5476,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\Imagine.csproj",
+      "projectUniqueName": "C:\\Users\\enise\\desktop\\imaginemvc\\imagine\\Imagine.csproj",
       "projectName": "Imagine",
-      "projectPath": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\Imagine.csproj",
+      "projectPath": "C:\\Users\\enise\\desktop\\imaginemvc\\imagine\\Imagine.csproj",
       "packagesPath": "C:\\Users\\enise\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\obj\\",
+      "outputPath": "C:\\Users\\enise\\desktop\\imaginemvc\\imagine\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5471,11 +5502,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine.Business\\Imagine.Business.csproj": {
-              "projectPath": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine.Business\\Imagine.Business.csproj"
+            "C:\\Users\\enise\\desktop\\imaginemvc\\Imagine.Business\\Imagine.Business.csproj": {
+              "projectPath": "C:\\Users\\enise\\desktop\\imaginemvc\\Imagine.Business\\Imagine.Business.csproj"
             },
-            "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine.DataAccess\\Imagine.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine.DataAccess\\Imagine.DataAccess.csproj"
+            "C:\\Users\\enise\\desktop\\imaginemvc\\Imagine.DataAccess\\Imagine.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\enise\\desktop\\imaginemvc\\Imagine.DataAccess\\Imagine.DataAccess.csproj"
             }
           }
         }
@@ -5524,6 +5555,10 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.3, )"
+          },
+          "QRCoder": {
+            "target": "Package",
+            "version": "[1.6.0, )"
           },
           "System.Net.Http.Formatting.Extension": {
             "target": "Package",

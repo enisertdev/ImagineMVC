@@ -24,8 +24,9 @@ namespace Imagine.Components.Controllers
             _userAuthenticationService = userAuthenticationService;
             _mapper = mapper;
         }
-        public IActionResult Login()
+        public IActionResult Login(string? returnUrl)
         {
+            TempData["returnUrl"] = returnUrl;
             return View();
         }
 
@@ -55,8 +56,8 @@ namespace Imagine.Components.Controllers
             }
 
             await _userAuthenticationService.SignInUserAsync(user);
-
-            return RedirectToAction("Index", "Home");
+            string returnUrl = TempData["returnUrl"].ToString();
+            return LocalRedirect(returnUrl ?? Url.Action("Index", "Home"));
         }
 
         public IActionResult Register()

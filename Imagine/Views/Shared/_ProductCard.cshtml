@@ -1,29 +1,26 @@
 ﻿@model X.PagedList.IPagedList<Product>
-<head>
 
+<head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <div class="container-fluid bg-transparent my-4 p-3" style="position: relative;">
-    <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-3">
         @foreach (Product product in Model)
         {
-            <div class="col-md-3 mt-2">
+            <div class="col">
                 <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">
                     <div class="card">
                         <div class="card-img-actions">
                             <img src="~/images/@product.ImageUrl" class="card-img img-fluid" alt="">
                         </div>
                         <div class="card-body text-left">
-                            <div class="mb-2">
-                                <h6 class="font-weight-semibold mb-2 card-title">
-                                    <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">
-                                        <b style="font-size: 13px;">@product.Brand</b>
-                                        <p style="font-size: 13px;" class="truncate">@product.Name</p>
-                                    </a>
-                                </h6>
-                            </div>
-
+                            <h6 class="font-weight-semibold mb-2 card-title">
+                                <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id" class="product-link">
+                                    <b style="font-size: 13px;">@product.Brand</b>
+                                    <p style="font-size: 13px;" class="truncate">@product.Name</p>
+                                </a>
+                            </h6>
                             <h3 class="mb-0 font-weight-semibold" style="font-size: 18px; color:#f27a1a">@product.Price.ToString("N0") TL</h3>
                             <div>
                                 <i class="fa fa-star"></i>
@@ -33,7 +30,6 @@
                                 <i class="fa fa-star emptystar"></i>
                                 <p style="display: inline; color: #7b7b7b;">(0)</p>
                             </div>
-
                         </div>
                     </div>
                 </a>
@@ -69,23 +65,14 @@
         text-align: left;
     }
 
-    .mt-50 {
-        margin-top: 50px;
-    }
-
-    .mb-50 {
-        margin-bottom: 50px;
-    }
-
     .card {
-        width: 18rem;
-        height: 550px;
         display: flex;
         flex-direction: column;
         background-color: #fff;
-        border: 1px solid rgba(0,0,0,.125);
+        border: 1px solid rgba(0, 0, 0, .125);
         border-radius: .1875rem;
         overflow: hidden;
+        height: 100%;
     }
 
     .card-img-actions {
@@ -117,67 +104,23 @@
         color: gray;
     }
 
-    .bg-cart {
-        background-color: orange;
-        color: #fff;
+    .pagination {
+        margin: 0;
     }
 
-        .bg-cart:hover {
-            color: #fff;
-        }
-
-    .bg-buy {
-        background-color: green;
-        color: #fff;
-        padding-right: 29px;
+    .truncate {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
-        .bg-buy:hover {
-            color: #fff;
-        }
-
-    a {
-        text-decoration: none !important;
+    .product-link {
+        color: black; /* Set link color to black */
+        text-decoration: none; /* Remove underline */
     }
 
-    .card-title {
-        display: flex;
-        flex-direction: column;
-    }
-
-        .card-title a {
-            height: 3.4rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            color: #7b7b7b; /* Product name color */
-            text-decoration: none; /* Remove underline */
-            margin: 0;
-        }
-
-            .card-title a:hover {
-                color: #7b7b7b; /* Maintain color on hover */
-                text-decoration: none; /* Ensure no underline on hover */
-            }
-
-        .card-title b {
-            color: #484848; /* Product brand color */
-            display: block;
-            font-size: 13px; /* Adjust as needed */
-            text-align: left;
-        }
-
-        .card-title p {
-            color: #7b7b7b; /* Product name color */
-            font-size: 13px; /* Adjust as needed */
-            margin: 0; /* Remove default margin */
-            text-align: left;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        .product-link:hover {
+            color: black; /* Keep the same color on hover */
+            text-decoration: none; /* Ensure no underline on hover */
         }
 </style>

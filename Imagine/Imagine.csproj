@@ -17,6 +17,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="QRCoder" Version="1.6.0" />
     <PackageReference Include="System.Net.Http.Formatting.Extension" Version="5.2.3" />
     <PackageReference Include="X.PagedList" Version="10.0.3" />
     <PackageReference Include="X.Web.PagedList" Version="10.1.2" />

@@ -6,6 +6,7 @@ namespace Imagine.DataAccess.Interfaces
     public interface IOrderItemRepository : IGenericRepository<OrderItem>
     {
         IEnumerable<OrderItem> GetOrders(Expression<Func<OrderItem, bool>> filter);
-        OrderItem GetOneOrderItem(int id);
+        OrderItem GetOneOrderItemById(int id);
+        OrderItem GetOneOrderItem(Expression<Func<OrderItem, bool>> filter);
     }
 }

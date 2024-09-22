@@ -1,17 +1,49 @@
 ﻿@model Product
 
-<div class="mb-3">
-    <label for="productName" class="form-label">Product Name</label>
-    <input readonly id="productName" class="form-control form-control-sm" asp-for="Name">
-    <div id="nameHelp" class="form-text text-muted">We'll never share your product name with anyone else.</div>
-</div>
-    
-<div class="mb-3">
-    <label for="productPrice" class="form-label">Price</label>
-    <input  readonly class="form-control form-control-sm" asp-for="Price">
+<div class="card shadow-sm p-4 mb-4 bg-white rounded">
+    <div class="mb-3">
+        <label for="productName" class="form-label fw-bold">Product Name</label>
+        <input readonly id="productName" class="form-control form-control-sm" asp-for="Name" style="background-color: #f8f9fa;">
+        <div id="nameHelp" class="form-text text-muted">We'll never share your product name with anyone else.</div>
+    </div>
+
+    <div class="mb-3">
+        <label for="productPrice" class="form-label fw-bold">Price</label>
+        <input readonly class="form-control form-control-sm" asp-for="Price" style="background-color: #f8f9fa;">
+    </div>
+
+    <div class="mb-3">
+        <label for="productSubCategory" class="form-label fw-bold">Sub Category</label>
+        <input readonly id="productSubCategory" class="form-control form-control-sm" asp-for="Category.Name" style="background-color: #f8f9fa;">
+    </div>
+
+    @if (Model.Category.Parent != null && !string.IsNullOrWhiteSpace(Model.Category.Parent.Name))
+    {
+        <div class="mb-3">
+            <label for="parentCategory" class="form-label fw-bold">Parent Category</label>
+            <input readonly id="parentCategory" class="form-control form-control-sm" asp-for="Category.Parent.Name" style="background-color: #f8f9fa;">
+        </div>
+    }
 </div>
 
-<div class="mb-3">
-    <label for="productPrice" class="form-label">Category</label>
-    <input readonly  class="form-control form-control-sm" asp-for="Category.Name">
-</div>
+<style>
+    .form-label {
+        font-size: 1rem;
+    }
+
+    .form-control-sm {
+        font-size: 0.9rem;
+    }
+
+    .form-text {
+        font-size: 0.8rem;
+    }
+
+    .card {
+        border-radius: 15px;
+    }
+
+    .fw-bold {
+        font-weight: bold;
+    }
+</style>

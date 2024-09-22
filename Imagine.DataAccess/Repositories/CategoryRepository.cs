@@ -27,7 +27,7 @@ namespace Imagine.DataAccess.Repositories
 
         public IEnumerable<Category> GetCategoriesWithParent()
         {
-            return _context.Categories.Include(p=>p.Parent).ToList();
+            return _context.Categories.Include(p=>p.Parent).Where(c=>c.ParentId !=  null).ToList();
         }
     }
 }

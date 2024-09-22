@@ -1,4 +1,6 @@
-﻿@model PaymentViewModel
+﻿@using System.Security.Claims
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model AmountViewModel
 
 <link rel="stylesheet" href="~/payment/style.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -14,7 +16,7 @@
                         <div class="list-group list-group-flush">
                             <a data-toggle="tab" href="#menu1" id="tab1" class="tabs list-group-item bg-light">
                                 <div class="list-div my-2">
-                                    <div class="fa fa-wallet"></div> &nbsp;&nbsp; Wallet
+                                    <div class="fa fa-home"></div> &nbsp;&nbsp; Bank
                                 </div>
                             </a> <a data-toggle="tab" href="#menu2" id="tab2" class="tabs list-group-item active1">
                                 <div class="list-div my-2">
@@ -44,7 +46,7 @@
                                 </div>
                                 <div class="row justify-content-right">
                                     <div class="col-12">
-                                        <p class="mb-0 mr-4 text-right">Pay <span class="top-highlight">@Model.Price TL</span> </p>
+                                        <p class="mb-0 mr-4 text-right">Pay <span class="top-highlight">@Model.Amount TL</span> </p>
                                     </div>
                                 </div>
                             </div>
@@ -57,14 +59,25 @@
                                 <div class="row justify-content-center">
                                     <div class="col-11">
                                         <div class="form-card">
-                                            <h3 class="mt-0 mb-4 text-center">Pay with your e-wallet</h3>
-                                            <form method="post" asp-action="ConfirmPaymentWithWallet">
+                                            <h3 class="mt-0 mb-4 text-center">Enter bank details to pay</h3>
+                                            <form onsubmit="event.preventDefault()">
                                                 <div class="row">
-                                                    <div class="col-md-12">
-                                                        <input type="submit" value="Pay @Model.Price TL" class="btn btn-success placeicon">
+                                                    <div class="col-12">
+                                                        <div class="input-group"> <input type="text" id="bk_nm" placeholder="BBB Bank"> <label>BANK NAME</label> </div>
                                                     </div>
                                                 </div>
-                                                <input type="hidden" value="@Model.Price" asp-for="Price"/>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="input-group"> <input type="text" name="ben_nm" id="ben-nm" placeholder="John Smith"> <label>BENEFICIARY NAME</label> </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="input-group"> <input type="text" name="scode" placeholder="ABCDAB1S" class="placeicon" minlength="8" maxlength="11"> <label>SWIFT CODE</label> </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12"> <input type="submit" value="Pay @Model.Amount TL" class="btn btn-success placeicon"> </div>
+
+                                                </div>
                                             </form>
                                         </div>
                                     </div>
@@ -75,7 +88,9 @@
                                     <div class="col-11">
                                         <div class="form-card">
                                             <h3 class="mt-0 mb-4 text-center">Enter your card details to pay</h3>
-                                            <form  method="post" asp-action="ConfirmPayment">
+                                            <form method="post" asp-action="ConfirmAddAmount">
+                                                <input type="hidden" asp-for="Email" value ="@User.FindFirstValue(ClaimTypes.Email)"/>
+                                                <input type ="hidden" asp-for="Amount" value="@Model.Amount"/>
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="input-group"> <input type="text" id="cr_no" placeholder="0000 0000 0000 0000" minlength="19" maxlength="19" required> <label>CARD NUMBER</label> </div>
@@ -90,7 +105,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-md-12"> <input type="submit" value="Pay @Model.Price TL" class="btn btn-success placeicon"> </div>
+                                                    <div class="col-md-12"> <input type="submit" value="Pay @Model.Amount TL" class="btn btn-success placeicon"> </div>
                                                 </div>
                                                 <div class="row">
                                                 </div>
@@ -104,7 +119,7 @@
                                     <div class="col-11">
                                         <h3 class="mt-0 mb-4 text-center">Scan the QR code to pay</h3>
                                         <div class="row justify-content-center">
-                                            <div id="qr"> <img src="@ViewBag.QRCodeImage" width="200px" height="200px"> </div>
+                                            <div id="qr"> <img src="https://i.imgur.com/DD4Npfw.jpg" width="200px" height="200px"> </div>
                                         </div>
                                     </div>
                                 </div>

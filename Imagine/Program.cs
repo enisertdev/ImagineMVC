@@ -12,6 +12,7 @@ using Imagine.Business.Services.OrderService;
 using Imagine.Business.Services.ProductService;
 using Imagine.Business.Services.UserAuthenticationService;
 using Imagine.Business.Services.UserService.UserService;
+using Microsoft.Extensions.Options;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -57,7 +58,10 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         opt.ExpireTimeSpan = TimeSpan.FromMinutes(15);
         opt.SlidingExpiration = true;
         opt.AccessDeniedPath = "/Error/AccessDenied";
+        opt.LoginPath = "/User/Login";
+        opt.LogoutPath = "/User/Logout";
     });
+
 
 
 var app = builder.Build();

@@ -1,28 +1,88 @@
 ﻿@model IEnumerable<Product>
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Product Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Category</th>
-            <th scope="col">Sub Category</th>
-        </tr>
+<table class="table table-hover table-bordered">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col" class="text-center">#</th>
+        <th scope="col">Product Name</th>
+        <th scope="col" class="text-end">Price</th>
+        <th scope="col">Category</th>
+        <th scope="col">Sub Category</th>
+    </tr>
     </thead>
     <tbody>
-        @foreach (Product products in Model)
-        {
-            <tr>
-                <th scope="row">@products.Id</th>
-                <td>@products.Name</td>
-                <td>@products.Price</td>
-                <td>@(products.Category.Parent?.Name ?? products.Category.Name)</td>
-                @if (products.Category.Parent != null)
-                {
-                    <td>@products.Category.Name</td>
-                }
-            </tr>
-        }
-    </tbody>
+    @foreach (Product products in Model)
+    {
+        <tr>
+            <th scope="row" class="text-center">@products.Id</th>
+            <td>@products.Name</td>
+            <td class="text-end">@String.Format("{0:C}", products.Price)</td>
+            <td>@(products.Category.Parent?.Name ?? products.Category.Name)</td>
+            @if (products.Category.Parent != null)
+            {
+                <td>@products.Category.Name</td>
+            }
+            else
+            {
+                <td>N/A</td>
+            }
+        </tr>
+    }
+    </tbody> 
 </table>
+
+<style>
+    .table {
+        font-size: 0.9rem;
+        color: #343a40;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f8f9fa;
+    }
+
+    .table th, .table td {
+        vertical-align: middle;
+        padding: 0.75rem;
+    }
+
+    .thead-dark {
+        background-color: #343a40;
+        color: white;
+    }
+
+    th {
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .table-bordered th, .table-bordered td {
+        border: 1px solid #dee2e6;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .text-end {
+        text-align: right;
+    }
+
+    .table tbody tr:nth-of-type(odd) {
+        background-color: #f2f2f2;
+    }
+
+    td {
+        font-weight: 500;
+        color: #495057;
+    }
+
+    td:nth-child(2) {
+        font-weight: bold;
+        color: #007bff;
+    }
+
+    td:nth-child(3) {
+        color: #28a745;
+    }
+</style>

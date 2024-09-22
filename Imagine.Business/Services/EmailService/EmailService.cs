@@ -82,6 +82,34 @@ namespace Imagine.Business.Services.EmailService
             }
         }
 
+        public async Task SendOrderUpdatedEmailAsync(string email, string subject, Order order, OrderItem? orderItem, int id)
+        {
+            using (var client = new SmtpClient("smtp.gmail.com", 587))
+            {
+                client.EnableSsl = true;
+                client.Credentials = new NetworkCredential(this.email, password);
+
+                using (var mailMessage = new MailMessage())
+                {
+                    mailMessage.From = new MailAddress(this.email);
+                    mailMessage.Subject = subject;
+                    mailMessage.Body = OrderUpdatedMessage(order,orderItem, email, id);
+                    mailMessage.IsBodyHtml = true;
+                    mailMessage.To.Add(email);
+
+                    try
+                    {
+                        await client.SendMailAsync(mailMessage);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"An error occurred while sending the email: {ex.Message}");
+                        throw;
+                    }
+                }
+            }
+        }
+
         public async Task SendEmailAsync(string email, string subject, string confirmUrl)
         {
             using (var client = new SmtpClient("smtp.gmail.com", 587))
@@ -170,6 +198,31 @@ namespace Imagine.Business.Services.EmailService
             </a>
             <p style='font-size: 16px;'><strong>Tracking Number:</strong> {order.TrackingNumber}</p>
             <p style='font-size: 16px;'><strong>Refunded Amount:</strong> {order.TotalAmount}₺</p>
+            <p style='font-size: 14px; color: #555; text-align: center;'>If you have any questions, feel free to contact us.</p>
+        </div>
+    </body>
+    </html>";
+
+        }
+
+        public string OrderUpdatedMessage(Order order,OrderItem? orderItem, string email, int id)
+        {
+            return $@"
+    <html>
+    <body style='font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 20px;'>
+        <div style='max-width: 600px; margin: 0 auto; background-color: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);'>
+            <h2 style='color: #4CAF50; text-align: center;'>Your Order Has Been Updated</h2>
+            <p style='font-size: 16px;'>
+                Your order is currently <strong>{order.OrderStatus}</strong>.
+            </p>
+            <h3 style='color: #4CAF50;'>Order Details</h3>
+ <p style='font-size: 16px;'><strong>Product Name:</strong> {orderItem.Product.Name}</p>
+            <a href='https://smart-tops-pelican.ngrok-free.app/Order/OrderDetails/{id}' 
+               style='display: inline-block; padding: 10px 15px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; font-size: 16px; text-align: center;'>
+                Check Your Order Status Here
+            </a>
+            <p style='font-size: 16px;'><strong>Order Id:</strong> {order.Id}</p>
+            <p style='font-size: 16px;'><strong>Tracking Number:</strong> {order.TrackingNumber}</p>
             <p style='font-size: 14px; color: #555; text-align: center;'>If you have any questions, feel free to contact us.</p>
         </div>
     </body>

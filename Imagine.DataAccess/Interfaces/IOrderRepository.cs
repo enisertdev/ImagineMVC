@@ -8,5 +8,6 @@ namespace Imagine.DataAccess.Interfaces
         IEnumerable<Order> GetOrders(Expression<Func<Order,bool>> filter);
         IEnumerable<Order> GetAllOrders();
         void RemoveOrder(Order order);
+        Order GetOneOrder(int id);
     }
 }

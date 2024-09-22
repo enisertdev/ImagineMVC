@@ -1,6 +1,6 @@
 ﻿@model ProductDtoForUpdate
 
-<form method="post" class="p-4 bg-white border rounded">
+<form method="post" class="p-4 bg-white border rounded shadow-sm">
     <div class="mb-3">
         <label for="productName" class="form-label">Product Name</label>
         <input id="productName" class="form-control form-control-sm" asp-for="Name" placeholder="Enter product name">
@@ -11,12 +11,23 @@
         <label for="productPrice" class="form-label">Price</label>
         <input id="productPrice" class="form-control form-control-sm" asp-for="Price" placeholder="Enter product price">
     </div>
-    <div class="mb-3">
-        <label for="productPrice" class="form-label">Description</label>
-        <input id="productPrice" class="form-control form-control-sm" asp-for="Description" placeholder="Enter description">
-    </div>  
 
-    <input type="hidden" asp-for="CategoryId" />
+    <div class="mb-4">
+        <label class="form-label" for="categorySelect">Category</label>
+        <select id="categorySelect" class="form-select" asp-for="CategoryId">
+            <option value="">Select a category</option>
+            @foreach (Category category in ViewBag.Categories)
+            {
+                <option value="@category.Id" selected="@(category.Id == Model.CategoryId ? "selected" : null)">
+                    @category.Name
+                </option>
+            }
+        </select>
+
+        <span class="text-danger" asp-validation-for="CategoryId"></span>
+    </div>
+
+    <input type="hidden" asp-for="ImageUrl" />
 
     <button type="submit" class="btn btn-success w-100">Submit</button>
 </form>
@@ -33,6 +44,12 @@
         border-radius: 0.2rem;
         color: #495057;
         border: 1px solid #ced4da;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-control-sm:focus {
+        border-color: #80bdff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
     }
 
     .form-text {
@@ -45,12 +62,13 @@
         border-color: #28a745;
         font-size: 0.875rem;
         padding: 0.5rem;
+        transition: background-color 0.3s, border-color 0.3s;
     }
 
-        .btn-success:hover {
-            background-color: #218838;
-            border-color: #1e7e34;
-        }
+    .btn-success:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+    }
 
     .border {
         border: 1px solid #dee2e6;
@@ -70,5 +88,9 @@
 
     .w-100 {
         width: 100% !important;
+    }
+
+    .shadow-sm {
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     }
 </style>

@@ -34,5 +34,10 @@ namespace Imagine.DataAccess.Repositories
             _context.Orders.Remove(order);
             _context.SaveChanges();
         }
+
+        public Order GetOneOrder(int id)
+        {
+            return _context.Orders.Include(o => o.User).FirstOrDefault(o=>o.Id == id);
+        }
     }
 }

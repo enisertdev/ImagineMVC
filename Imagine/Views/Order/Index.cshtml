@@ -50,8 +50,8 @@ else
                         <td>
                             <input class = "form-control form-control-sm text-center" value="@item.Order.OrderStatus" disabled>
                         </td>
-                        <td><a asp-action="OrderDetails" asp-controller="Order" asp-route-id="@item.Id">Order Details</a></td>
-                        <td><a asp-action="CancelOrder" asp-controller="Order" asp-route-id="@item.Id">Cancel Order</a></td>
+                            <td><a asp-action="OrderDetails" asp-controller="Order" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Order Details</a></td>
+                            <td><a asp-action="CancelOrder" asp-controller="Order" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Cancel Order</a></td>
                     </tr>
                 }
 

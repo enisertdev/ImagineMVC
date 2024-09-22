@@ -28,9 +28,9 @@ namespace Imagine.Business.Services.OrderService
            return _orderRepository.GetOrders(filter);
         }
 
-        public Order GetOneOrder(Expression<Func<Order, bool>> filter)
+        public Order GetOneOrder(int id)
         {
-           return _orderRepository.Get(filter);
+            return _orderRepository.GetOneOrder(id);
         }
 
         public IEnumerable<Order> GetAllOrders()

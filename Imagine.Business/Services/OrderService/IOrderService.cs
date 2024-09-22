@@ -12,7 +12,7 @@ namespace Imagine.Business.Services.OrderService
     {
         public void Create(Order  order);
         IEnumerable<Order> GetOrders(Expression<Func<Order, bool>> filter);
-        Order GetOneOrder(Expression<Func<Order, bool>> filter);
+        Order GetOneOrder(int id);
         IEnumerable<Order> GetAllOrders();
         void UpdateOrder(Order order);
         void RemoveOrder(Order order);

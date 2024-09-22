@@ -82,6 +82,7 @@ namespace Imagine.Areas.Admin.Controllers
 
         public IActionResult Edit(int id)
         {
+            ViewBag.Categories = _categoryService.GetCategoriesWithParent();
             var product = _productService.GetOneProductForUpdate(id);
             return View(product);
         }

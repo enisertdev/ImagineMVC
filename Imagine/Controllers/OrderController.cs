@@ -53,8 +53,8 @@ namespace Imagine.Controllers
         public async Task<IActionResult> CancelOrder(int id)
         {
             User user = _userService.GetUserByEmail(User.FindFirstValue(ClaimTypes.Email));
-            OrderItem orderItem = _orderItemService.GetOneOrderItem(id);
-            Order getOrder = _orderService.GetOneOrder(o => o.Id == orderItem.OrderId);
+            OrderItem orderItem = _orderItemService.GetOneOrderItemById(id);
+            Order getOrder = _orderService.GetOneOrder(orderItem.OrderId);
 
             if (orderItem == null)
             {
@@ -77,7 +77,7 @@ namespace Imagine.Controllers
 
         public IActionResult OrderDetails(int id)
         {
-            OrderItem orderItem = _orderItemService.GetOneOrderItem(id);
+            OrderItem orderItem = _orderItemService.GetOneOrderItemById(id);
             return View(orderItem);
         }
 

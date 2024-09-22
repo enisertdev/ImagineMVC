@@ -19,7 +19,8 @@
                 <td>@orders.TotalAmount</td>
                 <td>@orders.TrackingNumber</td>
                 <td>@orders.User.Email</td>
-                <td><a asp-action ="EditOrderStatus" asp-route-id ="@orders.Id">Edit OrderStatus</a></td>
+                <td><a asp-action ="EditOrderStatus" asp-route-id ="@orders.Id" class="btn btn-warning btn-sm ">Edit OrderStatus</a></td>
+                <td><a asp-action ="RemoveOrder" asp-route-id ="@orders.Id" class="btn btn-danger btn-sm">Remove Order</a></td>
             </tr>
         }
     </tbody>

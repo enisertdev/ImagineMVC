@@ -27,9 +27,16 @@ namespace Imagine.DataAccess.Repositories
                 .ToList();
         }
 
-        public OrderItem GetOneOrderItem(int id)
+        public OrderItem GetOneOrderItem(Expression<Func<OrderItem, bool>> filter)
         {
-            return _context.OrderItems.Include(o=>o.Order).FirstOrDefault(o=>o.Id == id);
+            return _context.OrderItems.Include(o => o.Order)
+                .Include(p => p.Product)
+                .FirstOrDefault(filter);
+        }
+
+        public OrderItem GetOneOrderItemById(int id)
+        {
+            return _context.OrderItems.Include(o => o.Order).FirstOrDefault(o => o.Id == id);
         }
     }
 }
