@@ -1,11 +1,15 @@
-Currently working on this project
+Projede kullanılan başlıca teknolojiler:
 
-To try <a href ="http://www.imaginewebsite.com.tr">here</a>
+ASP.NET MVC ile kullanıcı arayüzü ve veri işlemleri
+SQL Server ve Entity Framework ile güvenli ve düzenli veritabanı yönetimi
+Ödeme işlemleri, sipariş yönetimi, ve kullanıcı yönetimi gibi temel e-ticaret özellikleri
+
+Denemek için<a href ="http://www.imaginewebsite.com.tr">here</a>
 <br>
-<a href ="https://cool-monthly-krill.ngrok-free.app/api/products/">Api</a> Access (UNAVAIBLE)
+<a href ="https://cool-monthly-krill.ngrok-free.app/api/products/">Api</a> Access (MEVCUT DEĞİL)
 
 <hr>
-<br>for admin access 
+<br>Admin erişimi için
 <br>  
 
 email : admin@admin.com  
