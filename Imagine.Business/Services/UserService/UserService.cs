@@ -37,6 +37,11 @@ namespace Imagine.Business.Services.UserService.UserService
             return _userRepository.GetAll();
         }
 
+        public IEnumerable<User> GetUsers(Expression<Func<User, bool>> filter)
+        {
+            return _userRepository.GetUsers(filter);
+        }
+
         public User GetUser(Expression<Func<User, bool>> filter)
         {
             return _userRepository.Get(filter);

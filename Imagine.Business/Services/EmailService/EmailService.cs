@@ -113,6 +113,32 @@ namespace Imagine.Business.Services.EmailService
             }
         }
 
+        public async Task SendClientConnectedChatEmailAsync(string email, string subject, string roomId)
+        {
+            using (var client = new SmtpClient("smtp.gmail.com", 587))
+            {
+                client.EnableSsl = true;
+                client.Credentials = new NetworkCredential(this.email, password);
+                using (var mailMessage = new MailMessage())
+                {
+                    mailMessage.From = new MailAddress(this.email);
+                    mailMessage.Subject = subject;
+                    mailMessage.Body = ClientJoinedLiveChat(roomId);
+                    mailMessage.IsBodyHtml = true;
+                    mailMessage.To.Add(email);
+                    try
+                    {
+                        await client.SendMailAsync(mailMessage);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"An error occurred while sending the email: {ex.Message}");
+                        throw;
+                    }
+                }
+            }
+        }
+
         public async Task SendEmailAsync(string email, string subject, string confirmUrl)
         {
             using (var client = new SmtpClient("smtp.gmail.com", 587))
@@ -142,6 +168,19 @@ namespace Imagine.Business.Services.EmailService
             }
         }
 
+
+        public string ClientJoinedLiveChat(string roomId)
+        {
+            return $@"
+                <html>
+                <body>
+                    <h2>An User entered live chat.</h2>
+                    <p>Room Id = ""{roomId}"",</p>
+                    <p>Enter the chat as soon as possible!</p>
+                    <p>Imagine Administration Team</p>
+                </body>
+                </html>";
+        }
 
 
         public string CreateHtmlMessage(string email, string confirmUrl)

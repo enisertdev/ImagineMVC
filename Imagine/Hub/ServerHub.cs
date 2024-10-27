@@ -1,6 +1,8 @@
 ﻿
 using System.Security.Claims;
+using Imagine.Business.Services.EmailService;
 using Imagine.Business.Services.UserService.UserService;
+using Imagine.DataAccess.Entities;
 using Microsoft.AspNetCore.SignalR;
 
 namespace Imagine.Hub;
@@ -8,6 +10,14 @@ namespace Imagine.Hub;
 public class ServerHub : Microsoft.AspNetCore.SignalR.Hub
 {
     private static Dictionary<string, List<string>> _rooms = new Dictionary<string, List<string>>();
+    private readonly IEmailService _emailService;
+    private readonly IUserService _userService;
+
+    public ServerHub(IEmailService emailService, IUserService userService)
+    {
+        _emailService = emailService;
+        _userService = userService;
+    }
 
     public async Task ClientConnectsChat()
     {
@@ -20,6 +30,13 @@ public class ServerHub : Microsoft.AspNetCore.SignalR.Hub
             }
             _rooms[roomId].Add(Context.User.Identity.Name);
             await Groups.AddToGroupAsync(Context.ConnectionId, roomId);
+            IEnumerable<User> admins = _userService.GetUsers(u => u.IsAdmin == true).ToList();
+            foreach (var admin in admins )
+            {
+                _emailService.SendClientConnectedChatEmailAsync(admin.Email, "User Connected Live Chat", roomId);
+
+            }
+
             await Clients.Caller.SendAsync("ReceiveConnection", $"You Have Sucessfully Joined to Chat, RoomId is {roomId}");
         }
     }

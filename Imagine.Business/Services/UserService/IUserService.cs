@@ -21,6 +21,8 @@ namespace Imagine.Business.Services.UserService.UserService
         void RemoveUser(User user);
         User GetUserByEmail(string email);
         Task<(bool success, string errorMessage, string confirmUrl)> RegisterUserAsync(UserDtoForRegister user);
+        IEnumerable<User> GetUsers(Expression<Func<User, bool>> filter);
+
 
 
     }

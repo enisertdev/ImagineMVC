@@ -13,5 +13,6 @@ namespace Imagine.Business.Services.EmailService
         Task SendOrderEmailAsync(string email, string subject, Order order, int id);
         Task SendOrderCancelledEmailAsync(string email, string subject, Order order, int id);
         Task SendOrderUpdatedEmailAsync(string email, string subject, Order order, OrderItem? orderItem, int id);
+        Task SendClientConnectedChatEmailAsync(string email, string subject, string roomId);
     }
 }
