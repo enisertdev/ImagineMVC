@@ -24,6 +24,7 @@ connection.on("AdminConnected",
 connection.on("ErrorAdminConnection",
     (value) => {
         alert(value);
+        connection.stop();
     });
 
 connection.on("AdminMessage",
