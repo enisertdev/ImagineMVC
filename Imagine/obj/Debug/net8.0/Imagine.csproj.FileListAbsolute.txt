@@ -587,7 +587,4 @@ C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Debug\net8.0\System.Net.Http.WebRe
 C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Debug\net8.0\System.Net.Http.Extensions.dll
 C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Debug\net8.0\System.Net.Http.Primitives.dll
 C:\Users\enise\desktop\imaginemvc\imagine\bin\Debug\net8.0\QRCoder.dll
-C:\Users\enise\desktop\imaginemvc\imagine\bin\Debug\net8.0\Imagine.staticwebassets.endpoints.json
-C:\Users\enise\desktop\imaginemvc\imagine\bin\Debug\net8.0\System.Text.Json.dll
-C:\Users\enise\desktop\imaginemvc\imagine\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\enise\desktop\imaginemvc\imagine\obj\Debug\net8.0\staticwebassets\msbuild.Imagine.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Debug\net8.0\libman.json

@@ -14,13 +14,23 @@
     <header>
         <partial name="_Navbar" />
     </header>
-    <div class="container">
-        <main id="main" role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer>
+<div class="container">
+    <main id="main" role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
+@if (User.Identity.IsAuthenticated)
+{
+    if (User.IsInRole("Admin"))
+    {
+        <partial name="_LiveSupportAdmin"/>
+    }
+    else
+    {
+        <partial name="_LiveSupport"/>
+    }
+}
+<footer>
        <partial name="_Footer" />
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

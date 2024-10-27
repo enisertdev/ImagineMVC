@@ -56,7 +56,7 @@ namespace Imagine.Components.Controllers
             }
 
             await _userAuthenticationService.SignInUserAsync(user);
-            string returnUrl = TempData["returnUrl"].ToString();
+            string? returnUrl = TempData["returnUrl"] as string;
             return LocalRedirect(returnUrl ?? Url.Action("Index", "Home"));
         }
 
@@ -83,7 +83,7 @@ namespace Imagine.Components.Controllers
                 await _emailService.SendEmailAsync(
                     email: user.Email,
                     subject: "Welcome",
-                    confirmUrl: Url.Action("ConfirmEmail", "User", new { email = user.Email }, "https", "smart-tops-pelican.ngrok-free.app"));
+                    confirmUrl: Url.Action("ConfirmEmail", "User", new { email = user.Email }, "http", "www.imaginewebsite.com.tr"));
 
                 TempData["Message"] = "A confirmation email has been sent. Please confirm your email address before logging in.";
 

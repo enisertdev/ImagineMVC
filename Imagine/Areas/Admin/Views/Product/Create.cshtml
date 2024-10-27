@@ -1,61 +1,94 @@
 ﻿@model ProductDtoForInsertion
 
-@ViewData["path"]
-<form method="post" class="p-4 bg-light border rounded shadow-sm" enctype="multipart/form-data">
-    <div asp-validation-summary="All" class="alert alert-danger"></div>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0">
+                <div class="card-header bg-primary text-white py-3">
+                    <h3 class="mb-0 text-center">Add New Product</h3>
+                </div>
+                <div class="card-body p-5">
+                    <form method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="All" class="alert alert-danger"></div>
 
-    <!-- Category Dropdown -->
-    <div class="mb-4">
-        <label class="form-label" for="categorySelect">Category</label>
-        <select id="categorySelect" class="form-select">
-            <option>Select a category</option>
+                        <!-- Category Dropdown -->
+                        <div class="mb-4">
+                            <label class="form-label" for="categorySelect">Category</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-folder"></i></span>
+                                <select id="categorySelect" class="form-select">
+                                    <option>Select a category</option>
+                                    @foreach (Category category in ViewBag.Categories)
+                                    {
+                                        <option value="@category.Id">@category.Name</option>
+                                    }
+                                </select>
+                            </div>
+                            <span class="text-danger" asp-validation-for="CategoryId"></span>
+                        </div>
 
-            @foreach (Category category in ViewBag.Categories)
-            {
-                <option value="@category.Id">@category.Name</option>
-            }
-        </select>
-        <span class="text-danger" asp-validation-for="CategoryId"></span>
+                        <!-- Sub Category Dropdown -->
+                        <div class="mb-4">
+                            <label class="form-label" for="subCategorySelect">Sub Category</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-sitemap"></i></span>
+                                <select id="subCategorySelect" class="form-select" asp-for="CategoryId" required>
+                                    <option value="">Select a subcategory</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Brand -->
+                        <div class="mb-4">
+                            <label class="form-label" for="brandName">Brand</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-trademark"></i></span>
+                                <input id="brandName" class="form-control" asp-for="Brand" placeholder="Enter brand name">
+                            </div>
+                            <span class="text-danger" asp-validation-for="Brand"></span>
+                        </div>
+
+                        <!-- Product Name -->
+                        <div class="mb-4">
+                            <label class="form-label" for="productName">Product Name</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-tag"></i></span>
+                                <input id="productName" class="form-control" asp-for="Name" placeholder="Enter product name">
+                            </div>
+                            <span class="text-danger" asp-validation-for="Name"></span>
+                        </div>
+
+                        <!-- Price -->
+                        <div class="mb-4">
+                            <label class="form-label" for="productPrice">Price</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                                <input id="productPrice" class="form-control" asp-for="Price" placeholder="Enter product price">
+                            </div>
+                            <span class="text-danger" asp-validation-for="Price"></span>
+                        </div>
+
+                        <!-- Image -->
+                        <div class="mb-4">
+                            <label class="form-label">Upload Image</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-image"></i></span>
+                                <input required name="file" type="file" class="form-control">
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-plus-circle me-2"></i> Add Product
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!-- Sub Category Dropdown -->
-    <div class="mb-4">
-        <label class="form-label" for="subCategorySelect">Sub Category</label>
-        <select id="subCategorySelect" class="form-select" asp-for="CategoryId" required>
-            <option value="">Select a subcategory</option>
-        </select>
-    </div>
-
-    <!-- Brand -->
-    <div class="mb-4">
-        <label class="form-label" for="brandName">Brand</label>
-        <input id="brandName" class="form-control shadow-sm" asp-for="Brand" placeholder="Enter brand name">
-        <span class="text-danger" asp-validation-for="Brand"></span>
-    </div>
-
-    <!-- Product Name -->
-    <div class="mb-4">
-        <label class="form-label" for="productName">Product Name</label>
-        <input id="productName" class="form-control shadow-sm" asp-for="Name" placeholder="Enter product name">
-        <span class="text-danger" asp-validation-for="Name"></span>
-    </div>
-
-    <!-- Price -->
-    <div class="mb-4">
-        <label class="form-label" for="productPrice">Price</label>
-        <input id="productPrice" class="form-control shadow-sm" asp-for="Price" placeholder="Enter product price">
-        <span class="text-danger" asp-validation-for="Price"></span>
-    </div>
-
-    <!-- Image -->
-    <div class="mb-4">
-        <label class="form-label">Upload Image</label>
-        <input required name="file" type="file" class="form-control shadow-sm">
-    </div>
-
-    <!-- Submit Button -->
-    <button type="submit" class="btn btn-primary w-100 py-2 shadow">Submit</button>
-</form>
+</div>
 
 @section Scripts {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -88,86 +121,80 @@
 
 <style>
     body {
-        font-family: 'Arial', sans-serif;
-        background-color: #f7f7f7;
+        font-family: 'Roboto', sans-serif;
+        background-color: #f8f9fa;
+    }
+
+    .card {
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .card-header {
+        background-color: #4e73df;
+        border-bottom: none;
     }
 
     .form-label {
         font-weight: 600;
-        color: #343a40;
+        color: #495057;
+        margin-bottom: 0.5rem;
     }
 
-    .form-control {
-        border: 1px solid #ced4da;
-        padding: 0.75rem 1rem;
-        font-size: 0.9rem;
-        color: #495057;
-        border-radius: 0.25rem;
-        transition: box-shadow 0.3s ease-in-out;
+    .input-group-text {
+        background-color: #e9ecef;
+        border-right: none;
     }
 
-        .form-control:focus {
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-            border-color: #007bff;
-        }
-
-    .form-select {
-        border: 1px solid #ced4da;
+    .form-control, .form-select {
+        border-left: none;
         padding: 0.75rem 1rem;
-        font-size: 0.9rem;
+        font-size: 1rem;
         color: #495057;
-        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .form-control:focus, .form-select:focus {
+        box-shadow: none;
+        border-color: #4e73df;
     }
 
     .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
+        background-color: #4e73df;
+        border-color: #4e73df;
         font-size: 1rem;
-        font-weight: bold;
+        font-weight: 600;
         padding: 0.75rem;
-        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        transition: all 0.2s ease-in-out;
     }
 
-        .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
-        }
-
-    .border {
-        border: 1px solid #dee2e6;
-    }
-
-    .rounded {
-        border-radius: 0.5rem;
-    }
-
-    .bg-light {
-        background-color: #ffffff !important;
-    }
-
-    .p-4 {
-        padding: 2rem !important;
-    }
-
-    .shadow {
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .shadow-sm {
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .w-100 {
-        width: 100% !important;
-    }
-
-    .mb-4 {
-        margin-bottom: 1.5rem !important;
+    .btn-primary:hover {
+        background-color: #2e59d9;
+        border-color: #2e59d9;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
     }
 
     .text-danger {
-        font-size: 0.85rem;
-        font-weight: bold;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+    }
+
+    .alert-danger {
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+        color: #721c24;
+        border-radius: 10px;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .shadow-lg {
+        box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    }
+
     }
 </style>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">

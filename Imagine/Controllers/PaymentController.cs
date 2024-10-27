@@ -125,6 +125,10 @@ namespace Imagine.Controllers
         public IActionResult ConfirmWithQR(int userId, int totalquantity)
         {
             User user = _userService.GetUser(u => u.Id == userId);
+            if (user.Email != User.FindFirstValue(ClaimTypes.Email))
+            {
+                return NotFound("This cart does not belong to you!");
+            }
             IEnumerable<Cart> items = _cartService.GetMany(i => i.UserId == user.Id);
             if (!items.Any())
             {

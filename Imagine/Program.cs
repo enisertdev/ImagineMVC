@@ -12,6 +12,7 @@ using Imagine.Business.Services.OrderService;
 using Imagine.Business.Services.ProductService;
 using Imagine.Business.Services.UserAuthenticationService;
 using Imagine.Business.Services.UserService.UserService;
+using Imagine.Hub;
 using Microsoft.Extensions.Options;
 
 
@@ -21,6 +22,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddRazorPages();
+builder.Services.AddSignalR();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
@@ -85,6 +87,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 
+app.MapHub<ServerHub>("/chat");
 
 app.MapAreaControllerRoute(
     name: "Areas",

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Imagine.Business.Services.OrderItemService;
 using Imagine.DataAccess.Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 
@@ -17,11 +18,13 @@ namespace Imagine.Business.Services.EmailService
         private readonly IOrderItemService _orderItemService;
         private readonly string email;
         private readonly string password;
-        public EmailService(IConfiguration configuration, IOrderItemService orderItemService)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        public EmailService(IConfiguration configuration, IOrderItemService orderItemService, IHttpContextAccessor httpContextAccessor)
         {
             email = configuration["EmailSettings:Email"];
             password = configuration["EmailSettings:Password"];
             _orderItemService = orderItemService;
+            _httpContextAccessor = httpContextAccessor;
         }
 
 
@@ -158,13 +161,16 @@ namespace Imagine.Business.Services.EmailService
 
         public string CreateOrderCompletedMessage(Order order, string email, int id)
         {
+            var request = _httpContextAccessor.HttpContext.Request;
+            var baseUrl = $"{request.Scheme}://{request.Host}";
+            var orderDetailsUrl = $"{baseUrl}/Order/OrderDetails/{id}";
             return $@"
     <html>
     <body style='font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 20px;'>
         <div style='max-width: 600px; margin: 0 auto; background-color: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);'>
             <h2 style='color: #4CAF50; text-align: center;'>Thank you for your order!</h2>
             <p style='font-size: 16px;'>Your order has been received and is now being processed. You can track your order by clicking the link below:</p>
-            <a href='https://smart-tops-pelican.ngrok-free.app/Order/OrderDetails/{id}' 
+            <a href='{orderDetailsUrl}' 
                style='display: inline-block; padding: 10px 15px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; font-size: 16px; text-align: center;'>
                 Check Your Order
             </a>
@@ -182,6 +188,10 @@ namespace Imagine.Business.Services.EmailService
 
         public string OrderCancelledMessage(Order order, string email, int id)
         {
+            var request = _httpContextAccessor.HttpContext.Request;
+            var baseUrl = $"{request.Scheme}://{request.Host}";
+            var orderDetailsUrl = $"{baseUrl}/Order/OrderDetails/{id}";
+
             return $@"
     <html>
     <body style='font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 20px;'>
@@ -192,7 +202,7 @@ namespace Imagine.Business.Services.EmailService
             </p>
             <p style='font-size: 16px;'>Your bank will reflect this amount within 8 business days.</p>
             <h3 style='color: #4CAF50;'>Order Details</h3>
-            <a href='https://smart-tops-pelican.ngrok-free.app/Order/OrderDetails/{id}' 
+            <a href='{orderDetailsUrl}' 
                style='display: inline-block; padding: 10px 15px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; font-size: 16px; text-align: center;'>
                 Check Your Cancelled Order
             </a>
@@ -207,6 +217,10 @@ namespace Imagine.Business.Services.EmailService
 
         public string OrderUpdatedMessage(Order order,OrderItem? orderItem, string email, int id)
         {
+            var request = _httpContextAccessor.HttpContext.Request;
+            var baseUrl = $"{request.Scheme}://{request.Host}";
+            var orderDetailsUrl = $"{baseUrl}/Order/OrderDetails/{id}";
+
             return $@"
     <html>
     <body style='font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 20px;'>
@@ -217,7 +231,7 @@ namespace Imagine.Business.Services.EmailService
             </p>
             <h3 style='color: #4CAF50;'>Order Details</h3>
  <p style='font-size: 16px;'><strong>Product Name:</strong> {orderItem.Product.Name}</p>
-            <a href='https://smart-tops-pelican.ngrok-free.app/Order/OrderDetails/{id}' 
+            <a href='{orderDetailsUrl}' 
                style='display: inline-block; padding: 10px 15px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; font-size: 16px; text-align: center;'>
                 Check Your Order Status Here
             </a>

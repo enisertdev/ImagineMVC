@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canlı Müşteri Temsilcisi Sohbeti</title>
+    <link rel="stylesheet" href="~/css/livesupportadmin.css"/>
+</head>
+<body>
+    <div class="chat-widgetadmin">
+        <div class="chat-headeradmin">
+            <span class="chat-titleadmin">Canlı Destek</span>
+            <span class="chat-iconadmin">▼</span>
+        </div>
+        <div class="chat-bodyadmin">
+            <form id="connect-formadmin">
+                <input type="text" id="room-idadmin" placeholder="Oda ID'sini girin" required>
+                <button type="submit" id="connect-buttonadmin">Canlı Desteğe Bağlan</button>
+            </form>
+            <div id="chat-interfaceadmin" class="hidden">
+                <div id="chat-messagesadmin" class="chat-messagesadmin">
+                    <!-- Mesajlar buraya eklenecek -->
+                </div>
+                <div class="chat-inputadmin">
+                    <input type="text" id="message-inputadmin" placeholder="Mesajınızı yazın...">
+                    <button id="send-buttonadmin">Gönder</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const chatWidgetadmin = document.querySelector('.chat-widgetadmin');
+        const chatHeaderadmin = document.querySelector('.chat-headeradmin');
+        const chatIconadmin = document.querySelector('.chat-iconadmin');
+        const chatBodyadmin = document.querySelector('.chat-bodyadmin');
+        const connectFormadmin = document.getElementById('connect-formadmin');
+        const roomIdInputadmin = document.getElementById('room-idadmin');
+        const chatInterfaceadmin = document.getElementById('chat-interfaceadmin');
+        const chatMessagesadmin = document.getElementById('chat-messagesadmin');
+        const messageInputadmin = document.getElementById('message-inputadmin');
+        const sendButtonadmin = document.getElementById('send-buttonadmin');
+
+        chatHeaderadmin.addEventListener('click', () => {
+            chatBodyadmin.classList.toggle('open');
+            chatIconadmin.style.transform = chatBodyadmin.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
+        });
+
+      
+    </script>
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/ChatClientAdmin.js"></script>
+</body>
+</html>

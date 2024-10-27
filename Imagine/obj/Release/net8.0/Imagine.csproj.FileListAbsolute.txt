@@ -440,3 +440,5 @@ C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Release\net8.0\Newtonsoft.Json.Bso
 C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Release\net8.0\System.Net.Http.WebRequest.dll
 C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Release\net8.0\System.Net.Http.Extensions.dll
 C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Release\net8.0\System.Net.Http.Primitives.dll
+C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Release\net8.0\QRCoder.dll
+C:\Users\enise\Desktop\ImagineMVC\Imagine\bin\Release\net8.0\libman.json
