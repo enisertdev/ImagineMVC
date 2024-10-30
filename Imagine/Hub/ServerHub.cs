@@ -19,8 +19,34 @@ public class ServerHub : Microsoft.AspNetCore.SignalR.Hub
         _userService = userService;
     }
 
+    public override async Task OnConnectedAsync()
+    {
+        var username = Context.User.Identity.Name;
+        var findRoom = _rooms.FirstOrDefault(r => r.Value.Contains(username));
+        if (!string.IsNullOrEmpty(findRoom.Key))
+        {
+            await Groups.AddToGroupAsync(Context.ConnectionId, findRoom.Key);
+            await Clients.Caller.SendAsync("ClientReconnected");
+        }
+        await base.OnConnectedAsync();
+    }
+
+    public override Task OnDisconnectedAsync(Exception? exception)
+    {
+
+        return base.OnDisconnectedAsync(exception);
+    }
+
     public async Task ClientConnectsChat()
     {
+        foreach (var room in _rooms)
+        {
+            if (room.Value.Contains(Context.User.Identity.Name))
+            {
+                await Clients.Caller.SendAsync("ReceiveConnection", "You are already in  a room");
+                return;
+            }
+        }
         Random rnd = new Random();
         string roomId = rnd.Next(Int32.MaxValue).ToString();
         if (!_rooms.Keys.Contains(roomId))
@@ -31,28 +57,27 @@ public class ServerHub : Microsoft.AspNetCore.SignalR.Hub
             _rooms[roomId].Add(Context.User.Identity.Name);
             await Groups.AddToGroupAsync(Context.ConnectionId, roomId);
             IEnumerable<User> admins = _userService.GetUsers(u => u.IsAdmin == true).ToList();
-            foreach (var admin in admins )
+            foreach (var admin in admins)
             {
                 _emailService.SendClientConnectedChatEmailAsync(admin.Email, "User Connected Live Chat", roomId);
 
             }
 
+            await Clients.Caller.SendAsync("WaitingForAdmin");
             await Clients.Caller.SendAsync("ReceiveConnection", $"You Have Sucessfully Joined to Chat, RoomId is {roomId}");
         }
     }
 
-    public async Task ClientDisconnectsChat(string roomId)
+    public async Task ClientDisconnectsChat()
     {
-        var findRoom = _rooms.FirstOrDefault(r => r.Key == roomId);
+        var username = Context.User.Identity.Name;
+        var findRoom = _rooms.FirstOrDefault(r => r.Value.Contains(username));
         if (findRoom.Key != null)
         {
-            _rooms.Remove(roomId);
+            _rooms[findRoom.Key].Remove(username);
+            await Groups.RemoveFromGroupAsync(Context.ConnectionId, findRoom.Key);
+            await Clients.Group(findRoom.Key).SendAsync("ClientHasLeftChat", "The client has left the chat.");
         }
-        else
-        {
-            return;
-        }
-        await Groups.RemoveFromGroupAsync(Context.ConnectionId, roomId);
     }
 
     public async Task AdminJoinChat(string roomId)
@@ -74,7 +99,7 @@ public class ServerHub : Microsoft.AspNetCore.SignalR.Hub
         }
         else
         {
-        await Clients.Caller.SendAsync("ErrorAdminConnection", "A room with this roomId does not exist.");
+            await Clients.Caller.SendAsync("ErrorAdminConnection", "A room with this roomId does not exist.");
         }
     }
 

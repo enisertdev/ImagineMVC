@@ -113,7 +113,7 @@
                     background-color: #064c44; /* Hover durumu için renk ekledik */
                 }
 
-        #connect-button {
+        #connect-button, #end-chat-button {
             display: block;
             width: 100%;
             padding: 10px;
@@ -125,7 +125,7 @@
             transition: background-color 0.3s ease; /* Geçiş efekti ekledik */
         }
 
-            #connect-button:hover {
+            #connect-button:hover, #end-chat-button:hover {
                 background-color: #064c44; /* Hover durumu için renk ekledik */
             }
 
@@ -142,27 +142,33 @@
             border-radius: 4px;
         }
 
+        #end-chat-button {
+            margin-top: 0px;
+        }
+
         .hidden {
             display: none;
         }
+
     </style>
 </head>
 <body>
     <div class="chat-widget">
         <div class="chat-header">
-            <span class="chat-title">Canlı Destek</span>
+            <span class="chat-title">Live Support</span>
             <span class="chat-icon">▼</span>
         </div>
         <div class="chat-body">
-            <button id="connect-button">Canlı Desteğe Bağlan</button>
+            <button id="connect-button">Connect To Live Support</button>
             <div id="chat-interface">
                 <div id="chat-messages" class="chat-messages">
                     <!-- Mesajlar buraya eklenecek -->
                 </div>
                 <div class="chat-input">
                     <input type="text" id="message-input" placeholder="Mesajınızı yazın...">
-                    <button id="send-button">Gönder</button>
+                    <button id="send-button">Send</button>
                 </div>
+                <button id="end-chat-button" class="hidden">Sohbeti Bitir</button>
             </div>
         </div>
     </div>
@@ -171,6 +177,8 @@
         const chatHeader = document.querySelector('.chat-header');
         const chatIcon = document.querySelector('.chat-icon');
         const chatBody = document.querySelector('.chat-body');
+        const endButton = document.getElementById("end-chat-button");
+
 
 
         chatHeader.addEventListener('click', () => {

@@ -1,67 +1,85 @@
-﻿var connection = new signalR.HubConnectionBuilder().withUrl("/chat").build();
+﻿var connection = new signalR.HubConnectionBuilder().withUrl("/chat").withAutomaticReconnect().build();
 
-//connect to hub when user presses to connect button
+connection.onreconnecting(() => {
+    console.log("reconnecting..");
+});
+
+connection.onreconnected(async () => {
+    console.log("reconnected to server");
+    updateUIOnConnect();
+    try {
+        await connection.invoke("ClientConnectsChat");
+        console.log("rejoined");
+    } catch (error) {
+        console.log("failed to rejoin", error);
+    }
+});
+
+// Connect to hub when user presses connect button
 document.getElementById("connect-button").onclick = async () => {
-    connection.start().then(async function () {
-        const connectButton = document.getElementById('connect-button');
-        const chatInterface = document.getElementById('chat-interface');
-        connectButton.style.display = 'none';
-        chatInterface.style.display = 'block';
+    try {
+        await connection.start();
+        updateUIOnConnect();
         await connection.invoke("ClientConnectsChat");
         console.log("Connected To Chat");
-        setTimeout(() => {
-            addMessage('agent', 'Waiting for an admin to join.');
-        },
-            1000);
-    }).catch(() => {
-        alert("connection has failed.");
-    });
+    } catch (error) {
+        alert("Connection has failed.");
+    }
 };
 
 
+// Functions to handle connection status and UI
+function updateUIOnConnect() {
+    document.getElementById('connect-button').style.display = 'none';
+    document.getElementById('chat-interface').style.display = 'block';
+    document.getElementById("end-chat-button").style.display = 'none';
+}
 
-//if user joined room get log
-connection.on("ReceiveConnection",
-    (value) => {
-        console.log(value);
+function updateUIOnDisconnect() {
+    document.getElementById('chat-interface').style.display = 'none';
+    document.getElementById('connect-button').style.display = 'block';
+}
+
+
+// Message event listeners
+connection.on("ReceiveConnection", (value) => console.log(value));
+connection.on("ClientReconnected", (value) => {
+    console.log(value);
+    document.getElementById("end-chat-button").style.display = 'block';
+});
+
+
+connection.on("AdminConnected", (value) => {
+    document.getElementById("end-chat-button").style.display = 'block';
+    console.log(value);
+    addMessage('agent', value);
+});
+
+connection.on("ReceiveMessage", (value) => addMessage('customer', value));
+connection.on("AdminMessage", (value) => addMessage('agent', value));
+connection.on("UserNotInRoom", (value) => addMessage('system', value));
+connection.on("WaitingForAdmin",
+    () => {
+        setTimeout(() => {
+                addMessage('agent', 'Waiting for an admin to join.');
+            },
+            1000);
     });
+connection.on("ClientReconnected", () => addMessage('agent', "You have reconnected to the chat!"));
 
-
-//if admin joined get log
-connection.on("AdminConnected",
-    (value) => {
-        console.log(value);
-        addMessage('agent', value);
-
-    });
-
-connection.on("ReceiveMessage",
-    (value) => {
-        addMessage('customer', value);
-    });
-
-connection.on("AdminMessage",
-    (value) => {
-        addMessage('agent', value);
-    });
-
-connection.on("UserNotInRoom",
-    (value) => {
-        addMessage(value);
-    });
-
+// Add message to the chat
 function addMessage(sender, text) {
     const messageElement = document.createElement('div');
     messageElement.classList.add('message', sender);
     messageElement.textContent = text;
-    var chatMessages = document.getElementById("chat-messages");
+
+    const chatMessages = document.getElementById("chat-messages");
     chatMessages.appendChild(messageElement);
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-document.getElementById("send-button").onclick = async () => {
-    await sendMessage();
-};
+// Send message to the server
+document.getElementById("send-button").onclick = async () => await sendMessage();
 
 document.getElementById("message-input").addEventListener("keypress", async (event) => {
     if (event.key === "Enter") {
@@ -70,11 +88,20 @@ document.getElementById("message-input").addEventListener("keypress", async (eve
     }
 });
 
-
 async function sendMessage() {
-    var message = document.getElementById("message-input").value;
-    if (message.trim() !== "") {
+    const message = document.getElementById("message-input").value;
+    if (connection.state === signalR.HubConnectionState.Connected && message.trim() !== "") {
         await connection.invoke("SendMessage", message);
         document.getElementById("message-input").value = "";
     }
 }
+
+// End chat button handler
+document.getElementById("end-chat-button").onclick = async () => {
+    if (connection.state === signalR.HubConnectionState.Connected) {
+        addMessage("You left the chat.");
+        await connection.invoke("ClientDisconnectsChat");
+        document.getElementById("end-chat-button").style.display = 'block';
+        await connection.stop();
+    }
+};
