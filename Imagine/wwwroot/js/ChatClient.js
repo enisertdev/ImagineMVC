@@ -61,11 +61,16 @@ connection.on("UserNotInRoom", (value) => addMessage('system', value));
 connection.on("WaitingForAdmin",
     () => {
         setTimeout(() => {
-                addMessage('agent', 'Waiting for an admin to join.');
-            },
+            addMessage('agent', 'Waiting for an admin to join.');
+        },
             1000);
     });
-connection.on("ClientReconnected", () => addMessage('agent', "You have reconnected to the chat!"));
+connection.on("ClientReconnected", () => {
+    addMessage('agent', "You have reconnected to the chat!");
+    document.getElementById("end-chat-button").style.display = 'block';
+    console.log("End chat button displayed:", document.getElementById("end-chat-button").style.display);
+
+});
 
 // Add message to the chat
 function addMessage(sender, text) {
@@ -99,9 +104,9 @@ async function sendMessage() {
 // End chat button handler
 document.getElementById("end-chat-button").onclick = async () => {
     if (connection.state === signalR.HubConnectionState.Connected) {
-        addMessage("You left the chat.");
         await connection.invoke("ClientDisconnectsChat");
-        document.getElementById("end-chat-button").style.display = 'block';
+        document.getElementById("chat-messages").value = "";
+        updateUIOnDisconnect();
         await connection.stop();
     }
 };

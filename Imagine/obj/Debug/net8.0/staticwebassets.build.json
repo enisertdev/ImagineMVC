@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1NSWBzfmS3kRAFj+o6LQ3UctQZxRKYSzIzD3+Be/TB8=",
+  "Hash": "UzWL45T8JfVcr4pRbEiAKLM/4m5UUXi49VQNKkWpD8I=",
   "Source": "Imagine",
   "BasePath": "_content/Imagine",
   "Mode": "Default",
@@ -72,25 +72,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\livesupportadmin.css"
-    },
-    {
-      "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\css\\productCard.css",
-      "SourceId": "Imagine",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\",
-      "BasePath": "_content/Imagine",
-      "RelativePath": "css/productCard.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\productCard.css"
     },
     {
       "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\css\\site.css",
@@ -946,6 +927,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\product.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\productCard.css",
+      "SourceId": "Imagine",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\",
+      "BasePath": "_content/Imagine",
+      "RelativePath": "images/productCard.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\productCard.css"
     },
     {
       "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\redmi.webp",

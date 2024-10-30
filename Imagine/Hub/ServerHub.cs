@@ -19,20 +19,20 @@ public class ServerHub : Microsoft.AspNetCore.SignalR.Hub
         _userService = userService;
     }
 
-    public override async Task OnConnectedAsync()
+    public override Task OnDisconnectedAsync(Exception? exception)
     {
         var username = Context.User.Identity.Name;
         var findRoom = _rooms.FirstOrDefault(r => r.Value.Contains(username));
-        if (!string.IsNullOrEmpty(findRoom.Key))
+        foreach (var user in findRoom.Value)
         {
-            await Groups.AddToGroupAsync(Context.ConnectionId, findRoom.Key);
-            await Clients.Caller.SendAsync("ClientReconnected");
+            User adminInRoom = _userService.GetUser(u => u.Name == user && u.IsAdmin == true);
+            if (adminInRoom != null)
+            {
+                return base.OnDisconnectedAsync(exception);
+            }
         }
-        await base.OnConnectedAsync();
-    }
 
-    public override Task OnDisconnectedAsync(Exception? exception)
-    {
+        _rooms[findRoom.Key].Remove(username);
 
         return base.OnDisconnectedAsync(exception);
     }
@@ -43,7 +43,7 @@ public class ServerHub : Microsoft.AspNetCore.SignalR.Hub
         {
             if (room.Value.Contains(Context.User.Identity.Name))
             {
-                await Clients.Caller.SendAsync("ReceiveConnection", "You are already in  a room");
+                ClientReconnects();
                 return;
             }
         }
@@ -80,6 +80,16 @@ public class ServerHub : Microsoft.AspNetCore.SignalR.Hub
         }
     }
 
+    public async Task ClientReconnects()
+    {
+        var username = Context.User.Identity.Name;
+        var findRoom = _rooms.FirstOrDefault(r => r.Value.Contains(username));
+        if (!string.IsNullOrEmpty(findRoom.Key))
+        {
+            await Groups.AddToGroupAsync(Context.ConnectionId, findRoom.Key);
+            await Clients.Caller.SendAsync("ClientReconnected");
+        }
+    }
     public async Task AdminJoinChat(string roomId)
     {
         var roomExists = _rooms.FirstOrDefault(r => r.Key == roomId);

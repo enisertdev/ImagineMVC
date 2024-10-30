@@ -9,10 +9,6 @@
       "PackagePath": "staticwebassets\\css\\livesupportadmin.css"
     },
     {
-      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\css\\productCard.css",
-      "PackagePath": "staticwebassets\\css\\productCard.css"
-    },
-    {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -227,6 +223,10 @@
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\product.jpeg",
       "PackagePath": "staticwebassets\\images\\product.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\productCard.css",
+      "PackagePath": "staticwebassets\\images\\productCard.css"
     },
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\redmi.webp",
