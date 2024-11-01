@@ -15,5 +15,6 @@ namespace Imagine.Business.Services.OrderItemService
         OrderItem GetOneOrderItemById(int id);
         OrderItem GetOneOrderItem(Expression<Func<OrderItem, bool>> filter);
        void RemoveOrderItem(int id);
+       OrderItem CreateOrderItem(Order order, Cart cartItem);
     }
 }

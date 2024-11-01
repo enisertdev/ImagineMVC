@@ -30,7 +30,7 @@ namespace Imagine.Business.Services.EmailService
 
         public async Task SendOrderEmailAsync(string email, string subject, Order order, int id)
         {
-            using (var client = new SmtpClient("smtp.gmail.com", 587))
+            using (var client = new SmtpClient("smtp.zoho.eu", 587))
             {
                 client.EnableSsl = true;
                 client.Credentials = new NetworkCredential(this.email, password);
@@ -59,7 +59,7 @@ namespace Imagine.Business.Services.EmailService
 
         public async Task SendOrderCancelledEmailAsync(string email, string subject, Order order, int id)
         {
-            using (var client = new SmtpClient("smtp.gmail.com", 587))
+            using (var client = new SmtpClient("smtp.zoho.eu", 587))
             {
                 client.EnableSsl = true;
                 client.Credentials = new NetworkCredential(this.email, password);
@@ -87,7 +87,7 @@ namespace Imagine.Business.Services.EmailService
 
         public async Task SendOrderUpdatedEmailAsync(string email, string subject, Order order, OrderItem? orderItem, int id)
         {
-            using (var client = new SmtpClient("smtp.gmail.com", 587))
+            using (var client = new SmtpClient("smtp.zoho.eu", 587))
             {
                 client.EnableSsl = true;
                 client.Credentials = new NetworkCredential(this.email, password);
@@ -115,7 +115,7 @@ namespace Imagine.Business.Services.EmailService
 
         public async Task SendClientConnectedChatEmailAsync(string email, string subject, string roomId)
         {
-            using (var client = new SmtpClient("smtp.gmail.com", 587))
+            using (var client = new SmtpClient("smtp.zoho.eu", 587))
             {
                 client.EnableSsl = true;
                 client.Credentials = new NetworkCredential(this.email, password);
@@ -141,7 +141,7 @@ namespace Imagine.Business.Services.EmailService
 
         public async Task SendEmailAsync(string email, string subject, string confirmUrl)
         {
-            using (var client = new SmtpClient("smtp.gmail.com", 587))
+            using (var client = new SmtpClient("smtp.zoho.eu", 587))
             {
                 client.EnableSsl = true;
                 client.Credentials = new NetworkCredential(this.email, password);

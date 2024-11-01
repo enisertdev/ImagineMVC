@@ -1,5 +1,6 @@
-﻿using Imagine.Business.Services.UserService.UserService;
+﻿using Imagine.Business.Services.UserService;
 using Imagine.DataAccess.Entities;
+using Imagine.DataAccess.Entities.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,6 +32,19 @@ namespace Imagine.Api.Controllers
                 IsAdmin = u.IsAdmin,
                 IsConfirmed = u.IsConfirmed
             }));
+        }
+
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] UserDtoForRegister user)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var result = await _userService.RegisterUserAsync(user);
+            if (!result.success)
+                return BadRequest(new { error = result.errorMessage });
+
+            return Ok(new { message = "User registered successfully." });
         }
     }
 }

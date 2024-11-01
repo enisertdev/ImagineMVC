@@ -1,7 +1,7 @@
 ﻿
 using System.Security.Claims;
 using Imagine.Business.Services.EmailService;
-using Imagine.Business.Services.UserService.UserService;
+using Imagine.Business.Services.UserService;
 using Imagine.DataAccess.Entities;
 using Microsoft.AspNetCore.SignalR;
 
@@ -102,7 +102,9 @@ public class ServerHub : Microsoft.AspNetCore.SignalR.Hub
                 var userInChat = "";
                 foreach (var user in _rooms[roomId])
                 {
-                    userInChat = user;
+                    User isAdmin = _userService.GetUser(u => u.Name == user && u.IsAdmin == true);
+                    if (isAdmin is null)
+                        userInChat = user;
                 }
                 await Clients.Group(roomId).SendAsync("AdminConnected", "An admin has joined to chat", userInChat);
             }

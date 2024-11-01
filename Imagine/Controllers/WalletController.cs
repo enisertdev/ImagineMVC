@@ -1,5 +1,5 @@
 ﻿using System.Drawing;
-using Imagine.Business.Services.UserService.UserService;
+using Imagine.Business.Services.UserService;
 using Imagine.DataAccess.Entities;
 using Imagine.Models;
 using Microsoft.AspNetCore.Mvc;

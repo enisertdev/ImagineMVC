@@ -6,7 +6,7 @@ using Imagine.DataAccess.Entities.Dtos;
 using AutoMapper;
 using Imagine.Business.Services.EmailService;
 using Imagine.Business.Services.UserAuthenticationService;
-using Imagine.Business.Services.UserService.UserService;
+using Imagine.Business.Services.UserService;
 
 namespace Imagine.Components.Controllers
 {
@@ -51,12 +51,13 @@ namespace Imagine.Components.Controllers
             //if user hasn't confirmed email
             if (!user.IsConfirmed)
             {
-                TempData["Error"] = "You have not confirmed your email.Please check your email before logging in.";
+                TempData["Error"] = "You have not confirmed your email.Please check your email before trying to log in.";
                 return View(model);
             }
 
             await _userAuthenticationService.SignInUserAsync(user);
             string? returnUrl = TempData["returnUrl"] as string;
+
             return LocalRedirect(returnUrl ?? Url.Action("Index", "Home"));
         }
 
@@ -85,7 +86,7 @@ namespace Imagine.Components.Controllers
                     subject: "Welcome",
                     confirmUrl: Url.Action("ConfirmEmail", "User", new { email = user.Email }, "http", "www.imaginewebsite.com.tr"));
 
-                TempData["Message"] = "A confirmation email has been sent. Please confirm your email address before logging in.";
+                TempData["Message"] = "A confirmation email has been sent. Please confirm your email address before you log in.";
 
                 return RedirectToAction("Login");
             }
@@ -106,10 +107,12 @@ namespace Imagine.Components.Controllers
             {
                 return NotFound("User not found");
             }
+
             if (user.IsConfirmed)
             {
                 return NotFound("you already confirmed your email.");
             }
+
             user.IsConfirmed = true;
             _userService.UpdateUser(user);
 
@@ -125,6 +128,7 @@ namespace Imagine.Components.Controllers
             var user = _userService.GetOneUserToUpdate(email);
             if (user is null)
                 return NotFound("user not found");
+
             return View(user);
         }
 

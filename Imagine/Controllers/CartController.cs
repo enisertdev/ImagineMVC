@@ -1,7 +1,7 @@
 ﻿using System.Security.Claims;
 using Imagine.Business.Services.CartService;
 using Imagine.Business.Services.ProductService;
-using Imagine.Business.Services.UserService.UserService;
+using Imagine.Business.Services.UserService;
 using Imagine.DataAccess.Entities;
 using Imagine.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -22,6 +22,7 @@ namespace Imagine.Components.Controllers
             _userService = userService;
         }
 
+
         public IActionResult Cart()
         {
             User user = _userService.GetUserByEmail(User.FindFirstValue(ClaimTypes.Email));
@@ -29,22 +30,23 @@ namespace Imagine.Components.Controllers
             {
                 return RedirectToAction("Login", "User");
             }
+
             IEnumerable<Cart> items = _cartService.GetMany(u => u.UserId == user.Id);
             if (items == null)
             {
                 ViewData["Empty"] = "Cart is empty";
                 return View();
             }
-            else
+
+            decimal total = 0;
+            foreach (var item in items)
             {
-                decimal total = 0;
-                foreach (var item in items)
-                {
-                    total += item.Quantity * item.Product.Price;
-                }
-                ViewData["total"] = total.ToString("c");
-                ViewData["items"] = items.Count();
+                total += item.Quantity * item.Product.Price;
             }
+
+            ViewData["total"] = total.ToString("c");
+            ViewData["items"] = items.Count();
+
             return View(items);
         }
 
@@ -57,6 +59,7 @@ namespace Imagine.Components.Controllers
             {
                 return NotFound("invalid product");
             }
+
             if (!User.Identity.IsAuthenticated)
             {
                 TempData["error"] = "You must login to purchase items.";
@@ -67,6 +70,7 @@ namespace Imagine.Components.Controllers
             User user = _userService.GetUserByEmail(User.FindFirstValue(ClaimTypes.Email));
             _cartService.AddItem(getProduct, user.Id, Quantity);
             TempData["success"] = "Item has been added to your cart.";
+
             return RedirectToAction("Cart", "Cart");
         }
 
@@ -84,6 +88,7 @@ namespace Imagine.Components.Controllers
                 item.Quantity -= 1;
                 _cartService.UpdateItem(item);
             }
+
             else
             {
                 _cartService.RemoveItem(item);
@@ -94,7 +99,7 @@ namespace Imagine.Components.Controllers
 
         public IActionResult IncreaseItemQuantity(int productId)
         {
-            Cart item = _cartService.GetItem(p=>p.ProductId == productId);
+            Cart item = _cartService.GetItem(p => p.ProductId == productId);
             if (item == null)
             {
                 return NotFound("invalid item");

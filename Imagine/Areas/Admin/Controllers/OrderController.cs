@@ -24,15 +24,15 @@ namespace Imagine.Areas.Admin.Controllers
         public IActionResult Index()
         {
             IEnumerable<Order> orders = _orderService.GetAllOrders();
-             foreach(var order in orders)
+            foreach (var order in orders)
             {
-                if(order.OrderStatus == "Cancelled" && Int32.Parse(DateTime.Now.ToString("dd")) - Int32.Parse(order.LastUpdated.ToString("dd"))  > 3)
+                if (order.OrderStatus == "Cancelled" && Int32.Parse(DateTime.Now.ToString("dd")) - Int32.Parse(order.LastUpdated.ToString("dd")) > 3)
                 {
                     _orderService.RemoveOrder(order);
                 }
             }
             return View(orders);
-           
+
 
         }
 
@@ -41,7 +41,7 @@ namespace Imagine.Areas.Admin.Controllers
             Order order = _orderService.GetOneOrder(id);
             var orderStatues = Enum.GetValues(typeof(OrderStatus))
                 .Cast<OrderStatus>()
-                .Select(s => new {Id = (int)s, Name = s.ToString()})
+                .Select(s => new { Id = (int)s, Name = s.ToString() })
                 .ToList();
             ViewBag.orderstatus = orderStatues;
             return View(order);
@@ -56,8 +56,8 @@ namespace Imagine.Areas.Admin.Controllers
             _orderService.UpdateOrder(getOrder);
             string email = User.FindFirstValue(ClaimTypes.Email);
 
-            await _emailService.SendOrderUpdatedEmailAsync(getOrder.User.Email, "Order Updated", getOrder,orderItem,orderItem.Id);
-            return RedirectToAction("Index","Dashboard");
+            await _emailService.SendOrderUpdatedEmailAsync(getOrder.User.Email, "Order Updated", getOrder, orderItem, orderItem.Id);
+            return RedirectToAction("Index", "Dashboard");
         }
 
         public IActionResult RemoveOrder(int id)

@@ -1,7 +1,9 @@
 
 using Imagine.Business.Services.CategoryService;
+using Imagine.Business.Services.EmailService;
+using Imagine.Business.Services.OrderItemService;
 using Imagine.Business.Services.ProductService;
-using Imagine.Business.Services.UserService.UserService;
+using Imagine.Business.Services.UserService;
 using Imagine.DataAccess.Interfaces;
 using Imagine.DataAccess.Repositories;
 using Imagine.Database;
@@ -27,7 +29,12 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
-builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IOrderItemService, OrderItemService>();
+builder.Services.AddScoped<IOrderItemRepository, OrderItemRepository>();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddAutoMapper(typeof(UserProfile));
+
 
 
 var app = builder.Build();

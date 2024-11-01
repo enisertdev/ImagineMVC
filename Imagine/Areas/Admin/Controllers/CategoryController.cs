@@ -33,7 +33,9 @@ namespace Imagine.Areas.Admin.Controllers
                     Name = category.Name,
                     ParentId = category.ParentId
                 };
+
                 _categoryService.CreateCategory(insertCategory);
+
                 return RedirectToAction("Index", "Dashboard");
             }
             return View(category);

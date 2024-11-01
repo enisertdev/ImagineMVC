@@ -1,12 +1,11 @@
-﻿using AutoMapper;
+﻿using System.Linq.Expressions;
+using AutoMapper;
+using Imagine.Business.Services.EmailService;
 using Imagine.DataAccess.Entities;
 using Imagine.DataAccess.Entities.Dtos;
 using Imagine.DataAccess.Interfaces;
-using System.Linq.Expressions;
-using Imagine.Business.Services.EmailService;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 
-namespace Imagine.Business.Services.UserService.UserService
+namespace Imagine.Business.Services.UserService
 {
     public class UserService : IUserService
     {
@@ -62,7 +61,7 @@ namespace Imagine.Business.Services.UserService.UserService
             _userRepository.Remove(user);
         }
 
-        public User GetUserByEmail(string email)
+        public User GetUserByEmail(string? email)
         {
             return _userRepository.Get(u => u.Email == email);
         }

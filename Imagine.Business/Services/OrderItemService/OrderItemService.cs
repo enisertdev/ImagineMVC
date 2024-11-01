@@ -45,5 +45,19 @@ namespace Imagine.Business.Services.OrderItemService
                 _orderItemRepository.Remove(getOrderItem);
             }
         }
+
+        public OrderItem CreateOrderItem(Order order, Cart cartItem)
+        {
+            OrderItem orderItem = new OrderItem
+            {
+                OrderId = order.Id,
+                ProductId = cartItem.ProductId,
+                Quantity = cartItem.Quantity,
+                UnitPrice = cartItem.Product.Price,
+                TotalPrice = cartItem.Quantity * cartItem.Product.Price
+            };
+            Create(orderItem);
+            return orderItem;
+        }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using System.Security.Claims;
-using Imagine.Business.Services.UserService.UserService;
+using Imagine.Business.Services.UserService;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client;
 

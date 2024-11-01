@@ -16,6 +16,9 @@ namespace Imagine.Business.Services.OrderService
         IEnumerable<Order> GetAllOrders();
         void UpdateOrder(Order order);
         void RemoveOrder(Order order);
+        int GenerateUniqueTrackingNumber();
+        Order CreateOrder(User user, Cart cartItem, int trackingNumber);
+        Task CreateOrdersAsync(User user);
 
     }
 }

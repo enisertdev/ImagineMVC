@@ -10,6 +10,7 @@ namespace Imagine.Database
         public Microsoft.EntityFrameworkCore.DbSet<Category> Categories { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Product> Products { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Cart> Carts { get; set; }
+        public DbSet<ChatRoom> ChatRooms { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
 

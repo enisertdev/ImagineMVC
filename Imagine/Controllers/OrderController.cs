@@ -2,7 +2,7 @@
 using Imagine.Business.Services.EmailService;
 using Imagine.Business.Services.OrderItemService;
 using Imagine.Business.Services.OrderService;
-using Imagine.Business.Services.UserService.UserService;
+using Imagine.Business.Services.UserService;
 using Imagine.DataAccess.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client;
@@ -31,9 +31,11 @@ namespace Imagine.Controllers
             {
                 return Unauthorized();
             }
+
             IEnumerable<OrderItem> getActiveOrders = _orderItemService.GetOrders(o => o.Order.UserId == user.Id);
 
             List<OrderItem> orderItems = new List<OrderItem>();
+
             foreach (var order in getActiveOrders)
             {
                 if (order.Order.OrderStatus != "Cancelled")
@@ -42,7 +44,7 @@ namespace Imagine.Controllers
                 }
             }
 
-            if (orderItems.Count() == 0)
+            if (!orderItems.Any())
             {
                 ViewData["noActiveOrders"] = "You dont have any active orders";
                 return View();
@@ -60,15 +62,12 @@ namespace Imagine.Controllers
             {
                 return NotFound();
             }
+
             getOrder.OrderStatus = "Cancelled";
+
             _orderService.UpdateOrder(getOrder);
 
-            await _emailService.SendOrderCancelledEmailAsync(
-                email: user.Email,
-                subject: "Order Cancelled",
-                order: getOrder,
-                id: orderItem.Id
-                );
+            await _emailService.SendOrderCancelledEmailAsync(user.Email,"Order Cancelled", getOrder, orderItem.Id);
 
             return RedirectToAction("Index");
 

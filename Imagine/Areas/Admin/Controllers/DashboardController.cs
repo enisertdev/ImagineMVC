@@ -2,12 +2,12 @@
 using Imagine.Business.Services.CategoryService;
 using Imagine.Business.Services.OrderService;
 using Imagine.Business.Services.ProductService;
-using Imagine.Business.Services.UserService.UserService;
 using Imagine.DataAccess.Entities;
 using Imagine.DataAccess.Entities.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using Imagine.Business.Services.UserService;
 
 namespace Imagine.Areas.Admin.Controllers
 {
@@ -47,11 +47,12 @@ namespace Imagine.Areas.Admin.Controllers
             return View(_productService.GetAllProductsWithCategory());
         }
 
-      
+
         public IActionResult ListUsers()
         {
-            if(User.FindFirstValue(ClaimTypes.Email) == "admin@admin.com")
-            return NotFound("you cannot view users.");
+            if (User.FindFirstValue(ClaimTypes.Email) == "admin@admin.com")
+                return NotFound("you cannot view users.");
+
             return View(_userService.GetAllUsers());
         }
         public IActionResult EditUser(int id)
@@ -97,6 +98,7 @@ namespace Imagine.Areas.Admin.Controllers
                 user.IsConfirmed = isCheckedConfirmed ? true : false;
                 var createdUser = _mapper.Map<User>(user);
                 _userService.AddUser(createdUser);
+
                 return RedirectToAction("ListUsers");
             }
             return View(user);
@@ -104,11 +106,11 @@ namespace Imagine.Areas.Admin.Controllers
 
         public IActionResult DeleteUser(int id)
         {
-            if(User.FindFirstValue(ClaimTypes.Email) == "admin@admin.com")
+            if (User.FindFirstValue(ClaimTypes.Email) == "admin@admin.com")
             {
                 return NotFound("You cannot remove users");
             }
-            User user =_userService.GetUser(u=> u.Id == id);
+            User user = _userService.GetUser(u => u.Id == id);
             if (user == null)
                 return NotFound("not found");
             if (user.IsAdmin)

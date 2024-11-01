@@ -10,5 +10,6 @@ public class UserProfile : Profile
         CreateMap<UserDtoForRegister, User>();
         CreateMap<UserDtoForUpdate, User>().ForMember(dest => dest.Password, opt => opt.Ignore()).ReverseMap();
         CreateMap<UserDtoForInsertion, User>();
+
     }
 }
