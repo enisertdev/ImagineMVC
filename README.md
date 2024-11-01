@@ -6,7 +6,7 @@ SQL Server ve Entity Framework ile güvenli ve düzenli veritabanı yönetimi
 
 Denemek için <a href ="http://www.imaginewebsite.com.tr">   buraya</a>
 <br>
-<a href ="https://cool-monthly-krill.ngrok-free.app/api/products/">Api</a> Access (MEVCUT DEĞİL)
+<a href ="http://api.imaginewebsite.com.tr/api/users/">Api</a> Access (/api/users , /api/products )
 
 <hr>
 <br>Admin erişimi için
