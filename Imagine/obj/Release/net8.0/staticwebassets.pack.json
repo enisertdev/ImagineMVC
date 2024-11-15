@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\livesupportadmin.css"
     },
     {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\css\\navbar.css",
+      "PackagePath": "staticwebassets\\css\\navbar.css"
+    },
+    {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -99,6 +103,10 @@
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\aircon.webp",
       "PackagePath": "staticwebassets\\images\\aircon.webp"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\bd-blender.jpg",
+      "PackagePath": "staticwebassets\\images\\bd-blender.jpg"
     },
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\blender.jpg",
@@ -299,6 +307,10 @@
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\js\\ChatClientAdmin.js",
       "PackagePath": "staticwebassets\\js\\ChatClientAdmin.js"
+    },
+    {
+      "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\js\\navbar.js",
+      "PackagePath": "staticwebassets\\js\\navbar.js"
     },
     {
       "Id": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\js\\site.js",

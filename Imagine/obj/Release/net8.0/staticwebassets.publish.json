@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gXoA4uRkiWLb+96zeyrbs23fKZHzaYB/WWfWZt2kvjQ=",
+  "Hash": "lUjKUTywxzxHq2O0yAXVpIaEOAss3FHdc4ViztY5r0o=",
   "Source": "Imagine",
   "BasePath": "_content/Imagine",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\livesupportadmin.css"
+    },
+    {
+      "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\css\\navbar.css",
+      "SourceId": "Imagine",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\",
+      "BasePath": "_content/Imagine",
+      "RelativePath": "css/navbar.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\navbar.css"
     },
     {
       "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\css\\site.css",
@@ -281,6 +300,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\aircon.webp"
+    },
+    {
+      "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\bd-blender.jpg",
+      "SourceId": "Imagine",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\",
+      "BasePath": "_content/Imagine",
+      "RelativePath": "images/bd-blender.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\bd-blender.jpg"
     },
     {
       "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\images\\blender.jpg",
@@ -1459,6 +1497,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\ChatClientAdmin.js"
+    },
+    {
+      "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\js\\navbar.js",
+      "SourceId": "Imagine",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\",
+      "BasePath": "_content/Imagine",
+      "RelativePath": "js/navbar.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\navbar.js"
     },
     {
       "Identity": "C:\\Users\\enise\\Desktop\\ImagineMVC\\Imagine\\wwwroot\\js\\site.js",

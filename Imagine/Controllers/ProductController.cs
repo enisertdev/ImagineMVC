@@ -27,7 +27,7 @@ namespace Imagine.Components.Controllers
             return View(product);
         }
 
-        public IActionResult ProductsByCategory(int categoryId,int page = 1, int pageSize = 4)
+        public IActionResult ProductsByCategory(int categoryId, int page = 1, int pageSize = 4)
         {
 
             IEnumerable<Product> products = _productService.GetProductsWithCategory(p => p.CategoryId == categoryId || p.Category.ParentId == categoryId);
@@ -49,27 +49,32 @@ namespace Imagine.Components.Controllers
             ViewData["CategoryId"] = categoryId;
 
 
-            return View("ProductsByCategory",model);
+            return View("ProductsByCategory", model);
         }
 
 
         public IActionResult Search(string search)
         {
-           return RedirectToAction("SearchResults", new {query = search ?? string.Empty});
+            return RedirectToAction("SearchResults", new { query = search ?? string.Empty });
         }
 
         public IActionResult SearchResults(string query, int page = 1, int pageSize = 4)
         {
-            var products = _productService.GetProductsWithCategory(p => p.Name.Contains(query) || p.Brand.Contains(query) || p.Category.Name.Contains(query));
-            if(string.IsNullOrEmpty(query))
+            if (string.IsNullOrEmpty(query))
             {
-                return View(_productService.GetAllProducts());
+                var getAllProducts = _productService.GetAllProducts();
+                var allProductsModel = getAllProducts.ToPagedList(page, pageSize);
+                return View(allProductsModel);
             }
+
+            var products = _productService.GetProductsWithCategory(p =>
+                p.Name.Contains(query) || p.Brand.Contains(query) || p.Category.Name.Contains(query));
+
             if (products.Count() == 0)
             {
                 TempData["NotFound"] = "No product found with this keyword.";
             }
-            IPagedList<Product> model = products.ToPagedList(page, pageSize);
+            var model = products.ToPagedList(page, pageSize);
 
             return View(model);
         }
