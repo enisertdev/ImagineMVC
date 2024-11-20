@@ -12,7 +12,7 @@ Denemek için <a href ="http://www.imaginewebsite.com.tr">   buraya</a>
 <br>Admin erişimi için
 <br>  
 
-email : admin@admin.com  
+email : admin@admin
 
 password : admin
 
