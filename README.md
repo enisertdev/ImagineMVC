@@ -4,7 +4,7 @@ ASP.NET MVC ile kullanıcı arayüzü ve veri işlemleri
 SQL Server ve Entity Framework ile güvenli ve düzenli veritabanı yönetimi
 Ödeme işlemleri, sipariş yönetimi, ve kullanıcı yönetimi gibi temel e-ticaret özellikleri
 
-Denemek için <a href ="http://www.imaginewebsite.com.tr">   buraya</a>
+Denemek  <a href ="http://www.imaginewebsite.com.tr">   buraya</a>
 <br>
 <a href ="http://api.imaginewebsite.com.tr/api/products/">Api</a> Access (şu anlık sadece ürünler listesi mevcut)
 
